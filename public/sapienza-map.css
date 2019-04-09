@@ -2,7 +2,7 @@
 /* style sheet for svg */
 path, rect {
    opacity:1;
-   fill: red;
+   fill: white;
    fill-opacity:1;
    fill-rule:nonzero;
    stroke: black;
@@ -10,11 +10,11 @@ path, rect {
    stroke-opacity:1
 }
 
-path:hover, rect:hover {
-	fill: yellow;
-}
-
 #wall {
 	fill-opacity: 0;
 	stroke-width:0.7;
+}
+
+.department:hover {
+   stroke-width: 1;
 }
