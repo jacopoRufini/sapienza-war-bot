@@ -12,16 +12,6 @@ if(svg) { // firefox
     })
 }
 
-function setOwner(departmentString, ownerString) {
-    const element = svg.getElementById(departmentString)
-    element.setAttribute("owner", ownerString)
-    element.style.fill = toColor((ownerString || "").hashCode() % MAX_COLOR)
-}
-
-function getDepartmentDescription(departmentNode) {
-    return  departmentNode.id + " posseduto da " + departmentNode.getAttribute("owner")
-}
-
 String.prototype.hashCode = function() {
   var hash = 0, i, chr;
   if (this.length === 0)
@@ -44,6 +34,16 @@ function toColor(num) {
     return "rgba(" + [r, g, b].join(",") + ",1)";
 }
 
+function setOwner(departmentString, ownerString) {
+    const element = svg.getElementById(departmentString)
+    element.setAttribute("owner", ownerString)
+    element.style.fill = toColor((ownerString || "").hashCode() % MAX_COLOR)
+}
+
+function getDepartmentDescription(departmentNode) {
+    return  departmentNode.id + " posseduto da " + departmentNode.getAttribute("owner")
+}
+
 function setOwners(ownersDictionary) {
     var departments = svg.getElementsByClassName("department")
     for (var i = departments.length - 1; i >= 0; i--) {
@@ -62,7 +62,7 @@ function onSvgReady() {
     for (var i = departments.length - 1; i >= 0; i--) {
         let d = departments[i]
         d.addEventListener("click", event => {
-            console.log(event.target.id + " posseduto da " + event.target.getAttribute("owner"))
+            console.log(getDepartmentDescription(event.target))
         })
     }
 }
