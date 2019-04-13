@@ -1,10 +1,11 @@
 var svg = null
+var selection;
 
 var container = document.getElementById("map-container")
 svg = container.getSVGDocument()
 
 if(svg) { // firefox
-    onSvgReady() 
+    onSvgReady()
 } else { // chrome
     container.addEventListener("load", () => {
         svg = container.getSVGDocument()
@@ -52,6 +53,16 @@ function setOwners(ownersDictionary) {
     }
 }
 
+function vote(){
+  if (selection)
+    axios.post('/vote', {'dep' : selection.id})
+    .then(res => {
+      if (res.data) console.log("HAI VOTATO, BRAVO");
+      else console.log("HAI GIà VOTATO, BASTA")})
+    .catch(err => console.log(err));
+  else console.log("seleziona un dipartimento");
+}
+
 function onSvgReady() {
     // load owners data
     axios.get('/owners')
@@ -62,6 +73,7 @@ function onSvgReady() {
     for (var i = departments.length - 1; i >= 0; i--) {
         let d = departments[i]
         d.addEventListener("click", event => {
+            selection = event.target;
             console.log(getDepartmentDescription(event.target))
         })
     }
