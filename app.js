@@ -31,5 +31,4 @@ setInterval(() => {
 					+ " dopo aver lanciato l'attaccato da " + dipartimentoVincitore)
 		currentOwnership[dipartimentoPerdente] = fazioneVincente
 	}
-}, 150)
-
+}, 150000000)

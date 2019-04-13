@@ -1,10 +1,9 @@
-var svg = null
-
-var container = document.getElementById("map-container")
-svg = container.getSVGDocument()
+const container = document.getElementById("map-container")
+let svg = container.getSVGDocument()
+const adjacents = {};
 
 if(svg) { // firefox
-    onSvgReady() 
+    onSvgReady()
 } else { // chrome
     container.addEventListener("load", () => {
         svg = container.getSVGDocument()
@@ -12,50 +11,28 @@ if(svg) { // firefox
     })
 }
 
-String.prototype.hashCode = function() {
-  var hash = 0, i, chr;
-  if (this.length === 0)
-    return hash;
-  for (i = 0; i < this.length; i++) {
-    chr   = this.charCodeAt(i);
-    hash  = ((hash << 5) - hash) + chr;
-    hash |= 0; // Convert to 32bit integer
-  }
-  return hash* hash * 71 + hash * 5571;
-};
-
-const MAX_COLOR = 0xFFFFFF;
-
-function toColor(num) {
-    num >>>= 0;
-    var b = num & 0xFF,
-        g = (num & 0xFF00) >>> 8,
-        r = (num & 0xFF0000) >>> 16;
-    return "rgba(" + [r, g, b].join(",") + ",1)";
-}
-
-function setOwner(departmentString, ownerString) {
-    const element = svg.getElementById(departmentString)
-    element.setAttribute("owner", ownerString)
-    element.style.fill = toColor((ownerString || "").hashCode() % MAX_COLOR)
+function setOwner(department, departmentData) {
+    department.setAttribute("owner", departmentData.owner);
+    department.style.fill = departmentData.color
 }
 
 function getDepartmentDescription(departmentNode) {
-    return  departmentNode.id + " posseduto da " + departmentNode.getAttribute("owner")
+    return departmentNode.id + " posseduto da " + departmentNode.getAttribute("owner")
 }
 
-function setOwners(ownersDictionary) {
-    var departments = svg.getElementsByClassName("department")
-    for (var i = departments.length - 1; i >= 0; i--) {
-        const departmentId = departments[i].id
-        setOwner(departmentId, ownersDictionary[departmentId])
+function updateDepartments(data) {
+    const departments = svg.getElementsByClassName("department")
+    for (let department of departments) {
+      const departmentData = data[department.id];
+      adjacents[department.id] = departmentData.adjacents;
+      setOwner(department, departmentData)
     }
 }
 
 function onSvgReady() {
     // load owners data
     axios.get('/owners')
-    .then(response => setOwners(response.data))
+    .then(response => updateDepartments(response.data))
     .catch(error => console.log(error))
     // set on click handler on deps
     var departments = svg.getElementsByClassName("department")
