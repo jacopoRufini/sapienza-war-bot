@@ -1,27 +1,54 @@
-const express = require('express');
-const app = express();
-const server = app.listen(8080);
-const fs = require('fs');
-const socket = require('socket.io');
-const io = socket(server);
-let data;
+const express = require('express')
+const bodyParser = require('body-parser')
 
-app.use(express.static('public'));
+const PORT = 8080
+const app = express()
 
-fs.readFile(__dirname + '/public/data.json', handleFile);
+let votedIp = [];
+let armies = new Map();
 
-io.on('connection', (socket) => {
-  console.log('new user: ' + socket.id)
-  socket.emit('data', data);
-})
+app.use(express.static('public'))
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
 
+// starting ownership data
+const currentOwnership = Object.assign({}, require("./defaultLocations"));
+
+// init armies ( 50 start soldiers )
+for (let key of Object.keys(currentOwnership))
+    armies.set(key, 50);
+
+// route for data
+app.get("/owners", (req, res) => res.send(currentOwnership))
+
+app.post("/vote", (req, res) => {
+  let clientIp = req.connection.remoteAddress;
+  if (!votedIp.includes(clientIp)) {
+    votedIp.push(clientIp);
+    const dep = req.body.dep;
+    armies.set(dep, armies.get(dep) + 1);
+    res.send(true);
+  } else res.send(false);
+});
+
+const server = app.listen(PORT, () => {
+	// on server start
+	console.log("server listening on localhost:" + PORT + "...")
+});
+
+const randomElement = array => array[Math.floor(Math.random() * array.length)]
+
+// cambiamo l'ownership a caso per divertimento
 setInterval(() => {
-  const dep = data[Math.floor(Math.random() * data.length)];
-  const dep2 = data[Math.floor(Math.random() * data.length)];
-  io.sockets.emit('attack', {att: dep, def: dep2});
-},100000);
-
-function handleFile(err, file) {
-    if (err) throw err
-    data = JSON.parse(file);
-}
+	let dipartimenti = Object.keys(currentOwnership)
+	let dipartimentoVincitore = randomElement(dipartimenti),
+		dipartimentoPerdente = randomElement(dipartimenti),
+		fazioneVincente = currentOwnership[dipartimentoVincitore],
+		fazionePerdente = currentOwnership[dipartimentoPerdente];
+	if(fazioneVincente != fazionePerdente) {
+		console.log(fazioneVincente + " hanno conquistato " + dipartimentoPerdente
+					+ " sottraendone il possesso da " + fazionePerdente
+					+ " dopo aver lanciato l'attaccato da " + dipartimentoVincitore)
+		currentOwnership[dipartimentoPerdente] = fazioneVincente
+	}
+}, 150000000)
