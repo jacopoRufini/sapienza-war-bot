@@ -35,7 +35,7 @@ function vote(){
   if (selectedFaction) {
     axios.post('/vote', {'own' : selectedFaction})
     .then(res => {
-      console.log(res);
+      console.log(res.data);
     })
     .catch(err => {
       if(err.response && err.response.status === 401) //NOT  AUTHORIZED code
