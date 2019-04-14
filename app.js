@@ -1,5 +1,6 @@
 const express = require('express')
 const bodyParser = require('body-parser')
+const Logger = require('./logger')
 
 const PORT = 8080
 const app = express()
@@ -22,6 +23,8 @@ for (let key in ownership) {
 
 // routes for data
 app.get("/owners", (req, res) => res.send(ownership))
+// get war history
+app.get("/logs", (req, res) => res.send(Logger.getLogs()))
 
 app.post("/vote", (req, res) => {
   let clientIp = req.connection.remoteAddress;
@@ -57,7 +60,7 @@ setInterval(() => {
   const attWin = Math.random() <= attackWinProb(attacker.owner.voti, defender.owner.voti);
   if (attWin) {
     ownership[depDef].owner = attacker.owner;
-    console.log(attacker.owner.name + " hanno CONQUISTATO il dipartimento di " + depDef);
+    Logger.log(attacker.owner.name + " hanno CONQUISTATO il dipartimento di " + depDef);
   } else {
     // DO NOTHING
   }//console.log(defender.owner.name + " hanno DIFESO il dipartimento di " + depDef);

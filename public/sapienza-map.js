@@ -1,17 +1,7 @@
-const container = document.getElementById("map-container")
-let svg = container.getSVGDocument()
+let svg = null
 const adjacents = {};
 let selectedOwner = null
 let departments = null
-
-if(svg) { // firefox
-    onSvgReady()
-} else { // chrome
-    container.addEventListener("load", () => {
-        svg = container.getSVGDocument()
-        onSvgReady()
-    })
-}
 
 function setOwner(department, departmentData) {
     department.setAttribute("owner", departmentData.owner.name);
@@ -49,6 +39,30 @@ function vote(){
   }
 }
 
+// add log message, feel free to change the HTML of the logger
+function addLogMessage(message) {
+  let messageNode = document.createElement("LI")
+  messageNode.innerHTML = message
+  let logs = document.getElementById("logs")
+  // append as first child
+  logs.insertBefore(messageNode, logs.firstChild);
+}
+
+function resetLogs() {
+  document.getElementById("logs").innerHTML = ""
+}
+
+function synchronizeLogs() {
+  axios.get('/logs')
+  .then(response => {
+    let logs = response.data
+    resetLogs()
+    for(let log of logs)
+      addLogMessage(log)
+  })
+  .catch(error => console.log(error))
+}
+
 // called when a svg department has been clicked
 // "department" argument is the svg element clicked
 function onDeparmentClicked(department) {
@@ -61,12 +75,18 @@ setInterval(() => {
   axios.get('/owners')
   .then(response => updateDepartments(response.data))
   .catch(error => console.log(error))
+
+  synchronizeLogs()
 },5000)
 
 // called on initialization
 function onSvgReady() {
+    // initialize svg
+    svg = document.getElementById("map-container").getSVGDocument()
     // initialize departments
     departments = svg.getElementsByClassName("department")
+    // load logs
+    synchronizeLogs()
     // load owners data
     axios.get('/owners')
     .then(response => updateDepartments(response.data))
