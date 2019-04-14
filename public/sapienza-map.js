@@ -32,13 +32,12 @@ function updateDepartments(data) {
 function vote(){
   if (selection)
     axios.post('/vote', {'own' : selection.getAttribute("owner")})
-    .then(res => {
-      if (res.data) console.log("HAI VOTATO, BRAVO");
-      else console.log("HAI GIà VOTATO, BASTA")})
-    .catch(err => console.log(err));
+    .then(res => console.log(res.data))
+    .catch(err => console.log("hai già votato"));
   else console.log("seleziona un dipartimento");
 }
 
+// update data every attack
 setInterval(() => {
   axios.get('/owners')
   .then(response => updateDepartments(response.data))
