@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html>
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-<script type="text/javascript" src="sapienza-map.js"></script>
+<head>
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+</head>
+
 <body>
-  <button onclick="vote()">VOTA</button>
-  <embed id="map-container" type="image/svg+xml" src="sapienza-map.svg" onload="onSvgReady()"/>
-  <!-- modificate come vi pare html e css dei logs -->
-  <ul id="logs" style="float: right"></ul>
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<script type="text/javascript" src="sapienza-map.js"></script>
+	<button onclick="vote()">VOTA</button>
+	<embed id="map-container" type="image/svg+xml" src="sapienza-map.svg" onload="onSvgReady()"/>
+	<!-- modificate come vi pare html e css dei logs -->
+	<ul id="logs" style="float: right"></ul>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 </body>
+
 </html>

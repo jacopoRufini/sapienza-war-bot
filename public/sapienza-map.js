@@ -24,20 +24,26 @@ function vote(){
   if (selectedOwner && selectedOwner != "nessuno") {
     axios.post('/vote', {'owner' : selectedOwner})
     .then(res => {
-      console.log(res.data);
+      successToast(res.data);
     })
     .catch(err => {
       if(err.response && err.response.data) // already voted or faction doesn't exist
-        console.log(err.response.data) // error message from the server
-      else if(err.response) // other error from server 
-        console.log(err.response)
-      else // unkown error (probably from js in this function)
-        console.log(err)
+        errorToast(err.response.data) // error message from the server
+      console.log(err)
     });
   } else {
     console.log("seleziona una fazione");
   }
 }
+
+// called when a svg department has been clicked
+// "department" argument is the svg element clicked
+function onDepartmentClicked(department) {
+  selectedOwner = department.getAttribute("owner");
+  infoToast(getDepartmentDescription(department));
+}
+
+//  -----------------  LOGS START -----------------
 
 // add log message, feel free to change the HTML of the logger
 function addLogMessage(message) {
@@ -63,12 +69,30 @@ function synchronizeLogs() {
   .catch(error => console.log(error))
 }
 
-// called when a svg department has been clicked
-// "department" argument is the svg element clicked
-function onDeparmentClicked(department) {
-  selectedOwner = department.getAttribute("owner");
-  console.log(getDepartmentDescription(department));
+//  ----------------- LOGS END -----------------
+
+// show a message info
+// type should be "info", "error" or "success"
+// feel free to change options and colors, check options at https://github.com/apvarun/toastify-js
+function toast(type, message) {
+  let color;
+  if(type == "info")
+    color = "#06d6c8"
+  else if(type == "success")
+    color = "linear-gradient(to right, #00b09b, #96c93d)"
+  else if(type == "error")
+    color = "red"
+  else
+    throw("invalid type '" + type + "'")
+  Toastify({
+    text: message,
+    backgroundColor: color,
+  }).showToast();
 }
+
+function errorToast(message) { toast("error", message)}
+function infoToast(message) { toast("info", message)}
+function successToast(message) { toast("success", message)}
 
 // update data every attack
 setInterval(() => {
@@ -93,5 +117,5 @@ function onSvgReady() {
     .catch(error => console.log(error))
     // set on click handler on deps
     for (let department of departments)
-      department.onclick = event => onDeparmentClicked(event.target)
+      department.onclick = event => onDepartmentClicked(event.target)
 }
