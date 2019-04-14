@@ -29,14 +29,25 @@ function updateDepartments(data) {
     }
 }
 
+let selectedFaction = null
+
 function vote(){
-  if (selection)
-    axios.post('/vote', {'own' : selection.getAttribute("owner")})
+  if (selectedFaction) {
+    axios.post('/vote', {'own' : selectedFaction})
     .then(res => {
-      if (res.data) console.log("HAI VOTATO, BRAVO");
-      else console.log("HAI GIà VOTATO, BASTA")})
-    .catch(err => console.log(err));
-  else console.log("seleziona un dipartimento");
+      console.log(res);
+    })
+    .catch(err => {
+      if(err.response && err.response.status === 401) //NOT  AUTHORIZED code
+        console.log(err.response.data)
+      else if(err.response) // other error from server 
+        console.log(err.response)
+      else // unkown error (probably from js in this function)
+        console.log(err)
+    });
+  } else {
+    console.log("seleziona un dipartimento");
+  }
 }
 
 setInterval(() => {
@@ -55,7 +66,7 @@ function onSvgReady() {
     for (var i = departments.length - 1; i >= 0; i--) {
         let d = departments[i]
         d.addEventListener("click", event => {
-            selection = event.target;
+            selectedFaction = event.target.getAttribute("owner");
             console.log(getDepartmentDescription(event.target));
         })
     }
