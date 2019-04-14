@@ -1,7 +1,7 @@
 const container = document.getElementById("map-container")
 let svg = container.getSVGDocument()
 const adjacents = {};
-let selectedFaction = null
+let selectedOwner = null
 let departments = null
 
 if(svg) { // firefox
@@ -31,8 +31,8 @@ function updateDepartments(data) {
 }
 
 function vote(){
-  if (selectedFaction && selectedFaction != "nessuno") {
-    axios.post('/vote', {'own' : selectedFaction})
+  if (selectedOwner && selectedOwner != "nessuno") {
+    axios.post('/vote', {'owner' : selectedOwner})
     .then(res => {
       console.log(res.data);
     })
@@ -52,7 +52,7 @@ function vote(){
 // called when a svg department has been clicked
 // "department" argument is the svg element clicked
 function onDeparmentClicked(department) {
-  selectedFaction = department.getAttribute("owner");
+  selectedOwner = department.getAttribute("owner");
   console.log(getDepartmentDescription(department));
 }
 

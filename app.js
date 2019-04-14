@@ -16,8 +16,8 @@ const ownership = Object.assign({}, require("./defaultLocations"));
 
 // map of owners
 for (let key in ownership) {
-  const own = ownership[key].owner;
-  owners[own.name] = own
+  const owner = ownership[key].owner;
+  owners[owner.name] = owner
 }
 
 // routes for data
@@ -27,9 +27,9 @@ app.post("/vote", (req, res) => {
   let clientIp = req.connection.remoteAddress;
   if (!votedIp[clientIp]) {
     votedIp[clientIp] = true;
-    const ownName = req.body.own;
-    if(owners[ownName]) {
-      owners[ownName].voti += 1;
+    const owner = req.body.owner;
+    if(owner != "nessuno" && owners[owner]) {
+      owners[owner].voti += 1;
       res.send("voto aggiunto con successo");
     } else {
       res.status(400 /* Bad Request */).send("la fazione non esiste");
