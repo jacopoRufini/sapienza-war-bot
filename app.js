@@ -4,8 +4,8 @@ const bodyParser = require('body-parser')
 const PORT = 8080
 const app = express()
 
-let votedIp = [];
-let owners = new Map(); // mappa ridondate ma più comoda / efficiente per l'update
+let votedIp = {};
+let owners = {}; // mappa ridondate ma più comoda / efficiente per l'update
 
 app.use(express.static('public'))
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -15,23 +15,25 @@ app.use(bodyParser.json())
 const ownership = Object.assign({}, require("./defaultLocations"));
 
 // map of owners
-for (let key of Object.keys(ownership)) {
-    const own = ownership[key].owner;
-    if (!owners.has(own.name))
-      owners.set(own.name, own);
-  }
+for (let key in ownership) {
+  const own = ownership[key].owner;
+  owners[own.name] = own
+}
 
 // routes for data
 app.get("/owners", (req, res) => res.send(ownership))
 
 app.post("/vote", (req, res) => {
   let clientIp = req.connection.remoteAddress;
-  if (!votedIp.includes(clientIp)) {
-    votedIp.push(clientIp);
+  if (!votedIp[clientIp]) {
+    votedIp[clientIp] = true;
     const ownName = req.body.own;
-    owners.get(ownName).voti += 1;
-    res.send(true);
-  } else res.send(false);
+    if(owners[ownName])
+      owners[ownName].voti += 1;
+    res.send("voto aggiunto con successo");
+  } else {
+    res.status(401 /* operazione non autorizzata */ ).send("non puoi votare in questo momento");
+  }
 });
 
 const server = app.listen(PORT, () => {
@@ -48,13 +50,16 @@ setInterval(() => {
   let attacker = ownership[depAtt]
   let depDef = randomElement(attacker.adjacents)
   let defender = ownership[depDef]
-  if (defender.owner === attacker.owner) return;
+  if (defender.owner === attacker.owner || attacker.owner.name === "nessuno")
+    return;
   //console.log(attacker.owner.name + " hanno attaccato il dipartimento di "+ depDef + " presidiato da " + defender.owner.name);
   const attWin = Math.random() <= attackWinProb(attacker.owner.voti, defender.owner.voti);
   if (attWin) {
     ownership[depDef].owner = attacker.owner;
     console.log(attacker.owner.name + " hanno CONQUISTATO il dipartimento di " + depDef);
-  } else { }//console.log(defender.owner.name + " hanno DIFESO il dipartimento di " + depDef);
+  } else {
+    // DO NOTHING
+  }//console.log(defender.owner.name + " hanno DIFESO il dipartimento di " + depDef);
 }, 5000)
 
 function attackWinProb(attVoti, defVoti){
@@ -62,5 +67,5 @@ function attackWinProb(attVoti, defVoti){
   return 0.5 + 0.5 * (perc/100);
   //esempio: att = 52, def = 50, la % è 52-50 = 2*2 = 4, cioè il 4% in più di vincita
   // 0.5 + 0.5 * 0.04 = 0.52
-
 }
+
