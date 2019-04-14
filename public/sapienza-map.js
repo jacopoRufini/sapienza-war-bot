@@ -1,6 +1,8 @@
 const container = document.getElementById("map-container")
 let svg = container.getSVGDocument()
 const adjacents = {};
+let selectedFaction = null
+let departments = null
 
 if(svg) { // firefox
     onSvgReady()
@@ -21,7 +23,6 @@ function getDepartmentDescription(departmentNode) {
 }
 
 function updateDepartments(data) {
-    const departments = svg.getElementsByClassName("department")
     for (let department of departments) {
       const departmentData = data[department.id];
       adjacents[department.id] = departmentData.adjacents;
@@ -29,10 +30,8 @@ function updateDepartments(data) {
     }
 }
 
-let selectedFaction = null
-
 function vote(){
-  if (selectedFaction) {
+  if (selectedFaction && selectedFaction != "nessuno") {
     axios.post('/vote', {'own' : selectedFaction})
     .then(res => {
       console.log(res.data);
@@ -46,8 +45,15 @@ function vote(){
         console.log(err)
     });
   } else {
-    console.log("seleziona un dipartimento");
+    console.log("seleziona una fazione");
   }
+}
+
+// called when a svg department has been clicked
+// "department" argument is the svg element clicked
+function onDeparmentClicked(department) {
+  selectedFaction = department.getAttribute("owner");
+  console.log(getDepartmentDescription(department));
 }
 
 // update data every attack
@@ -57,18 +63,15 @@ setInterval(() => {
   .catch(error => console.log(error))
 },5000)
 
+// called on initialization
 function onSvgReady() {
+    // initialize departments
+    departments = svg.getElementsByClassName("department")
     // load owners data
     axios.get('/owners')
     .then(response => updateDepartments(response.data))
     .catch(error => console.log(error))
     // set on click handler on deps
-    var departments = svg.getElementsByClassName("department")
-    for (var i = departments.length - 1; i >= 0; i--) {
-        let d = departments[i]
-        d.addEventListener("click", event => {
-            selectedFaction = event.target.getAttribute("owner");
-            console.log(getDepartmentDescription(event.target));
-        })
-    }
+    for (let department of departments)
+      department.onclick = event => onDeparmentClicked(event.target)
 }
