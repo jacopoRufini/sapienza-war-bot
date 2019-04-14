@@ -39,6 +39,12 @@ function vote(){
   else console.log("seleziona un dipartimento");
 }
 
+setInterval(() => {
+  axios.get('/owners')
+  .then(response => updateDepartments(response.data))
+  .catch(error => console.log(error))
+},5000)
+
 function onSvgReady() {
     // load owners data
     axios.get('/owners')
