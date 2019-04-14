@@ -28,11 +28,14 @@ app.post("/vote", (req, res) => {
   if (!votedIp[clientIp]) {
     votedIp[clientIp] = true;
     const ownName = req.body.own;
-    if(owners[ownName])
+    if(owners[ownName]) {
       owners[ownName].voti += 1;
-    res.send("voto aggiunto con successo");
+      res.send("voto aggiunto con successo");
+    } else {
+      res.status(400 /* Bad Request */).send("la fazione non esiste");
+    }
   } else {
-    res.status(401 /* operazione non autorizzata */ ).send("non puoi votare in questo momento");
+    res.status(401 /* Not Authorized */).send("non puoi votare in questo momento");
   }
 });
 

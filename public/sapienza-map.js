@@ -38,8 +38,8 @@ function vote(){
       console.log(res.data);
     })
     .catch(err => {
-      if(err.response && err.response.status === 401) //NOT  AUTHORIZED code
-        console.log(err.response.data)
+      if(err.response && err.response.data) // already voted or faction doesn't exist
+        console.log(err.response.data) // error message from the server
       else if(err.response) // other error from server 
         console.log(err.response)
       else // unkown error (probably from js in this function)
