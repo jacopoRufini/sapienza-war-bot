@@ -75,18 +75,14 @@ function synchronizeLogs() {
 // type should be "info", "error" or "success"
 // feel free to change options and colors, check options at https://github.com/apvarun/toastify-js
 function toast(type, message) {
-  let color;
-  if(type == "info")
-    color = "#06d6c8"
-  else if(type == "success")
-    color = "linear-gradient(to right, #00b09b, #96c93d)"
-  else if(type == "error")
-    color = "red"
-  else
-    throw("invalid type '" + type + "'")
+  let types = {
+    info: "background:linear-gradient(135deg,#73a5ff,#5477f5)",
+    success: "linear-gradient(to right, #00b09b, #96c93d)",
+    error: "red"
+  }
   Toastify({
     text: message,
-    backgroundColor: color,
+    backgroundColor: types[type],
   }).showToast();
 }
 
