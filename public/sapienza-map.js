@@ -12,8 +12,8 @@ if(svg) { // firefox
 }
 
 function setOwner(department, departmentData) {
-    department.setAttribute("owner", departmentData.owner);
-    department.style.fill = departmentData.color
+    department.setAttribute("owner", departmentData.owner.name);
+    department.style.fill = departmentData.owner.color
 }
 
 function getDepartmentDescription(departmentNode) {
@@ -31,7 +31,7 @@ function updateDepartments(data) {
 
 function vote(){
   if (selection)
-    axios.post('/vote', {'dep' : selection.id})
+    axios.post('/vote', {'own' : selection.getAttribute("owner")})
     .then(res => {
       if (res.data) console.log("HAI VOTATO, BRAVO");
       else console.log("HAI GIà VOTATO, BASTA")})
@@ -50,7 +50,7 @@ function onSvgReady() {
         let d = departments[i]
         d.addEventListener("click", event => {
             selection = event.target;
-            console.log(getDepartmentDescription(event.target))
+            console.log(getDepartmentDescription(event.target));
         })
     }
 }

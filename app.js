@@ -5,7 +5,7 @@ const PORT = 8080
 const app = express()
 
 let votedIp = [];
-let armies = new Map();
+let owners = new Map(); // mappa ridondate ma più comoda / efficiente per l'update
 
 app.use(express.static('public'))
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -14,19 +14,22 @@ app.use(bodyParser.json())
 // starting ownership data
 const currentOwnership = Object.assign({}, require("./defaultLocations"));
 
-// init armies ( 50 start soldiers )
-for (let key of Object.keys(currentOwnership))
-    armies.set(key, 50);
+// map of owners
+for (let key of Object.keys(currentOwnership)) {
+    const own = currentOwnership[key].owner;
+    if (!owners.has(own.name))
+      owners.set(own.name, own);
+  }
 
-// route for data
+// routes for data
 app.get("/owners", (req, res) => res.send(currentOwnership))
 
 app.post("/vote", (req, res) => {
   let clientIp = req.connection.remoteAddress;
   if (!votedIp.includes(clientIp)) {
     votedIp.push(clientIp);
-    const dep = req.body.dep;
-    armies.set(dep, armies.get(dep) + 1);
+    const ownName = req.body.own;
+    owners.get(ownName).voti += 1;
     res.send(true);
   } else res.send(false);
 });
