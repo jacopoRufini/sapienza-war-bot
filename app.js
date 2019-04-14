@@ -25,17 +25,17 @@ app.get("/owners", (req, res) => res.send(ownership))
 
 app.post("/vote", (req, res) => {
   let clientIp = req.connection.remoteAddress;
-  if (!votedIp[clientIp]) {
-    votedIp[clientIp] = true;
-    const owner = req.body.owner;
-    if(owner != "nessuno" && owners[owner]) {
+  const owner = req.body.owner;
+  if(owner != "nessuno" && owners[owner]) {
+    if (!votedIp[clientIp]) {
+      votedIp[clientIp] = true;
       owners[owner].voti += 1;
       res.send("voto aggiunto con successo");
     } else {
-      res.status(400 /* Bad Request */).send("la fazione non esiste");
+      res.status(401 /* Not Authorized */).send("non puoi votare in questo momento, hai già votato");
     }
   } else {
-    res.status(401 /* Not Authorized */).send("non puoi votare in questo momento");
+    res.status(400 /* Bad Request */).send("la fazione non esiste");
   }
 });
 
