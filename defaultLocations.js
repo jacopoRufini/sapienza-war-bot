@@ -1,13 +1,15 @@
+const DEFAULT_SCORE = 50;
+
 var nessuno = {
   "name": "nessuno",
   "color": "rgb(255,255,255)",
-  "voti": 50
+  "voti": DEFAULT_SCORE
 }
 
 var seguaciMinerva = {
   "name": "Seguaci della Minerva",
   "color": "rgb(218,167,164)",
-  "voti": 50
+  "voti": DEFAULT_SCORE
 }
 
 module.exports = {
@@ -55,7 +57,7 @@ module.exports = {
     "owner": {
       "name": "Archeologi",
       "color": "rgb(10,30,99)",
-      "voti": 50
+      "voti": DEFAULT_SCORE
     }
   },
   "Architettura": {
@@ -69,7 +71,7 @@ module.exports = {
     "owner": {
       "name": "Architetti",
       "color": "rgb(209,46,101)",
-      "voti": 50
+      "voti": DEFAULT_SCORE
     }
   },
   "Astrofisica": {
@@ -82,7 +84,7 @@ module.exports = {
     "owner": {
       "name": "Astrofisici",
       "color": "rgb(174,161,74)",
-      "voti": 50
+      "voti": DEFAULT_SCORE
     }
   },
   "Astronomia": {
@@ -96,7 +98,7 @@ module.exports = {
     "owner": {
       "name": "Astronomi",
       "color": "rgb(190,211,218)",
-      "voti": 50
+      "voti": DEFAULT_SCORE
     }
   },
   "Bar": {
@@ -108,7 +110,7 @@ module.exports = {
     "owner": {
       "name": "Baristi",
       "color": "rgb(47,214,147)",
-      "voti": 50
+      "voti": DEFAULT_SCORE
     }
   },
   "Biologia": {
@@ -121,7 +123,7 @@ module.exports = {
     "owner": {
       "name": "Biologi",
       "color": "rgb(29,220,131)",
-      "voti": 50
+      "voti": DEFAULT_SCORE
     }
   },
   "Biotecnologie": {
@@ -133,7 +135,7 @@ module.exports = {
     "owner": {
       "name": "Studenti di Biotecnologie",
       "color": "rgb(10,231,205)",
-      "voti": 50
+      "voti": DEFAULT_SCORE
     }
   },
   "Botanica": {
@@ -150,7 +152,7 @@ module.exports = {
     "owner": {
       "name": "Studenti di Botanica",
       "color": "rgb(218,142,124)",
-      "voti": 50
+      "voti": DEFAULT_SCORE
     }
   },
   "Chiesa": {
@@ -164,7 +166,7 @@ module.exports = {
     "owner": {
       "name": "Vaticano",
       "color": "rgb(148,211,201)",
-      "voti": 50
+      "voti": DEFAULT_SCORE
     }
   },
   "Chimica": {
@@ -177,7 +179,7 @@ module.exports = {
     "owner": {
       "name": "Chimici",
       "color": "rgb(15,84,107)",
-      "voti": 50
+      "voti": DEFAULT_SCORE
     }
   },
   "Chimica Industriale": {
@@ -191,7 +193,7 @@ module.exports = {
     "owner": {
       "name": "Chimici Industriali",
       "color": "rgb(92,187,180)",
-      "voti": 50
+      "voti": DEFAULT_SCORE
     }
   },
   "Chimica analitica": {
@@ -205,7 +207,7 @@ module.exports = {
     "owner": {
       "name": "Studenti di Chimica Analitica",
       "color": "rgb(199,236,168)",
-      "voti": 50
+      "voti": DEFAULT_SCORE
     }
   },
   "Chirurgia": {
@@ -217,7 +219,7 @@ module.exports = {
     "owner": {
       "name": "Chirurghi",
       "color": "rgb(68,89,1)",
-      "voti": 50
+      "voti": DEFAULT_SCORE
     }
   },
   "Economia": {
@@ -234,7 +236,7 @@ module.exports = {
     "owner": {
       "name": "Studenti di Economia",
       "color": "rgb(147,210,119)",
-      "voti": 50
+      "voti": DEFAULT_SCORE
     }
   },
   "Farmacologia": {
@@ -248,7 +250,7 @@ module.exports = {
     "owner": {
       "name": "Studenti di Farmacologia",
       "color": "rgb(16,78,235)",
-      "voti": 50
+      "voti": DEFAULT_SCORE
     }
   },
   "Filosofia": {
@@ -264,7 +266,7 @@ module.exports = {
     "owner": {
       "name": "Filosofi",
       "color": "rgb(161,90,247)",
-      "voti": 50
+      "voti": DEFAULT_SCORE
     }
   },
   "Fisica": {
@@ -278,7 +280,7 @@ module.exports = {
     "owner": {
       "name": "Fisici",
       "color": "rgb(89,67,173)",
-      "voti": 50
+      "voti": DEFAULT_SCORE
     }
   },
   "Fisica applicata": {
@@ -292,7 +294,7 @@ module.exports = {
     "owner": {
       "name": "Studenti di Fisica Applicata",
       "color": "rgb(245,37,207)",
-      "voti": 50
+      "voti": DEFAULT_SCORE
     }
   },
   "Fontana della Minerva": {
@@ -310,7 +312,7 @@ module.exports = {
     "owner": {
       "name": "Studenti di Genetica",
       "color": "rgb(201,214,189)",
-      "voti": 50
+      "voti": DEFAULT_SCORE
     }
   },
   "Geochimica": {
@@ -326,7 +328,7 @@ module.exports = {
     "owner": {
       "name": "Geochimici",
       "color": "rgb(180,226,124)",
-      "voti": 50
+      "voti": DEFAULT_SCORE
     }
   },
   "Geologia": {
@@ -340,7 +342,7 @@ module.exports = {
     "owner": {
       "name": "Geologi",
       "color": "rgb(162,188,113)",
-      "voti": 50
+      "voti": DEFAULT_SCORE
     }
   },
   "Giurisprudenza": {
@@ -354,7 +356,7 @@ module.exports = {
     "owner": {
       "name": "Giuristi",
       "color": "rgb(121,38,246)",
-      "voti": 50
+      "voti": DEFAULT_SCORE
     }
   },
   "Igiene": {
@@ -367,7 +369,7 @@ module.exports = {
     "owner": {
       "name": "Studenti di Igene",
       "color": "rgb(36,118,33)",
-      "voti": 50
+      "voti": DEFAULT_SCORE
     }
   },
   "Infermieristica": {
@@ -379,7 +381,7 @@ module.exports = {
     "owner": {
       "name": "Infermieri",
       "color": "rgb(180,29,31)",
-      "voti": 50
+      "voti": DEFAULT_SCORE
     }
   },
   "Informatica": {
@@ -390,7 +392,7 @@ module.exports = {
     "owner": {
       "name": "Informatici",
       "color": "rgb(200,54,230)",
-      "voti": 50
+      "voti": DEFAULT_SCORE
     }
   },
   "Ingegneria Chimica": {
@@ -404,7 +406,7 @@ module.exports = {
     "owner": {
       "name": "Ingegneri Chimici",
       "color": "rgb(104,218,168)",
-      "voti": 50
+      "voti": DEFAULT_SCORE
     }
   },
   "Ingegneria Civile": {
@@ -416,7 +418,7 @@ module.exports = {
     "owner": {
       "name": "Ingegneri Civili",
       "color": "rgb(207,149,0)",
-      "voti": 50
+      "voti": DEFAULT_SCORE
     }
   },
   "Ingegneria Edile": {
@@ -428,7 +430,7 @@ module.exports = {
     "owner": {
       "name": "Ingegneri Edili",
       "color": "rgb(73,104,181)",
-      "voti": 50
+      "voti": DEFAULT_SCORE
     }
   },
   "Ingegneria Gestionale": {
@@ -446,7 +448,7 @@ module.exports = {
     "owner": {
       "name": "Studenti di Ingegneria gestionale",
       "color": "rgb(162,169,229)",
-      "voti": 50
+      "voti": DEFAULT_SCORE
     }
   },
   "Ingegneria Industriale": {
@@ -459,7 +461,7 @@ module.exports = {
     "owner": {
       "name": "Ingegneri Industriali",
       "color": "rgb(242,87,60)",
-      "voti": 50
+      "voti": DEFAULT_SCORE
     }
   },
   "Ingegneria Informatica": {
@@ -473,7 +475,7 @@ module.exports = {
     "owner": {
       "name": "Ingegneri Informatici",
       "color": "rgb(21,171,54)",
-      "voti": 50
+      "voti": DEFAULT_SCORE
     }
   },
   "Lettere": {
@@ -487,7 +489,7 @@ module.exports = {
     "owner": {
       "name": "Studenti di Lettere",
       "color": "rgb(210,210,11)",
-      "voti": 50
+      "voti": DEFAULT_SCORE
     }
   },
   "Lingue": {
@@ -503,7 +505,7 @@ module.exports = {
     "owner": {
       "name": "Linguisti",
       "color": "rgb(5,227,35)",
-      "voti": 50
+      "voti": DEFAULT_SCORE
     }
   },
   "Matematica": {
@@ -520,7 +522,7 @@ module.exports = {
     "owner": {
       "name": "Matematici",
       "color": "rgb(82,204,86)",
-      "voti": 50
+      "voti": DEFAULT_SCORE
     }
   },
   "Medicina": {
@@ -533,7 +535,7 @@ module.exports = {
     "owner": {
       "name": "Medici",
       "color": "rgb(219,157,37)",
-      "voti": 50
+      "voti": DEFAULT_SCORE
     }
   },
   "Medicina legale": {
@@ -546,7 +548,7 @@ module.exports = {
     "owner": {
       "name": "Medici Legali",
       "color": "rgb(149,221,75)",
-      "voti": 50
+      "voti": DEFAULT_SCORE
     }
   },
   "Mensa": {
@@ -560,7 +562,7 @@ module.exports = {
     "owner": {
       "name": "Addetti alla mensa",
       "color": "rgb(107,43,95)",
-      "voti": 50
+      "voti": DEFAULT_SCORE
     }
   },
   "Mineralogia": {
@@ -574,7 +576,7 @@ module.exports = {
     "owner": {
       "name": "Minerologia",
       "color": "rgb(62,140,210)",
-      "voti": 50
+      "voti": DEFAULT_SCORE
     }
   },
   "Neurologia": {
@@ -588,7 +590,7 @@ module.exports = {
     "owner": {
       "name": "Neurologi",
       "color": "rgb(244,166,186)",
-      "voti": 50
+      "voti": DEFAULT_SCORE
     }
   },
   "Orto Botanico": {
@@ -611,7 +613,7 @@ module.exports = {
     "owner": {
       "name": "Ortopedici",
       "color": "rgb(208,83,9)",
-      "voti": 50
+      "voti": DEFAULT_SCORE
     }
   },
   "Ostetricia": {
@@ -624,7 +626,7 @@ module.exports = {
     "owner": {
       "name": "Ostetrici",
       "color": "rgb(59,194,240)",
-      "voti": 50
+      "voti": DEFAULT_SCORE
     }
   },
   "Pratino": {
@@ -680,7 +682,7 @@ module.exports = {
     "owner": {
       "name": "Tossici",
       "color": "rgb(120,11,232)",
-      "voti": 50
+      "voti": DEFAULT_SCORE
     }
   },
   "Psicologia": {
@@ -694,7 +696,7 @@ module.exports = {
     "owner": {
       "name": "Psicologi",
       "color": "rgb(174,169,17)",
-      "voti": 50
+      "voti": DEFAULT_SCORE
     }
   },
   "Rettorato": {
@@ -708,7 +710,7 @@ module.exports = {
     "owner": {
       "name": "Rettorato",
       "color": "rgb(213,195,208)",
-      "voti": 50
+      "voti": DEFAULT_SCORE
     }
   },
   "Robotica": {
@@ -721,7 +723,7 @@ module.exports = {
     "owner": {
       "name": "Studenti di Robotica",
       "color": "rgb(134,171,105)",
-      "voti": 50
+      "voti": DEFAULT_SCORE
     }
   },
   "Scienze Politiche": {
@@ -738,7 +740,7 @@ module.exports = {
     "owner": {
       "name": "Studenti di Scienze Politiche",
       "color": "rgb(219,3,244)",
-      "voti": 50
+      "voti": DEFAULT_SCORE
     }
   },
   "Scienze della Comunicazione": {
@@ -749,7 +751,7 @@ module.exports = {
     "owner": {
       "name": "Studenti di Scienze della Comunicazione",
       "color": "rgb(107,134,58)",
-      "voti": 50
+      "voti": DEFAULT_SCORE
     }
   },
   "Scienze della Formazione": {
@@ -761,7 +763,7 @@ module.exports = {
     "owner": {
       "name": "Scienze della Formazione",
       "color": "rgb(162,192,211)",
-      "voti": 50
+      "voti": DEFAULT_SCORE
     }
   },
   "Scienze dello Spettacolo": {
@@ -772,7 +774,7 @@ module.exports = {
     "owner": {
       "name": "Studenti di Scienze dello Spettacolo",
       "color": "rgb(206,180,84)",
-      "voti": 50
+      "voti": DEFAULT_SCORE
     }
   },
   "Scienze statistiche": {
@@ -785,7 +787,7 @@ module.exports = {
     "owner": {
       "name": "Studenti di Scienze Statistiche",
       "color": "rgb(212,194,125)",
-      "voti": 50
+      "voti": DEFAULT_SCORE
     }
   },
   "Sociologia": {
@@ -798,7 +800,7 @@ module.exports = {
     "owner": {
       "name": "Sociologi",
       "color": "rgb(36,164,133)",
-      "voti": 50
+      "voti": DEFAULT_SCORE
     }
   },
   "Statua della Minerva": {
@@ -821,7 +823,7 @@ module.exports = {
     "owner": {
       "name": "Storici",
       "color": "rgb(207,83,53)",
-      "voti": 50
+      "voti": DEFAULT_SCORE
     }
   },
   "Storia dell'arte": {
@@ -834,7 +836,7 @@ module.exports = {
     "owner": {
       "name": "Storici dell'Arte",
       "color": "rgb(246,79,111)",
-      "voti": 50
+      "voti": DEFAULT_SCORE
     }
   },
   "Zoologia": {
@@ -847,7 +849,7 @@ module.exports = {
     "owner": {
       "name": "Zoologi",
       "color": "rgb(55,52,42)",
-      "voti": 50
+      "voti": DEFAULT_SCORE
     }
   }
 }

@@ -2,6 +2,7 @@ let svg = null
 const adjacents = {};
 let selectedOwner = null
 let departments = null
+let selection;
 
 function setOwner(department, departmentData) {
     department.setAttribute("owner", departmentData.owner.name);
@@ -39,8 +40,17 @@ function vote(){
 // called when a svg department has been clicked
 // "department" argument is the svg element clicked
 function onDepartmentClicked(department) {
+  makeSelected(department);
   selectedOwner = department.getAttribute("owner");
   infoToast(getDepartmentDescription(department));
+}
+
+// adds a "strong" border to the element clicked
+// "department" argument is the svg element clicked
+function makeSelected(department) {
+  if (selection) selection.classList.remove("selection");
+  selection = department;
+  selection.classList.add("selection");
 }
 
 //  -----------------  LOGS START -----------------

@@ -18,3 +18,7 @@ path, rect {
 .department:hover {
    stroke-width: 1;
 }
+
+.selection {
+   stroke-width: 1;
+}
