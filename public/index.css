@@ -26,12 +26,12 @@ container {
   height: 700px;
   margin-right: 10px;
   padding-top: 25px;
-  padding-left: 3px;
+  padding-left: 5px;
 }
 .log {
   overflow-y: scroll;
   height: 530px;
-  padding-left: 2%;
+  padding-left: 13px;
   font-size: 13px;
   font-family: consoleFont;
 }
@@ -44,7 +44,7 @@ container {
   height: 175px;
   margin: 30px 10px 5px 0px;
   padding-top: 30px;
-  padding-left: 10px;
+  padding-left: 13px;
   font-size: 13px;
   font-family: consoleFont;
 }
