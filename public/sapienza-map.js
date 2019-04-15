@@ -132,21 +132,22 @@ function updateRanking() {
 	factionsByRank = factionsByRank.slice(0, RANKIN_LENGTH)
 	// aggiorna table HTML
 	let ranking =  document.getElementById("ranking")
-	ranking.innerHTML = factionsByRank.map(entry => `<tr onmouseenter="onHighlightStart(event.target.firstChild.innerText)" onmouseout="onHighlightEnd(event.target.innerText)"><td>${entry.faction}</td><td>${entry.departments}</td></tr>`).join('')
+	ranking.innerHTML = factionsByRank.map(entry => `<tr onmouseenter="onHighlightStart(event.target.firstChild.innerText)" onmouseout="onHighlightEnd()"><td>${entry.faction}</td><td>${entry.departments}</td></tr>`).join('')
 }
 //  ----------------- RANKING END -----------------
 //  ----------------- HIGHLIGHT START -----------------
 function onHighlightStart(faction) {
+	// nel caso non triggeri onHighlightEnd correttamente
+	onHighlightEnd()
 	let departments = factionsDepartments[faction]
 	if(departments)
 		for (let department of departments)
 			svg.getElementById(department).classList.add("highlight")
 }
-function onHighlightEnd(faction) {
-	let departments = factionsDepartments[faction]
-	if(departments)
-		for (let department of departments)
-			svg.getElementById(department).classList.remove("highlight")
+function onHighlightEnd() {
+	let highlighted = svg.getElementsByClassName("highlight")
+	for (var i = highlighted.length - 1; i >= 0; i--)
+		highlighted[i].classList.remove("highlight")
 }
 //  ----------------- HIGHLIGHT END -----------------
 // update data every attack
@@ -156,7 +157,7 @@ setInterval(() => {
   .catch(error => console.log(error))
 
   synchronizeLogs()
-},5000)
+},200)
 
 // called on initialization
 function onSvgReady() {

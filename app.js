@@ -65,7 +65,7 @@ setInterval(() => {
   } else {
     // DO NOTHING
   }//console.log(defender.owner.name + " hanno DIFESO il dipartimento di " + depDef);
-}, 5000000)
+}, 200)
 
 function attackWinProb(attVoti, defVoti){
   let perc = (attVoti - defVoti) * 2; // % da aggiungere a 0.5
