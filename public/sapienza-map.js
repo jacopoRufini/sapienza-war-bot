@@ -106,24 +106,25 @@ function successToast(message) { toast("success", message)}
 //  ----------------- TOAST END -----------------
 //  ----------------- RANKING START -----------------
 const RANKIN_LENGTH = 10; // numero di fazioni messe nella table ranking
+let factionsDepartments = {}
 function updateRanking() {
 	// associa alle fazioni il totale dei dipartimenti posseduti
-	let factions = {}
+	factionsDepartments = {}
 	for (let department of departments) {
 		let faction = department.getAttribute("owner")
 		if(faction != "nessuno") {
-			if(!factions[faction])
-				factions[faction] = 1
+			if(!factionsDepartments[faction]) 
+				factionsDepartments[faction] = [department.id]
 			else
-				factions[faction] += 1
+				factionsDepartments[faction].push(department.id)
 		}
 	}
 	// mappa in array di oggetti {faction: String, departments: Number}
 	// dove uno e' il nome della fazione, l'altro il numero dei territori
 	let factionsByRank =
-		Object.keys(factions)
+		Object.keys(factionsDepartments)
 		.map(faction => ({
-			faction: faction, departments: factions[faction]
+			faction: faction, departments: factionsDepartments[faction].length
 		}))
 	// ordina l'array verso decrescente
 	factionsByRank.sort((a, b) => b.departments - a.departments)
@@ -131,9 +132,23 @@ function updateRanking() {
 	factionsByRank = factionsByRank.slice(0, RANKIN_LENGTH)
 	// aggiorna table HTML
 	let ranking =  document.getElementById("ranking")
-	ranking.innerHTML = factionsByRank.map(entry => `<tr><td>${entry.faction}</td><td>${entry.departments}</td></tr>`).join('')
+	ranking.innerHTML = factionsByRank.map(entry => `<tr onmouseenter="onHighlightStart(event.target.firstChild.innerText)" onmouseout="onHighlightEnd(event.target.innerText)"><td>${entry.faction}</td><td>${entry.departments}</td></tr>`).join('')
 }
 //  ----------------- RANKING END -----------------
+//  ----------------- HIGHLIGHT START -----------------
+function onHighlightStart(faction) {
+	let departments = factionsDepartments[faction]
+	if(departments)
+		for (let department of departments)
+			svg.getElementById(department).classList.add("highlight")
+}
+function onHighlightEnd(faction) {
+	let departments = factionsDepartments[faction]
+	if(departments)
+		for (let department of departments)
+			svg.getElementById(department).classList.remove("highlight")
+}
+//  ----------------- HIGHLIGHT END -----------------
 // update data every attack
 setInterval(() => {
   axios.get('/owners')
