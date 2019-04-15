@@ -19,6 +19,7 @@ function updateDepartments(data) {
       adjacents[department.id] = departmentData.adjacents;
       setOwner(department, departmentData)
     }
+    updateRanking()
 }
 
 function vote(){
@@ -81,6 +82,7 @@ function synchronizeLogs() {
 }
 
 //  ----------------- LOGS END -----------------
+//  ----------------- TOAST START -----------------
 
 // show a message info
 // type should be "info", "error" or "success"
@@ -101,6 +103,37 @@ function errorToast(message) { toast("error", message)}
 function infoToast(message) { toast("info", message)}
 function successToast(message) { toast("success", message)}
 
+//  ----------------- TOAST END -----------------
+//  ----------------- RANKING START -----------------
+const RANKIN_LENGTH = 10; // numero di fazioni messe nella table ranking
+function updateRanking() {
+	// associa alle fazioni il totale dei dipartimenti posseduti
+	let factions = {}
+	for (let department of departments) {
+		let faction = department.getAttribute("owner")
+		if(faction != "nessuno") {
+			if(!factions[faction])
+				factions[faction] = 1
+			else
+				factions[faction] += 1
+		}
+	}
+	// mappa in array di oggetti {faction: String, departments: Number}
+	// dove uno e' il nome della fazione, l'altro il numero dei territori
+	let factionsByRank =
+		Object.keys(factions)
+		.map(faction => ({
+			faction: faction, departments: factions[faction]
+		}))
+	// ordina l'array verso decrescente
+	factionsByRank.sort((a, b) => b.departments - a.departments)
+	// prendi solo i primi RANKIN_LENGTH fazioni
+	factionsByRank = factionsByRank.slice(0, RANKIN_LENGTH)
+	// aggiorna table HTML
+	let ranking =  document.getElementById("ranking")
+	ranking.innerHTML = factionsByRank.map(entry => `<tr><td>${entry.faction}</td><td>${entry.departments}</td></tr>`).join('')
+}
+//  ----------------- RANKING END -----------------
 // update data every attack
 setInterval(() => {
   axios.get('/owners')
