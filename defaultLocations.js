@@ -387,7 +387,7 @@ module.exports = {
       "Chiesa"
     ],
     "owner":{
-      "name":"Studenti di Igene",
+      "name":"Studenti di Igiene",
       "color":"rgb(36,118,33)",
       "marks":0,
       "attackText":""

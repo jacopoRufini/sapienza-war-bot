@@ -27,12 +27,16 @@ container {
   margin-top: 80px;
   padding-top: 25px;
   padding-left: 3px;
+  font-family: consoleFont;
+  font-size: 13px;
 }
 .log {
   overflow: scroll;
   height: 810px;
   max-width: 758px;
+  padding-left: 2%;
 }
+
 .selected {
   font-size: 24px;
   font-weight: bold;
@@ -46,4 +50,9 @@ container {
   text-align: center;
   font-size: 20px;
   margin-left: 20px;
+}
+
+@font-face {
+  font-family: consoleFont;
+  src: url(SFMono-Regular.otf);
 }

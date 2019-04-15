@@ -1,8 +1,5 @@
-let svg = null
+let svg, departments, selection;
 const adjacents = {};
-let selectedOwner = null
-let departments = null
-let selection;
 
 function setOwner(department, departmentData) {
     department.setAttribute("owner", departmentData.owner.name);
@@ -22,8 +19,9 @@ function updateDepartments(data) {
 }
 
 function vote(){
-  if (selectedOwner && selectedOwner != "nessuno") {
-    axios.post('/vote', {'owner' : selectedOwner})
+  const owner = selection.getAttribute("owner");
+  if (owner && owner != "nessuno") {
+    axios.post('/vote', {'owner' : owner})
     .then(res => {
       successToast(res.data);
     })
@@ -41,7 +39,6 @@ function vote(){
 // "department" argument is the svg element clicked
 function onDepartmentClicked(department) {
   makeSelected(department);
-  selectedOwner = department.getAttribute("owner");
   infoToast(getDepartmentDescription(department));
 }
 
@@ -58,9 +55,9 @@ function makeSelected(department) {
 
 // add log message, feel free to change the HTML of the logger
 function addLogMessage(message) {
-  let messageNode = document.createElement("LI")
-  messageNode.innerHTML = message
-  let logs = document.getElementById("logs")
+  let messageNode = document.createElement("div");
+  messageNode.innerHTML = message;
+  let logs = document.getElementById("logs");
   // append as first child
   logs.insertBefore(messageNode, logs.firstChild);
 }
