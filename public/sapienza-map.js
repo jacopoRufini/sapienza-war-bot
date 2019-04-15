@@ -24,6 +24,8 @@ function vote(){
     axios.post('/vote', {'owner' : owner})
     .then(res => {
       successToast(res.data);
+      owners[owner].marks++;
+      showStats(selection);
     })
     .catch(err => {
       if(err.response && err.response.data) // already voted or faction doesn't exist
@@ -125,7 +127,7 @@ setInterval(() => {
   .catch(error => console.log(error))
 
   synchronizeLogs()
-},5000)
+},1)
 
 // called on initialization
 function onSvgReady() {
