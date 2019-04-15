@@ -1,8 +1,9 @@
-const express = require('express')
-const bodyParser = require('body-parser')
-const Logger = require('./logger')
+const express = require('express');
+const bodyParser = require('body-parser');
+const Logger = require('./logger');
 
-const PORT = 8080
+const PORT = 8080;
+const DEFAULT_MARKS = 50;
 const app = express()
 
 let votedIp = {};
@@ -13,7 +14,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 // starting ownership data
-const ownership = Object.assign({}, require("./defaultLocations"));
+const ownership = require("./defaultLocations");
 
 // map of owners
 for (let key in ownership) {
@@ -33,7 +34,7 @@ app.post("/vote", (req, res) => {
     res.status(401 /* Not Authorized */).send("non puoi votare in questo momento, hai già votato");
   else if(owner != "nessuno" && owners[owner]) {
     votedIp[clientIp] = true;
-    owners[owner].voti += 1;
+    owners[owner].marks += 1;
     res.send("voto aggiunto con successo");
   } else {
     res.status(400 /* Bad Request */).send("la fazione non esiste");
@@ -57,14 +58,14 @@ setInterval(() => {
   if (defender.owner === attacker.owner || attacker.owner.name === "nessuno")
     return;
   //console.log(attacker.owner.name + " hanno attaccato il dipartimento di "+ depDef + " presidiato da " + defender.owner.name);
-  const attWin = Math.random() <= attackWinProb(attacker.owner.voti, defender.owner.voti);
+  const attWin = Math.random() <= attackWinProb(attacker.owner.marks + DEFAULT_MARKS, defender.owner.marks + DEFAULT_MARKS);
   if (attWin) {
     ownership[depDef].owner = attacker.owner;
     Logger.log(attacker.owner.name + " hanno CONQUISTATO il dipartimento di " + depDef);
   } else {
     // DO NOTHING
   }//console.log(defender.owner.name + " hanno DIFESO il dipartimento di " + depDef);
-}, 5000)
+}, 5000000)
 
 function attackWinProb(attVoti, defVoti){
   let perc = (attVoti - defVoti) * 2; // % da aggiungere a 0.5
@@ -72,4 +73,3 @@ function attackWinProb(attVoti, defVoti){
   //esempio: att = 52, def = 50, la % è 52-50 = 2*2 = 4, cioè il 4% in più di vincita
   // 0.5 + 0.5 * 0.04 = 0.52
 }
-

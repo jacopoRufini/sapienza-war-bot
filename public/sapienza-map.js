@@ -46,6 +46,7 @@ function onDepartmentClicked(department) {
 }
 
 // adds a "strong" border to the element clicked
+// saves the selected department to show some stats
 // "department" argument is the svg element clicked
 function makeSelected(department) {
   if (selection) selection.classList.remove("selection");

@@ -1,145 +1,150 @@
-const DEFAULT_SCORE = 50;
-
 var nessuno = {
   "name": "nessuno",
   "color": "rgb(255,255,255)",
-  "voti": DEFAULT_SCORE
+  "marks": 0
 }
 
 var seguaciMinerva = {
   "name": "Seguaci della Minerva",
   "color": "rgb(218,167,164)",
-  "voti": DEFAULT_SCORE
+  "marks": 0
 }
 
 module.exports = {
-  "Aiuola 1": {
-    "adjacents": [
+  "Aiuola 1":{
+    "adjacents":[
       "Aiuola 2",
       "Astronomia",
       "Astrofisica",
       "Fisica",
       "Aiuola 3"
     ],
-    "owner": nessuno
+    "owner":nessuno
   },
-  "Aiuola 2": {
-    "adjacents": [
+  "Aiuola 2":{
+    "adjacents":[
       "Chimica",
       "Aiuola 1",
       "Aiuola 4"
     ],
-    "owner": nessuno
+    "owner":nessuno
   },
-  "Aiuola 3": {
-    "adjacents": [
+  "Aiuola 3":{
+    "adjacents":[
       "Aiuola 1",
       "Aiuola 4",
       "Igiene",
       "Infermieristica"
     ],
-    "owner": nessuno
+    "owner":nessuno
   },
-  "Aiuola 4": {
-    "adjacents": [
+  "Aiuola 4":{
+    "adjacents":[
       "Medicina",
       "Aiuola 2",
       "Aiuola 3"
     ],
-    "owner": nessuno
+    "owner":nessuno
   },
-  "Archeologia": {
-    "adjacents": [
+  "Archeologia":{
+    "adjacents":[
       "Architettura",
       "Geochimica",
       "Zoologia"
     ],
-    "owner": {
-      "name": "Archeologi",
-      "color": "rgb(10,30,99)",
-      "voti": DEFAULT_SCORE
+    "owner":{
+      "name":"Archeologi",
+      "color":"rgb(10,30,99)",
+      "marks":0,
+      "attackText":""
     }
   },
-  "Architettura": {
-    "adjacents": [
+  "Architettura":{
+    "adjacents":[
       "Biotecnologie",
       "Scienze Politiche",
       "Scienze statistiche",
       "Geochimica",
       "Archeologia"
     ],
-    "owner": {
-      "name": "Architetti",
-      "color": "rgb(209,46,101)",
-      "voti": DEFAULT_SCORE
+    "owner":{
+      "name":"Architetti",
+      "color":"rgb(209,46,101)",
+      "marks":0,
+      "attackText":""
     }
   },
-  "Astrofisica": {
-    "adjacents": [
+  "Astrofisica":{
+    "adjacents":[
       "Astronomia",
       "Aiuola 1",
       "Fisica",
       "Lingue"
     ],
-    "owner": {
-      "name": "Astrofisici",
-      "color": "rgb(174,161,74)",
-      "voti": DEFAULT_SCORE
+    "owner":{
+      "name":"Astrofisici",
+      "color":"rgb(174,161,74)",
+      "marks":0,
+      "attackText":""
     }
   },
-  "Astronomia": {
-    "adjacents": [
+  "Astronomia":{
+    "adjacents":[
       "Pratino",
       "Astrofisica",
       "Lingue",
       "Geologia",
       "Aiuola 1"
     ],
-    "owner": {
-      "name": "Astronomi",
-      "color": "rgb(190,211,218)",
-      "voti": DEFAULT_SCORE
+    "owner":{
+      "name":"Astronomi",
+      "color":"rgb(190,211,218)",
+      "marks":0,
+      "attackText":""
     }
   },
-  "Bar": {
-    "adjacents": [
+  "Bar":{
+    "adjacents":[
       "Sociologia",
       "Economia",
       "Psicologia"
     ],
-    "owner": {
-      "name": "Baristi",
-      "color": "rgb(47,214,147)",
-      "voti": DEFAULT_SCORE
+    "owner":{
+      "name":"Baristi",
+      "color":"rgb(47,64,147)",
+      "marks":0,
+      "attackText":""
     }
   },
-  "Biologia": {
-    "adjacents": [
+  "Biologia":{
+    "adjacents":[
       "Ostetricia",
       "Psicologia",
       "Scienze Politiche",
       "Biotecnologie"
     ],
-    "owner": {
-      "name": "Biologi",
-      "color": "rgb(29,220,131)",
-      "voti": DEFAULT_SCORE
+    "owner":{
+      "name":"Biologi",
+      "color":"rgb(29,220,131)",
+      "marks":0,
+      "attackText":""
     }
   },
-  "Biotecnologie": {
-    "adjacents": [
+  "Biotecnologie":{
+    "adjacents":[
       "Biologia",
       "Scienze Politiche",
       "Architettura"
     ],
-    "owner": {
-      "name": "Studenti di Biotecnologie",
-      "color": "rgb(10,231,205)",
-      "voti": DEFAULT_SCORE
+    "owner":{
+      "name":"Studenti di Biotecnologie",
+      "color":"rgb(10,231,205)",
+      "marks":0,
+      "attackText":""
     }
   },
-  "Botanica": {
-    "adjacents": [
+  "Botanica":{
+    "adjacents":[
       "Genetica",
       "Ingegneria Gestionale",
       "Orto Botanico",
@@ -149,81 +154,87 @@ module.exports = {
       "Ingegneria Chimica",
       "Economia"
     ],
-    "owner": {
-      "name": "Studenti di Botanica",
-      "color": "rgb(218,142,124)",
-      "voti": DEFAULT_SCORE
+    "owner":{
+      "name":"Studenti di Botanica",
+      "color":"rgb(218,142,124)",
+      "marks":0,
+      "attackText":""
     }
   },
-  "Chiesa": {
-    "adjacents": [
+  "Chiesa":{
+    "adjacents":[
       "Lingue",
       "Fisica",
       "Igiene",
       "Scienze della Formazione",
       "Neurologia"
     ],
-    "owner": {
-      "name": "Vaticano",
-      "color": "rgb(148,211,201)",
-      "voti": DEFAULT_SCORE
+    "owner":{
+      "name":"Vaticano",
+      "color":"rgb(148,211,201)",
+      "marks":0,
+      "attackText":""
     }
   },
-  "Chimica": {
-    "adjacents": [
+  "Chimica":{
+    "adjacents":[
       "Chimica Industriale",
       "Pratino Est 2",
       "Medicina",
       "Aiuola 2"
     ],
-    "owner": {
-      "name": "Chimici",
-      "color": "rgb(15,84,107)",
-      "voti": DEFAULT_SCORE
+    "owner":{
+      "name":"Chimici",
+      "color":"rgb(15,84,107)",
+      "marks":0,
+      "attackText":""
     }
   },
-  "Chimica Industriale": {
-    "adjacents": [
+  "Chimica Industriale":{
+    "adjacents":[
       "Pratino Est 2",
       "Farmacologia",
       "Medicina",
       "Chimica",
       "Matematica"
     ],
-    "owner": {
-      "name": "Chimici Industriali",
-      "color": "rgb(92,187,180)",
-      "voti": DEFAULT_SCORE
+    "owner":{
+      "name":"Chimici Industriali",
+      "color":"rgb(92,187,180)",
+      "marks":0,
+      "attackText":""
     }
   },
-  "Chimica analitica": {
-    "adjacents": [
+  "Chimica analitica":{
+    "adjacents":[
       "Mensa",
       "Storia",
       "Fisica applicata",
       "Robotica",
       "Medicina legale"
     ],
-    "owner": {
-      "name": "Studenti di Chimica Analitica",
-      "color": "rgb(199,236,168)",
-      "voti": DEFAULT_SCORE
+    "owner":{
+      "name":"Studenti di Chimica Analitica",
+      "color":"rgb(199,236,168)",
+      "marks":0,
+      "attackText":""
     }
   },
-  "Chirurgia": {
-    "adjacents": [
+  "Chirurgia":{
+    "adjacents":[
       "Farmacologia",
       "Scienze della Comunicazione",
       "Pratino Sud"
     ],
-    "owner": {
-      "name": "Chirurghi",
-      "color": "rgb(68,89,1)",
-      "voti": DEFAULT_SCORE
+    "owner":{
+      "name":"Chirurghi",
+      "color":"rgb(68,89,1)",
+      "marks":0,
+      "attackText":""
     }
   },
-  "Economia": {
-    "adjacents": [
+  "Economia":{
+    "adjacents":[
       "Bar",
       "Sociologia",
       "Ingegneria Gestionale",
@@ -233,28 +244,30 @@ module.exports = {
       "Pratone",
       "Psicologia"
     ],
-    "owner": {
-      "name": "Studenti di Economia",
-      "color": "rgb(147,210,119)",
-      "voti": DEFAULT_SCORE
+    "owner":{
+      "name":"Studenti di Economia",
+      "color":"rgb(147,210,119)",
+      "marks":0,
+      "attackText":""
     }
   },
-  "Farmacologia": {
-    "adjacents": [
+  "Farmacologia":{
+    "adjacents":[
       "Matematica",
       "Storia",
       "Chirurgia",
       "Chimica Industriale",
       "Pratino Sud"
     ],
-    "owner": {
-      "name": "Studenti di Farmacologia",
-      "color": "rgb(16,78,235)",
-      "voti": DEFAULT_SCORE
+    "owner":{
+      "name":"Studenti di Farmacologia",
+      "color":"rgb(16,78,235)",
+      "marks":0,
+      "attackText":""
     }
   },
-  "Filosofia": {
-    "adjacents": [
+  "Filosofia":{
+    "adjacents":[
       "Botanica",
       "Orto Botanico",
       "Robotica",
@@ -263,60 +276,64 @@ module.exports = {
       "Pratino Est 1",
       "Lettere"
     ],
-    "owner": {
-      "name": "Filosofi",
-      "color": "rgb(161,90,247)",
-      "voti": DEFAULT_SCORE
+    "owner":{
+      "name":"Filosofi",
+      "color":"rgb(161,90,247)",
+      "marks":0,
+      "attackText":""
     }
   },
-  "Fisica": {
-    "adjacents": [
+  "Fisica":{
+    "adjacents":[
       "Astrofisica",
       "Aiuola 1",
       "Igiene",
       "Chiesa",
       "Lingue"
     ],
-    "owner": {
-      "name": "Fisici",
-      "color": "rgb(89,67,173)",
-      "voti": DEFAULT_SCORE
+    "owner":{
+      "name":"Fisici",
+      "color":"rgb(89,67,173)",
+      "marks":0,
+      "attackText":""
     }
   },
-  "Fisica applicata": {
-    "adjacents": [
+  "Fisica applicata":{
+    "adjacents":[
       "Robotica",
       "Chimica analitica",
       "Mensa",
       "Matematica",
       "Filosofia"
     ],
-    "owner": {
-      "name": "Studenti di Fisica Applicata",
-      "color": "rgb(245,37,207)",
-      "voti": DEFAULT_SCORE
+    "owner":{
+      "name":"Studenti di Fisica Applicata",
+      "color":"rgb(245,37,207)",
+      "marks":0,
+      "attackText":""
     }
   },
-  "Fontana della Minerva": {
-    "adjacents": [
+  "Fontana della Minerva":{
+    "adjacents":[
       "Statua della Minerva"
     ],
-    "owner": seguaciMinerva
+    "owner":seguaciMinerva
   },
-  "Genetica": {
-    "adjacents": [
+  "Genetica":{
+    "adjacents":[
       "Botanica",
       "Economia",
       "Pratone"
     ],
-    "owner": {
-      "name": "Studenti di Genetica",
-      "color": "rgb(201,214,189)",
-      "voti": DEFAULT_SCORE
+    "owner":{
+      "name":"Studenti di Genetica",
+      "color":"rgb(201,214,189)",
+      "marks":0,
+      "attackText":""
     }
   },
-  "Geochimica": {
-    "adjacents": [
+  "Geochimica":{
+    "adjacents":[
       "Scienze statistiche",
       "Mineralogia",
       "Geologia",
@@ -325,116 +342,125 @@ module.exports = {
       "Archeologia",
       "Architettura"
     ],
-    "owner": {
-      "name": "Geochimici",
-      "color": "rgb(180,226,124)",
-      "voti": DEFAULT_SCORE
+    "owner":{
+      "name":"Geochimici",
+      "color":"rgb(180,226,124)",
+      "marks":0,
+      "attackText":""
     }
   },
-  "Geologia": {
-    "adjacents": [
+  "Geologia":{
+    "adjacents":[
       "Mineralogia",
       "Pratino",
       "Astronomia",
       "Lingue",
       "Geochimica"
     ],
-    "owner": {
-      "name": "Geologi",
-      "color": "rgb(162,188,113)",
-      "voti": DEFAULT_SCORE
+    "owner":{
+      "name":"Geologi",
+      "color":"rgb(162,188,113)",
+      "marks":0,
+      "attackText":""
     }
   },
-  "Giurisprudenza": {
-    "adjacents": [
+  "Giurisprudenza":{
+    "adjacents":[
       "Scienze Politiche",
       "Rettorato",
       "Pratino",
       "Mineralogia",
       "Statua della Minerva"
     ],
-    "owner": {
-      "name": "Giuristi",
-      "color": "rgb(121,38,246)",
-      "voti": DEFAULT_SCORE
+    "owner":{
+      "name":"Giuristi",
+      "color":"rgb(121,38,246)",
+      "marks":0,
+      "attackText":""
     }
   },
-  "Igiene": {
-    "adjacents": [
+  "Igiene":{
+    "adjacents":[
       "Fisica",
       "Aiuola 3",
       "Infermieristica",
       "Chiesa"
     ],
-    "owner": {
-      "name": "Studenti di Igene",
-      "color": "rgb(36,118,33)",
-      "voti": DEFAULT_SCORE
+    "owner":{
+      "name":"Studenti di Igene",
+      "color":"rgb(36,118,33)",
+      "marks":0,
+      "attackText":""
     }
   },
-  "Infermieristica": {
-    "adjacents": [
+  "Infermieristica":{
+    "adjacents":[
       "Igiene",
       "Aiuola 3",
       "Informatica"
     ],
-    "owner": {
-      "name": "Infermieri",
-      "color": "rgb(180,29,31)",
-      "voti": DEFAULT_SCORE
+    "owner":{
+      "name":"Infermieri",
+      "color":"rgb(180,29,31)",
+      "marks":0,
+      "attackText":""
     }
   },
-  "Informatica": {
-    "adjacents": [
+  "Informatica":{
+    "adjacents":[
       "Infermieristica",
       "Scienze dello Spettacolo"
     ],
-    "owner": {
-      "name": "Informatici",
-      "color": "rgb(200,54,230)",
-      "voti": DEFAULT_SCORE
+    "owner":{
+      "name":"Informatici",
+      "color":"rgb(200,54,230)",
+      "marks":0,
+      "attackText":""
     }
   },
-  "Ingegneria Chimica": {
-    "adjacents": [
+  "Ingegneria Chimica":{
+    "adjacents":[
       "Ingegneria Gestionale",
       "Orto Botanico",
       "Storia dell'arte",
       "Botanica",
       "Ingegneria Edile"
     ],
-    "owner": {
-      "name": "Ingegneri Chimici",
-      "color": "rgb(104,218,168)",
-      "voti": DEFAULT_SCORE
+    "owner":{
+      "name":"Ingegneri Chimici",
+      "color":"rgb(104,218,168)",
+      "marks":0,
+      "attackText":""
     }
   },
-  "Ingegneria Civile": {
-    "adjacents": [
+  "Ingegneria Civile":{
+    "adjacents":[
       "Ingegneria Informatica",
       "Ingegneria Industriale",
       "Ingegneria Gestionale"
     ],
-    "owner": {
-      "name": "Ingegneri Civili",
-      "color": "rgb(207,149,0)",
-      "voti": DEFAULT_SCORE
+    "owner":{
+      "name":"Ingegneri Civili",
+      "color":"rgb(207,149,0)",
+      "marks":0,
+      "attackText":""
     }
   },
-  "Ingegneria Edile": {
-    "adjacents": [
+  "Ingegneria Edile":{
+    "adjacents":[
       "Ingegneria Industriale",
       "Ingegneria Gestionale",
       "Ingegneria Chimica"
     ],
-    "owner": {
-      "name": "Ingegneri Edili",
-      "color": "rgb(73,104,181)",
-      "voti": DEFAULT_SCORE
+    "owner":{
+      "name":"Ingegneri Edili",
+      "color":"rgb(73,104,181)",
+      "marks":0,
+      "attackText":""
     }
   },
-  "Ingegneria Gestionale": {
-    "adjacents": [
+  "Ingegneria Gestionale":{
+    "adjacents":[
       "Botanica",
       "Economia",
       "Ingegneria Informatica",
@@ -445,55 +471,59 @@ module.exports = {
       "Orto Botanico",
       "Sociologia"
     ],
-    "owner": {
-      "name": "Studenti di Ingegneria gestionale",
-      "color": "rgb(162,169,229)",
-      "voti": DEFAULT_SCORE
+    "owner":{
+      "name":"Studenti di Ingegneria gestionale",
+      "color":"rgb(162,169,229)",
+      "marks":0,
+      "attackText":""
     }
   },
-  "Ingegneria Industriale": {
-    "adjacents": [
+  "Ingegneria Industriale":{
+    "adjacents":[
       "Ingegneria Civile",
       "Ingegneria Informatica",
       "Ingegneria Edile",
       "Ingegneria Gestionale"
     ],
-    "owner": {
-      "name": "Ingegneri Industriali",
-      "color": "rgb(242,87,60)",
-      "voti": DEFAULT_SCORE
+    "owner":{
+      "name":"Ingegneri Industriali",
+      "color":"rgb(242,87,60)",
+      "marks":0,
+      "attackText":""
     }
   },
-  "Ingegneria Informatica": {
-    "adjacents": [
+  "Ingegneria Informatica":{
+    "adjacents":[
       "Ingegneria Gestionale",
       "Sociologia",
       "Economia",
       "Ingegneria Civile",
       "Ingegneria Industriale"
     ],
-    "owner": {
-      "name": "Ingegneri Informatici",
-      "color": "rgb(21,171,54)",
-      "voti": DEFAULT_SCORE
+    "owner":{
+      "name":"Ingegneri Informatici",
+      "color":"rgb(96,11,134)",
+      "marks":0,
+      "attackText":""
     }
   },
-  "Lettere": {
-    "adjacents": [
+  "Lettere":{
+    "adjacents":[
       "Botanica",
       "Filosofia",
       "Pratino Est 1",
       "Rettorato",
       "Pratone"
     ],
-    "owner": {
-      "name": "Studenti di Lettere",
-      "color": "rgb(210,210,11)",
-      "voti": DEFAULT_SCORE
+    "owner":{
+      "name":"Studenti di Lettere",
+      "color":"rgb(210,210,11)",
+      "marks":0,
+      "attackText":""
     }
   },
-  "Lingue": {
-    "adjacents": [
+  "Lingue":{
+    "adjacents":[
       "Geologia",
       "Astronomia",
       "Astrofisica",
@@ -502,14 +532,15 @@ module.exports = {
       "Neurologia",
       "Zoologia"
     ],
-    "owner": {
-      "name": "Linguisti",
-      "color": "rgb(5,227,35)",
-      "voti": DEFAULT_SCORE
+    "owner":{
+      "name":"Linguisti",
+      "color":"rgb(5,227,35)",
+      "marks":0,
+      "attackText":""
     }
   },
-  "Matematica": {
-    "adjacents": [
+  "Matematica":{
+    "adjacents":[
       "Fisica applicata",
       "Storia",
       "Farmacologia",
@@ -519,82 +550,88 @@ module.exports = {
       "Filosofia",
       "Mensa"
     ],
-    "owner": {
-      "name": "Matematici",
-      "color": "rgb(82,204,86)",
-      "voti": DEFAULT_SCORE
+    "owner":{
+      "name":"Matematici",
+      "color":"rgb(82,204,86)",
+      "marks":0,
+      "attackText":""
     }
   },
-  "Medicina": {
-    "adjacents": [
+  "Medicina":{
+    "adjacents":[
       "Chimica Industriale",
       "Chimica",
       "Aiuola 4",
       "Ortopedia"
     ],
-    "owner": {
-      "name": "Medici",
-      "color": "rgb(219,157,37)",
-      "voti": DEFAULT_SCORE
+    "owner":{
+      "name":"Medici",
+      "color":"rgb(219,157,37)",
+      "marks":0,
+      "attackText":""
     }
   },
-  "Medicina legale": {
-    "adjacents": [
+  "Medicina legale":{
+    "adjacents":[
       "Storia dell'arte",
       "Orto Botanico",
       "Mensa",
       "Chimica analitica"
     ],
-    "owner": {
-      "name": "Medici Legali",
-      "color": "rgb(149,221,75)",
-      "voti": DEFAULT_SCORE
+    "owner":{
+      "name":"Medici Legali",
+      "color":"rgb(149,221,75)",
+      "marks":0,
+      "attackText":""
     }
   },
-  "Mensa": {
-    "adjacents": [
+  "Mensa":{
+    "adjacents":[
       "Storia dell'arte",
       "Medicina legale",
       "Chimica analitica",
       "Fisica applicata",
       "Matematica"
     ],
-    "owner": {
-      "name": "Addetti alla mensa",
-      "color": "rgb(107,43,95)",
-      "voti": DEFAULT_SCORE
+    "owner":{
+      "name":"Addetti alla mensa",
+      "color":"rgb(107,43,95)",
+      "marks":0,
+      "attackText":""
     }
   },
-  "Mineralogia": {
-    "adjacents": [
+  "Mineralogia":{
+    "adjacents":[
       "Scienze statistiche",
       "Giurisprudenza",
       "Pratino",
       "Geologia",
       "Geochimica"
     ],
-    "owner": {
-      "name": "Minerologia",
-      "color": "rgb(62,140,210)",
-      "voti": DEFAULT_SCORE
+    "owner":{
+      "name":"Minerologia",
+      "color":"rgb(62,140,210)",
+      "marks":0,
+      "attackText":""
     }
   },
-  "Neurologia": {
-    "adjacents": [
+  "Neurologia":{
+    "adjacents":[
       "Zoologia",
       "Lingue",
       "Chiesa",
       "Scienze della Formazione",
       "Geochimica"
     ],
-    "owner": {
-      "name": "Neurologi",
-      "color": "rgb(244,166,186)",
-      "voti": DEFAULT_SCORE
+    "owner":{
+      "name":"Neurologi",
+      "color":"rgb(244,166,186)",
+      "marks":0,
+      "attackText":""
     }
   },
-  "Orto Botanico": {
-    "adjacents": [
+  "Orto Botanico":{
+    "adjacents":[
       "Botanica",
       "Storia dell'arte",
       "Medicina legale",
@@ -603,73 +640,75 @@ module.exports = {
       "Ingegneria Chimica",
       "Ingegneria Gestionale"
     ],
-    "owner": nessuno
+    "owner":nessuno
   },
-  "Ortopedia": {
-    "adjacents": [
+  "Ortopedia":{
+    "adjacents":[
       "Pratino Sud",
       "Medicina"
     ],
-    "owner": {
-      "name": "Ortopedici",
-      "color": "rgb(208,83,9)",
-      "voti": DEFAULT_SCORE
+    "owner":{
+      "name":"Ortopedici",
+      "color":"rgb(208,83,9)",
+      "marks":0,
+      "attackText":""
     }
   },
-  "Ostetricia": {
-    "adjacents": [
+  "Ostetricia":{
+    "adjacents":[
       "Psicologia",
       "Pratone",
       "Scienze Politiche",
       "Biologia"
     ],
-    "owner": {
-      "name": "Ostetrici",
-      "color": "rgb(59,194,240)",
-      "voti": DEFAULT_SCORE
+    "owner":{
+      "name":"Ostetrici",
+      "color":"rgb(59,194,240)",
+      "marks":0,
+      "attackText":""
     }
   },
-  "Pratino": {
-    "adjacents": [
+  "Pratino":{
+    "adjacents":[
       "Giurisprudenza",
       "Statua della Minerva",
       "Astronomia",
       "Geologia",
       "Mineralogia"
     ],
-    "owner": nessuno
+    "owner":nessuno
   },
-  "Pratino Est 1": {
-    "adjacents": [
+  "Pratino Est 1":{
+    "adjacents":[
       "Lettere",
       "Filosofia",
       "Matematica",
       "Pratino Est 2",
       "Statua della Minerva"
     ],
-    "owner": nessuno
+    "owner":nessuno
   },
-  "Pratino Est 2": {
-    "adjacents": [
+  "Pratino Est 2":{
+    "adjacents":[
       "Pratino Est 1",
       "Matematica",
       "Chimica Industriale",
       "Chimica",
       "Statua della Minerva"
     ],
-    "owner": nessuno
+    "owner":nessuno
   },
-  "Pratino Sud": {
-    "adjacents": [
+  "Pratino Sud":{
+    "adjacents":[
       "Farmacologia",
       "Chirurgia",
       "Scienze della Comunicazione",
       "Ortopedia"
     ],
-    "owner": nessuno
+    "owner":nessuno
   },
-  "Pratone": {
-    "adjacents": [
+  "Pratone":{
+    "adjacents":[
       "Economia",
       "Genetica",
       "Botanica",
@@ -679,55 +718,59 @@ module.exports = {
       "Ostetricia",
       "Psicologia"
     ],
-    "owner": {
-      "name": "Tossici",
-      "color": "rgb(120,11,232)",
-      "voti": DEFAULT_SCORE
+    "owner":{
+      "name":"Tossici",
+      "color":"rgb(120,11,232)",
+      "marks":0,
+      "attackText":""
     }
   },
-  "Psicologia": {
-    "adjacents": [
+  "Psicologia":{
+    "adjacents":[
       "Economia",
       "Pratone",
       "Ostetricia",
       "Biologia",
       "Bar"
     ],
-    "owner": {
-      "name": "Psicologi",
-      "color": "rgb(174,169,17)",
-      "voti": DEFAULT_SCORE
+    "owner":{
+      "name":"Psicologi",
+      "color":"rgb(174,169,17)",
+      "marks":0,
+      "attackText":""
     }
   },
-  "Rettorato": {
-    "adjacents": [
+  "Rettorato":{
+    "adjacents":[
       "Pratone",
       "Lettere",
       "Statua della Minerva",
       "Giurisprudenza",
       "Scienze Politiche"
     ],
-    "owner": {
-      "name": "Rettorato",
-      "color": "rgb(213,195,208)",
-      "voti": DEFAULT_SCORE
+    "owner":{
+      "name":"Rettorato",
+      "color":"rgb(213,195,208)",
+      "marks":0,
+      "attackText":""
     }
   },
-  "Robotica": {
-    "adjacents": [
+  "Robotica":{
+    "adjacents":[
       "Orto Botanico",
       "Chimica analitica",
       "Fisica applicata",
       "Filosofia"
     ],
-    "owner": {
-      "name": "Studenti di Robotica",
-      "color": "rgb(134,171,105)",
-      "voti": DEFAULT_SCORE
+    "owner":{
+      "name":"Studenti di Robotica",
+      "color":"rgb(134,171,105)",
+      "marks":0,
+      "attackText":""
     }
   },
-  "Scienze Politiche": {
-    "adjacents": [
+  "Scienze Politiche":{
+    "adjacents":[
       "Ostetricia",
       "Biologia",
       "Biotecnologie",
@@ -737,74 +780,80 @@ module.exports = {
       "Rettorato",
       "Pratone"
     ],
-    "owner": {
-      "name": "Studenti di Scienze Politiche",
-      "color": "rgb(219,3,244)",
-      "voti": DEFAULT_SCORE
+    "owner":{
+      "name":"Studenti di Scienze Politiche",
+      "color":"rgb(159,93,24)",
+      "marks":0,
+      "attackText":""
     }
   },
-  "Scienze della Comunicazione": {
-    "adjacents": [
+  "Scienze della Comunicazione":{
+    "adjacents":[
       "Chirurgia",
       "Pratino Sud"
     ],
-    "owner": {
-      "name": "Studenti di Scienze della Comunicazione",
-      "color": "rgb(107,134,58)",
-      "voti": DEFAULT_SCORE
+    "owner":{
+      "name":"Studenti di Scienze della Comunicazione",
+      "color":"rgb(107,134,58)",
+      "marks":0,
+      "attackText":""
     }
   },
-  "Scienze della Formazione": {
-    "adjacents": [
+  "Scienze della Formazione":{
+    "adjacents":[
       "Chiesa",
       "Neurologia",
       "Scienze dello Spettacolo"
     ],
-    "owner": {
-      "name": "Scienze della Formazione",
-      "color": "rgb(162,192,211)",
-      "voti": DEFAULT_SCORE
+    "owner":{
+      "name":"Scienze della Formazione",
+      "color":"rgb(162,192,211)",
+      "marks":0,
+      "attackText":""
     }
   },
-  "Scienze dello Spettacolo": {
-    "adjacents": [
+  "Scienze dello Spettacolo":{
+    "adjacents":[
       "Informatica",
       "Scienze della Formazione"
     ],
-    "owner": {
-      "name": "Studenti di Scienze dello Spettacolo",
-      "color": "rgb(206,180,84)",
-      "voti": DEFAULT_SCORE
+    "owner":{
+      "name":"Studenti di Scienze dello Spettacolo",
+      "color":"rgb(206,180,84)",
+      "marks":0,
+      "attackText":""
     }
   },
-  "Scienze statistiche": {
-    "adjacents": [
+  "Scienze statistiche":{
+    "adjacents":[
       "Scienze Politiche",
       "Mineralogia",
       "Geochimica",
       "Architettura"
     ],
-    "owner": {
-      "name": "Studenti di Scienze Statistiche",
-      "color": "rgb(212,194,125)",
-      "voti": DEFAULT_SCORE
+    "owner":{
+      "name":"Studenti di Scienze Statistiche",
+      "color":"rgb(212,194,125)",
+      "marks":0,
+      "attackText":""
     }
   },
-  "Sociologia": {
-    "adjacents": [
+  "Sociologia":{
+    "adjacents":[
       "Ingegneria Informatica",
       "Economia",
       "Bar",
       "Ingegneria Gestionale"
     ],
-    "owner": {
-      "name": "Sociologi",
-      "color": "rgb(36,164,133)",
-      "voti": DEFAULT_SCORE
+    "owner":{
+      "name":"Sociologi",
+      "color":"rgb(36,164,133)",
+      "marks":0,
+      "attackText":""
     }
   },
-  "Statua della Minerva": {
-    "adjacents": [
+  "Statua della Minerva":{
+    "adjacents":[
       "Rettorato",
       "Pratino Est 1",
       "Pratino Est 2",
@@ -812,44 +861,47 @@ module.exports = {
       "Giurisprudenza",
       "Fontana della Minerva"
     ],
-    "owner": seguaciMinerva
+    "owner":seguaciMinerva
   },
-  "Storia": {
-    "adjacents": [
+  "Storia":{
+    "adjacents":[
       "Chimica analitica",
       "Farmacologia",
       "Matematica"
     ],
-    "owner": {
-      "name": "Storici",
-      "color": "rgb(207,83,53)",
-      "voti": DEFAULT_SCORE
+    "owner":{
+      "name":"Storici",
+      "color":"rgb(180,160,122)",
+      "marks":0,
+      "attackText":""
     }
   },
-  "Storia dell'arte": {
-    "adjacents": [
+  "Storia dell'arte":{
+    "adjacents":[
       "Orto Botanico",
       "Medicina legale",
       "Mensa",
       "Ingegneria Chimica"
     ],
-    "owner": {
-      "name": "Storici dell'Arte",
-      "color": "rgb(246,79,111)",
-      "voti": DEFAULT_SCORE
+    "owner":{
+      "name":"Storici dell'Arte",
+      "color":"rgb(246,79,111)",
+      "marks":0,
+      "attackText":""
     }
   },
-  "Zoologia": {
-    "adjacents": [
+  "Zoologia":{
+    "adjacents":[
       "Archeologia",
       "Geochimica",
       "Lingue",
       "Neurologia"
     ],
-    "owner": {
-      "name": "Zoologi",
-      "color": "rgb(55,52,42)",
-      "voti": DEFAULT_SCORE
+    "owner":{
+      "name":"Zoologi",
+      "color":"rgb(55,52,42)",
+      "marks":0,
+      "attackText":""
     }
   }
 }
