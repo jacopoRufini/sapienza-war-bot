@@ -1,4 +1,4 @@
-let svg, departments, selection;
+let svg, departments, selection, owners;
 const adjacents = {};
 
 function setOwner(department, departmentData) {
@@ -39,7 +39,27 @@ function vote(){
 // "department" argument is the svg element clicked
 function onDepartmentClicked(department) {
   makeSelected(department);
+  showStats(department);
   infoToast(getDepartmentDescription(department));
+}
+
+// show stats on user click
+function showStats(department){
+  const ownerName = department.getAttribute("owner");
+  const owner = owners[ownerName];
+  console.log(owner);
+  document.getElementById("statsInfo").innerHTML =
+  "DIPARTIMENTO: <br>" +
+  "FAZIONE: <br>" +
+  "VOTAZIONI: <br>" +
+  "COLORE: <br>";
+  document.getElementById("statsData").innerHTML =
+  department.id + "<br>" +
+  owner.name + "<br>" +
+  owner.marks + "<br>" +
+  "<div style='margin-top: 10px; width: 10px; height: 10px; background: "+owner.color+";'></div>";
+  document.getElementById("vote").innerHTML =
+  "<button class='btn btn-success btn-custom' onclick='vote()'>Vota "+owner.name+"</button>";
 }
 
 // adds a "strong" border to the element clicked
@@ -95,12 +115,12 @@ function toast(type, message) {
 }
 
 function errorToast(message) { toast("error", message)}
-function infoToast(message) { toast("info", message)}
+function infoToast(message) { }//toast("info", message)}
 function successToast(message) { toast("success", message)}
 
 // update data every attack
 setInterval(() => {
-  axios.get('/owners')
+  axios.get('/ownership')
   .then(response => updateDepartments(response.data))
   .catch(error => console.log(error))
 
@@ -117,6 +137,10 @@ function onSvgReady() {
     synchronizeLogs()
     // load owners data
     axios.get('/owners')
+    .then(response => owners = response.data)
+    .catch(error => console.log(error))
+    // load ownership data
+    axios.get('/ownership')
     .then(response => updateDepartments(response.data))
     .catch(error => console.log(error))
     // set on click handler on deps

@@ -23,9 +23,11 @@ for (let key in ownership) {
 }
 
 // routes for data
-app.get("/owners", (req, res) => res.send(ownership))
+app.get("/ownership", (req, res) => res.send(ownership))
 // get war history
 app.get("/logs", (req, res) => res.send(Logger.getLogs()))
+// get owner objects
+app.get("/owners", (req, res) => res.send(owners))
 
 app.post("/vote", (req, res) => {
   let clientIp = req.connection.remoteAddress;

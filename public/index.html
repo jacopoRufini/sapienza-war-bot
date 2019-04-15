@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link href="/index.css" type="text/css" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="/index.css" rel="stylesheet" />
 	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 
 </head>
@@ -15,16 +15,32 @@
         <embed id="map-container" type="image/svg+xml" src="sapienza-map.svg" onload="onSvgReady()"/>
       </div>
       <div class="col-sm-12 col-xl-5">
-        <div class="console">
-          <div><image class="img-fluid" src="asciiArt.png"></div>
-          <div class="log">
-            <div id="logs"></div>
+        <div class="row">
+          <div class="stat">
+            <div class="row">
+              <div class="col-3">
+                <div id="statsInfo" class="statText"></div>
+              </div>
+              <div class="col-5">
+                <div id="statsData" class="statText"></div>
+              </div>
+              <div class="col-4" style="padding-right: 22px;">
+                <div id="vote"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="console">
+            <div><image class="img-fluid" src="asciiArt.png"></div>
+            <div class="log">
+              <div id="logs"></div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-	<button onclick="vote()">VOTA</button>
 	<!-- modificate come vi pare html e css dei logs -->
 </body>
 <script type="text/javascript" src="sapienza-map.js"></script>
