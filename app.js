@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const Logger = require('./logger');
+const Backup = require('./backup');
 
 const PORT = 8080;
 const DEFAULT_MARKS = 50;
@@ -21,6 +22,8 @@ for (let key in ownership) {
   const owner = ownership[key].owner;
   owners[owner.name] = owner;
 }
+
+
 
 // routes for data
 app.get("/ownership", (req, res) => res.send(ownership));
@@ -63,9 +66,11 @@ setInterval(() => {
     attacker.owner.marks += 5;
     ownership[depDef].owner = attacker.owner;
     Logger.log(attacker.owner.name + " hanno CONQUISTATO il dipartimento di " + depDef);
+    //Backup.saveBackup(JSON.stringify(ownership, null, 2), Logger.getLogs());
   } else {
     // DO NOTHING
-  }//console.log(defender.owner.name + " hanno DIFESO il dipartimento di " + depDef);
+    //console.log(defender.owner.name + " hanno DIFESO il dipartimento di " + depDef);
+  }
 }, 1000);
 
 function attackWinProb(attVoti, defVoti){
