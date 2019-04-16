@@ -20,7 +20,7 @@ container {
 }
 
 .console {
-  background-image: url("console.png");
+  background-image: url("./images/console.png");
   background-repeat: no-repeat;
   border-radius: 0px 7px 0px 0px;
   width: 100%;
@@ -38,7 +38,7 @@ container {
 }
 
 .stat {
-  background-image: url("stats.png");
+  background-image: url("./images/stats.png");
   background-repeat: no-repeat;
   border-radius: 5px 11px 5px 9px;
   width: 100%;
