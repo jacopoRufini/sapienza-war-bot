@@ -3,11 +3,11 @@ const adjacents = {};
 
 function setOwner(department, departmentData) {
     department.setAttribute("owner", departmentData.owner.name);
-    department.style.fill = departmentData.owner.color
+    department.style.fill = departmentData.owner.color;
 }
 
 function getDepartmentDescription(departmentNode) {
-    return departmentNode.id + " posseduto da " + departmentNode.getAttribute("owner")
+    return departmentNode.id + " posseduto da " + departmentNode.getAttribute("owner");
 }
 
 function updateDepartments(data) {
@@ -29,8 +29,8 @@ function vote(){
     })
     .catch(err => {
       if(err.response && err.response.data) // already voted or faction doesn't exist
-        errorToast(err.response.data) // error message from the server
-      console.log(err)
+        errorToast(err.response.data); // error message from the server
+      console.log(err);
     });
   } else {
     console.log("seleziona una fazione");
@@ -85,18 +85,18 @@ function addLogMessage(message) {
 }
 
 function resetLogs() {
-  document.getElementById("logs").innerHTML = ""
+  document.getElementById("logs").innerHTML = "";
 }
 
 function synchronizeLogs() {
   axios.get('/logs')
   .then(response => {
-    let logs = response.data
-    resetLogs()
+    let logs = response.data;
+    resetLogs();
     for(let log of logs)
-      addLogMessage(log)
+      addLogMessage(log);
   })
-  .catch(error => console.log(error))
+  .catch(error => console.log(error));
 }
 
 //  ----------------- LOGS END -----------------
@@ -127,7 +127,7 @@ setInterval(() => {
   .catch(error => console.log(error))
 
   synchronizeLogs()
-},1)
+},1000)
 
 // called on initialization
 function onSvgReady() {
