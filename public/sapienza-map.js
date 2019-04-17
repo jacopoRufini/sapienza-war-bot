@@ -149,6 +149,34 @@ function onHighlightEnd() {
 		highlighted[i].classList.remove("highlight")
 }
 //  ----------------- HIGHLIGHT END -----------------
+//  ----------------- COUNTDOWN START ----------------
+function synchronizeCountdown(){
+  axios.get('/countdown')
+  .then(response => setCountdown(response.data))
+  .catch(error => console.log(error));
+}
+
+function setCountdown(lastAttack){
+  let countdown;
+  countdown = UPDATE_INTERVAL - (Date.now() - lastAttack);
+  setInterval(() => {
+    if (countdown <= 0) countdown = UPDATE_INTERVAL;
+    getById("countdown").innerHTML = "Prossimo Attacco in " + msToTime(countdown);
+    countdown-= 1000;
+  }, 1000);
+}
+
+function msToTime(duration) {
+  let seconds = Math.floor((duration / 1000) % 60),
+    minutes = Math.floor((duration / (1000 * 60)) % 60),
+    hours = Math.floor((duration / (1000 * 60 * 60)) % 24);
+
+  hours = (hours < 10) ? "0" + hours : hours;
+  minutes = (minutes < 10) ? "0" + minutes : minutes;
+  seconds = (seconds < 10) ? "0" + seconds : seconds;
+  return hours + ":" + minutes + ":" + seconds;
+}
+//  ----------------- COUNTDOWN END ----------------
 
 // called on svg initialization
 function onSvgReady() {
@@ -158,6 +186,7 @@ function onSvgReady() {
     departmentsSvg = svg.getElementsByClassName("department")
     // load logs
 	synchronizeLogs()
+  synchronizeCountdown()
 	onFactionsLoad = () => updateDepartments()
 	// load factions and departmentsSvg data
 	loadData() // calls onFactionsLoad()
