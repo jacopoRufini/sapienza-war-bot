@@ -78,7 +78,7 @@ setInterval(function() {
   // non sprecare le ore dei dyno di notte
   if(hour >= 8 && hour < 22)
     http.get("http://sapienza-warbot.herokuapp.com");
-}, 10 * 60 /** 1000*/); // every 10 minutes
+}, 10 * 60 * 1000); // every 10 minutes
 
 Factions.initializeFactionsAndDepartments()
 
