@@ -77,8 +77,8 @@ setInterval(function() {
   let hour = ((new Date()).getHours() + 2) % 24 // server e' 2 ore indietro
   // non sprecare le ore dei dyno di notte
   if(hour >= 8 && hour < 22)
-    http.get("sapienza-warbot.herokuapp.com");
-}, 10 * 60 * 1000); // every 10 minutes
+    http.get("http://sapienza-warbot.herokuapp.com");
+}, 10 * 60 /** 1000*/); // every 10 minutes
 
 Factions.initializeFactionsAndDepartments()
 
