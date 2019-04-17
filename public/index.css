@@ -10,7 +10,7 @@
 }
 
 body {
-  background-color: #5555 !important;
+  background-color: #822334 !important;
   overflow-x: hidden !important;
 }
 
@@ -35,6 +35,12 @@ container {
   padding-left: 13px;
   font-size: 13px;
   font-family: consoleFont;
+}
+
+#countdown {
+  color: red;
+  font-size: 15px;
+  margin: auto;
 }
 
 .stat {
@@ -70,10 +76,6 @@ container {
   src: url(SFMono-Regular.otf);
 }
 
-body {
-  background-image: url("/images/sapienza-blur.png");
-  background-size: 100%;
-}
 
 table {
   color: white;

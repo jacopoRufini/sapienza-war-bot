@@ -5,11 +5,14 @@ const Backup = require('./backup');
 const Factions = require("./factions")
 
 const PORT = process.env.PORT || 8080;
-ATTACK_INTERVAL = 1000 /* 1 sec */ * 60 /* min */;
+ATTACK_INTERVAL = 1000 /* 1 sec */ * 10 /* min */;
 const app = express();
 
+
 let votedIp = {};
-let owners = {}; // mappa ridondate ma più comoda / efficiente per l'update
+let owners = {}; 
+let lastAttack = Date.now();
+
 
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -17,13 +20,15 @@ app.use(bodyParser.json());
 
 // routes for data
 app.get("/data", (req, res) => res.send(Factions.getData()));
+// routes countdown
+app.get("/countdown", (req, res) => res.send(lastAttack + ""));
 // get war history
 app.get("/logs", (req, res) => res.send(Logger.getLogs()));
 // post vote for a faction
 app.post("/vote", (req, res) => {
   const clientIp = req.connection.remoteAddress;
   const faction = req.body.faction;
-  
+
   if(votedIp[clientIp]) {
     res.status(401 /* Not Authorized */).send("non puoi votare in questo momento, hai già votato");
   } else if(Factions.addVotes(faction)) {
@@ -46,15 +51,15 @@ const server = app.listen(PORT, () => {
   // la seguente e' equivalente
 const doAttack = (attacker /* name */, departmentAttacked /* name */) => {
   const defender /* name */ = Factions.getOwner(departmentAttacked);
-  if(attacker === defender || attacker === "nessuno")
-    return;
- 
+  if(attacker === defender || attacker === "nessuno") return;
+
    const hasAttackerWon = Math.random() <= (0.5 + (Factions.getVotes(attacker) - Factions.getVotes(defender)) / 100);
    if (hasAttackerWon) {
      Factions.addVotes(attacker, 5)
      Factions.setOwner(departmentAttacked, attacker)
      Logger.log(attacker + " hanno CONQUISTATO il dipartimento di " + departmentAttacked);
    }
+   else Logger.log(defender + " hanno DIFESO il dipartimento da " + attacker);
 }
 
 const randomElement = array => array[Math.floor(Math.random() * array.length)];
@@ -63,6 +68,7 @@ const randomElement = array => array[Math.floor(Math.random() * array.length)];
 // NOTA: il dipartimento a caso ha probabilita' maggiore di appartenere ad una fazione con molti dipartimenti,
 // se si prende direttamente una fazione a caso allora la probilita di una fazione di essere scelta e' equa
 setInterval(() => {
+  lastAttack = Date.now();
   let attackingDepartment = randomElement(Factions.getDepartmentsList());
   let defendingDepartment = randomElement(Factions.getDepartmentAdjacents(attackingDepartment));
   let attackingFaction = Factions.getOwner(attackingDepartment);
@@ -81,7 +87,3 @@ setInterval(function() {
 }, 10 * 60 * 1000); // every 10 minutes
 
 Factions.initializeFactionsAndDepartments()
-
-
-
-
