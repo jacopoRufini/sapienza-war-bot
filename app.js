@@ -74,8 +74,11 @@ setInterval(() => { votedIp = {} }, 1000 * 60 * 60);
 const http = require("http");
 
 setInterval(function() {
-    http.get("https://sapienza-warbot.herokuapp.com");
-}, 300000); // every 5 minutes (300000)
+  let hour = ((new Date()).getHours() + 2) % 24 // server e' 2 ore indietro
+  // non sprecare le ore dei dyno di notte
+  if(hour >= 8 && hour < 22)
+    http.get("sapienza-warbot.herokuapp.com");
+}, 10 * 60 * 1000); // every 10 minutes
 
 Factions.initializeFactionsAndDepartments()
 
