@@ -69,3 +69,12 @@ container {
   font-family: consoleFont;
   src: url(SFMono-Regular.otf);
 }
+
+body {
+  background-image: url("/images/sapienza-blur.png");
+  background-size: 100%;
+}
+
+table {
+  color: white;
+}
