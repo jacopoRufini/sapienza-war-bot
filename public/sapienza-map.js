@@ -16,6 +16,7 @@ function updateDepartments(data) {
       adjacents[department.id] = departmentData.adjacents;
       setOwner(department, departmentData)
     }
+    updateRanking()
 }
 
 function vote(){
@@ -100,6 +101,7 @@ function synchronizeLogs() {
 }
 
 //  ----------------- LOGS END -----------------
+//  ----------------- TOAST START -----------------
 
 // show a message info
 // type should be "info", "error" or "success"
@@ -120,6 +122,58 @@ function errorToast(message) { toast("error", message)}
 function infoToast(message) { }//toast("info", message)}
 function successToast(message) { toast("success", message)}
 
+//  ----------------- TOAST END -----------------
+//  ----------------- RANKING START -----------------
+const RANKIN_LENGTH = 10; // numero di fazioni messe nella table ranking
+let factionsDepartments = {}
+function updateRanking() {
+	// associa alle fazioni il totale dei dipartimenti posseduti
+	factionsDepartments = {}
+	for (let department of departments) {
+		let faction = department.getAttribute("owner")
+		if(faction != "nessuno") {
+			if(!factionsDepartments[faction]) 
+				factionsDepartments[faction] = [department.id]
+			else
+				factionsDepartments[faction].push(department.id)
+		}
+	}
+	// mappa in array di oggetti {faction: String, departments: Number}
+	// dove uno e' il nome della fazione, l'altro il numero dei territori
+	let factionsByRank =
+		Object.keys(factionsDepartments)
+		.map(faction => ({
+			faction: faction,
+			departments: factionsDepartments[faction].length,
+			voti: owners[faction].marks
+		}))
+	// ordina l'array verso decrescente
+	factionsByRank.sort((a, b) => b.departments - a.departments)
+	// prendi solo i primi RANKIN_LENGTH fazioni
+	factionsByRank = factionsByRank.slice(0, RANKIN_LENGTH)
+	// aggiorna table HTML
+	let ranking =  document.getElementById("ranking")
+	ranking.innerHTML = "<tr><th>Fazione</th><th>Dip</th><th>Voti</th></tr>"
+	ranking.innerHTML += factionsByRank.map(entry => `<tr onmouseenter="onHighlightStart(event.target.firstChild.innerText)" onmouseout="onHighlightEnd()"><td>${entry.faction}</td><td>${entry.departments}</td><td>${entry.voti}</td></tr>`).join('')
+}
+//  ----------------- RANKING END -----------------
+//  ----------------- HIGHLIGHT START -----------------
+// highlight faction's territories
+function onHighlightStart(faction) {
+	// nel caso non triggeri onHighlightEnd correttamente
+	onHighlightEnd()
+	let departments = factionsDepartments[faction]
+	if(departments)
+		for (let department of departments)
+			svg.getElementById(department).classList.add("highlight")
+}
+// reset highlight
+function onHighlightEnd() {
+	let highlighted = svg.getElementsByClassName("highlight")
+	for (var i = highlighted.length - 1; i >= 0; i--)
+		highlighted[i].classList.remove("highlight")
+}
+//  ----------------- HIGHLIGHT END -----------------
 // update data every attack
 setInterval(() => {
   axios.get('/ownership')

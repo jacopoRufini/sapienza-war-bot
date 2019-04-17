@@ -19,6 +19,6 @@ path, rect {
    stroke-width: 1;
 }
 
-.selection {
+.selection, .highlight {
    stroke-width: 1;
 }
