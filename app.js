@@ -68,6 +68,8 @@ setInterval(() => {
   let attackingFaction = Factions.getOwner(attackingDepartment);
   doAttack(attackingFaction, defendingDepartment)
 }, ATTACK_INTERVAL);
+// resetta la mappa degli ip ogni ora
+setInterval(() => { votedIp = {} }, 1000 * 60 * 60);
 
 Factions.initializeFactionsAndDepartments()
 
