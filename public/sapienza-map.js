@@ -124,7 +124,7 @@ function successToast(message) { toast("success", message)}
 
 //  ----------------- TOAST END -----------------
 //  ----------------- RANKING START -----------------
-const RANKIN_LENGTH = 10; // numero di fazioni messe nella table ranking
+const RANKIN_LENGTH = 7; // numero di fazioni messe nella table ranking
 let factionsDepartments = {}
 function updateRanking() {
 	// associa alle fazioni il totale dei dipartimenti posseduti
