@@ -11,7 +11,7 @@ path, rect {
 }
 
 #wall {
-	fill-opacity: 0;
+	fill-opacity: .5;
 	stroke-width:0.7;
 }
 
