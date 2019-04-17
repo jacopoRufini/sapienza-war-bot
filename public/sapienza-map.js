@@ -24,7 +24,7 @@ function vote() {
     .then(res => {
       successToast(res.data);
       factions[faction].votes++;
-      showStats(selection);
+      showDepartmentStats(selection);
     })
     .catch(err => {
       if(err.response && err.response.data) // already voted or faction doesn't exist
