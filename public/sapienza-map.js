@@ -1,11 +1,11 @@
-let svg, departmentsSvg, selection;
+let svg, departmentsSvg, selectedDepartment;
 const UPDATE_INTERVAL = 1 * 60 * 1000;
- 
+
 function getDepartmentDescription(departmentNode) {
     return departmentNode.id + " posseduto da " + departmentNode.getAttribute("faction");
 }
 
-function updateDepartments(data) {
+function updateDepartments() {
 	for (var i = departmentsSvg.length - 1; i >= 0; i--) {
 		let departmentSvg = departmentsSvg[i],
 			departmentName = departmentSvg.id,
@@ -14,17 +14,20 @@ function updateDepartments(data) {
 		departmentSvg.setAttribute("faction", faction);
     	departmentSvg.style.fill = getFactionColor(faction);
 	}
-    updateRanking()
+  updateRanking()
+  if(selectedDepartment)
+    showDepartmentStats(selectedDepartment)
 }
 
 function vote() {
-  const faction = selection.getAttribute("faction");
+  const faction = selectedDepartment.getAttribute("faction");
   if (faction && faction != "nessuno") {
     axios.post('/vote', {'faction' : faction})
     .then(res => {
       successToast(res.data);
       factions[faction].votes++;
-      showDepartmentStats(selection);
+      updateRanking()
+      showDepartmentStats(selectedDepartment);
     })
     .catch(err => {
       if(err.response && err.response.data) // already voted or faction doesn't exist
@@ -63,9 +66,9 @@ function showDepartmentStats(departmentSvg){
 // saves the selected department to show some stats
 // "department" argument is the svg element clicked
 function makeSelected(department) {
-  if (selection) selection.classList.remove("selection");
-  selection = department;
-  selection.classList.add("selection");
+  if (selectedDepartment) selectedDepartment.classList.remove("selectedDepartment");
+  selectedDepartment = department;
+  selectedDepartment.classList.add("selectedDepartment");
 }
 
 //  -----------------  LOGS START -----------------
