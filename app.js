@@ -4,7 +4,7 @@ const Logger = require('./logger');
 const Backup = require('./backup');
 const Factions = require("./factions")
 
-const PORT = 8080;
+const PORT = process.env.PORT || 8080;
 ATTACK_INTERVAL = 1000 /* 1 sec */;
 const app = express();
 
