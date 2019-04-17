@@ -61,7 +61,7 @@ setInterval(() => {
   const depDef = randomElement(attacker.adjacents);
   const defender = ownership[depDef];
   if (defender.owner === attacker.owner || attacker.owner.name === "nessuno") return;
-  const attWin = Math.random() <= attackWinProb(attacker.owner.marks + DEFAULT_MARKS, defender.owner.marks + DEFAULT_MARKS);
+  const attWin = Math.random() <= attackWinProb(attacker.owner.marks, defender.owner.marks);
   if (attWin) {
     attacker.owner.marks += 5;
     ownership[depDef].owner = attacker.owner;
