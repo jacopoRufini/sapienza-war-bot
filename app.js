@@ -70,6 +70,12 @@ setInterval(() => {
 }, ATTACK_INTERVAL);
 // resetta la mappa degli ip ogni ora
 setInterval(() => { votedIp = {} }, 1000 * 60 * 60);
+// wake up heroku app
+const http = require("http");
+
+setInterval(function() {
+    http.get("https://sapienza-warbot.herokuapp.com");
+}, 300000); // every 5 minutes (300000)
 
 Factions.initializeFactionsAndDepartments()
 
