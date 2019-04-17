@@ -19,7 +19,7 @@ module.exports = {
       "Fisica",
       "Aiuola 3"
     ],
-    "owner":nessuno
+    "faction":nessuno
   },
   "Aiuola 2":{
     "adjacents":[
@@ -27,7 +27,7 @@ module.exports = {
       "Aiuola 1",
       "Aiuola 4"
     ],
-    "owner":nessuno
+    "faction":nessuno
   },
   "Aiuola 3":{
     "adjacents":[
@@ -36,7 +36,7 @@ module.exports = {
       "Igiene",
       "Infermieristica"
     ],
-    "owner":nessuno
+    "faction":nessuno
   },
   "Aiuola 4":{
     "adjacents":[
@@ -44,7 +44,7 @@ module.exports = {
       "Aiuola 2",
       "Aiuola 3"
     ],
-    "owner":nessuno
+    "faction":nessuno
   },
   "Archeologia":{
     "adjacents":[
@@ -52,7 +52,7 @@ module.exports = {
       "Geochimica",
       "Zoologia"
     ],
-    "owner":{
+    "faction":{
       "name":"Archeologi",
       "color":"rgb(10,30,99)",
       "marks":0,
@@ -67,7 +67,7 @@ module.exports = {
       "Geochimica",
       "Archeologia"
     ],
-    "owner":{
+    "faction":{
       "name":"Architetti",
       "color":"rgb(209,46,101)",
       "marks":0,
@@ -81,7 +81,7 @@ module.exports = {
       "Fisica",
       "Lingue"
     ],
-    "owner":{
+    "faction":{
       "name":"Astrofisici",
       "color":"rgb(174,161,74)",
       "marks":0,
@@ -96,7 +96,7 @@ module.exports = {
       "Geologia",
       "Aiuola 1"
     ],
-    "owner":{
+    "faction":{
       "name":"Astronomi",
       "color":"rgb(190,211,218)",
       "marks":0,
@@ -109,7 +109,7 @@ module.exports = {
       "Economia",
       "Psicologia"
     ],
-    "owner":{
+    "faction":{
       "name":"Baristi",
       "color":"rgb(47,64,147)",
       "marks":0,
@@ -123,7 +123,7 @@ module.exports = {
       "Scienze Politiche",
       "Biotecnologie"
     ],
-    "owner":{
+    "faction":{
       "name":"Biologi",
       "color":"rgb(29,220,131)",
       "marks":0,
@@ -136,7 +136,7 @@ module.exports = {
       "Scienze Politiche",
       "Architettura"
     ],
-    "owner":{
+    "faction":{
       "name":"Studenti di Biotecnologie",
       "color":"rgb(10,231,205)",
       "marks":0,
@@ -154,7 +154,7 @@ module.exports = {
       "Ingegneria Chimica",
       "Economia"
     ],
-    "owner":{
+    "faction":{
       "name":"Studenti di Botanica",
       "color":"rgb(218,142,124)",
       "marks":0,
@@ -169,7 +169,7 @@ module.exports = {
       "Scienze della Formazione",
       "Neurologia"
     ],
-    "owner":{
+    "faction":{
       "name":"Vaticano",
       "color":"rgb(148,211,201)",
       "marks":0,
@@ -183,7 +183,7 @@ module.exports = {
       "Medicina",
       "Aiuola 2"
     ],
-    "owner":{
+    "faction":{
       "name":"Chimici",
       "color":"rgb(15,84,107)",
       "marks":0,
@@ -198,7 +198,7 @@ module.exports = {
       "Chimica",
       "Matematica"
     ],
-    "owner":{
+    "faction":{
       "name":"Chimici Industriali",
       "color":"rgb(92,187,180)",
       "marks":0,
@@ -213,7 +213,7 @@ module.exports = {
       "Robotica",
       "Medicina legale"
     ],
-    "owner":{
+    "faction":{
       "name":"Studenti di Chimica Analitica",
       "color":"rgb(199,236,168)",
       "marks":0,
@@ -226,7 +226,7 @@ module.exports = {
       "Scienze della Comunicazione",
       "Pratino Sud"
     ],
-    "owner":{
+    "faction":{
       "name":"Chirurghi",
       "color":"rgb(68,89,1)",
       "marks":0,
@@ -244,7 +244,7 @@ module.exports = {
       "Pratone",
       "Psicologia"
     ],
-    "owner":{
+    "faction":{
       "name":"Studenti di Economia",
       "color":"rgb(147,210,119)",
       "marks":0,
@@ -259,7 +259,7 @@ module.exports = {
       "Chimica Industriale",
       "Pratino Sud"
     ],
-    "owner":{
+    "faction":{
       "name":"Studenti di Farmacologia",
       "color":"rgb(16,78,235)",
       "marks":0,
@@ -276,7 +276,7 @@ module.exports = {
       "Pratino Est 1",
       "Lettere"
     ],
-    "owner":{
+    "faction":{
       "name":"Filosofi",
       "color":"rgb(161,90,247)",
       "marks":0,
@@ -291,7 +291,7 @@ module.exports = {
       "Chiesa",
       "Lingue"
     ],
-    "owner":{
+    "faction":{
       "name":"Fisici",
       "color":"rgb(89,67,173)",
       "marks":0,
@@ -306,7 +306,7 @@ module.exports = {
       "Matematica",
       "Filosofia"
     ],
-    "owner":{
+    "faction":{
       "name":"Studenti di Fisica Applicata",
       "color":"rgb(245,37,207)",
       "marks":0,
@@ -317,7 +317,7 @@ module.exports = {
     "adjacents":[
       "Statua della Minerva"
     ],
-    "owner":seguaciMinerva
+    "faction":seguaciMinerva
   },
   "Genetica":{
     "adjacents":[
@@ -325,7 +325,7 @@ module.exports = {
       "Economia",
       "Pratone"
     ],
-    "owner":{
+    "faction":{
       "name":"Studenti di Genetica",
       "color":"rgb(201,214,189)",
       "marks":0,
@@ -342,7 +342,7 @@ module.exports = {
       "Archeologia",
       "Architettura"
     ],
-    "owner":{
+    "faction":{
       "name":"Geochimici",
       "color":"rgb(180,226,124)",
       "marks":0,
@@ -357,7 +357,7 @@ module.exports = {
       "Lingue",
       "Geochimica"
     ],
-    "owner":{
+    "faction":{
       "name":"Geologi",
       "color":"rgb(162,188,113)",
       "marks":0,
@@ -372,7 +372,7 @@ module.exports = {
       "Mineralogia",
       "Statua della Minerva"
     ],
-    "owner":{
+    "faction":{
       "name":"Giuristi",
       "color":"rgb(121,38,246)",
       "marks":0,
@@ -386,7 +386,7 @@ module.exports = {
       "Infermieristica",
       "Chiesa"
     ],
-    "owner":{
+    "faction":{
       "name":"Studenti di Igiene",
       "color":"rgb(36,118,33)",
       "marks":0,
@@ -399,7 +399,7 @@ module.exports = {
       "Aiuola 3",
       "Informatica"
     ],
-    "owner":{
+    "faction":{
       "name":"Infermieri",
       "color":"rgb(180,29,31)",
       "marks":0,
@@ -411,7 +411,7 @@ module.exports = {
       "Infermieristica",
       "Scienze dello Spettacolo"
     ],
-    "owner":{
+    "faction":{
       "name":"Informatici",
       "color":"rgb(200,54,230)",
       "marks":0,
@@ -426,7 +426,7 @@ module.exports = {
       "Botanica",
       "Ingegneria Edile"
     ],
-    "owner":{
+    "faction":{
       "name":"Ingegneri Chimici",
       "color":"rgb(104,218,168)",
       "marks":0,
@@ -439,7 +439,7 @@ module.exports = {
       "Ingegneria Industriale",
       "Ingegneria Gestionale"
     ],
-    "owner":{
+    "faction":{
       "name":"Ingegneri Civili",
       "color":"rgb(207,149,0)",
       "marks":0,
@@ -452,7 +452,7 @@ module.exports = {
       "Ingegneria Gestionale",
       "Ingegneria Chimica"
     ],
-    "owner":{
+    "faction":{
       "name":"Ingegneri Edili",
       "color":"rgb(73,104,181)",
       "marks":0,
@@ -471,7 +471,7 @@ module.exports = {
       "Orto Botanico",
       "Sociologia"
     ],
-    "owner":{
+    "faction":{
       "name":"Studenti di Ingegneria gestionale",
       "color":"rgb(162,169,229)",
       "marks":0,
@@ -485,7 +485,7 @@ module.exports = {
       "Ingegneria Edile",
       "Ingegneria Gestionale"
     ],
-    "owner":{
+    "faction":{
       "name":"Ingegneri Industriali",
       "color":"rgb(242,87,60)",
       "marks":0,
@@ -500,7 +500,7 @@ module.exports = {
       "Ingegneria Civile",
       "Ingegneria Industriale"
     ],
-    "owner":{
+    "faction":{
       "name":"Ingegneri Informatici",
       "color":"rgb(96,11,134)",
       "marks":0,
@@ -515,7 +515,7 @@ module.exports = {
       "Rettorato",
       "Pratone"
     ],
-    "owner":{
+    "faction":{
       "name":"Studenti di Lettere",
       "color":"rgb(210,210,11)",
       "marks":0,
@@ -532,7 +532,7 @@ module.exports = {
       "Neurologia",
       "Zoologia"
     ],
-    "owner":{
+    "faction":{
       "name":"Linguisti",
       "color":"rgb(5,227,35)",
       "marks":0,
@@ -550,7 +550,7 @@ module.exports = {
       "Filosofia",
       "Mensa"
     ],
-    "owner":{
+    "faction":{
       "name":"Matematici",
       "color":"rgb(82,204,86)",
       "marks":0,
@@ -564,7 +564,7 @@ module.exports = {
       "Aiuola 4",
       "Ortopedia"
     ],
-    "owner":{
+    "faction":{
       "name":"Medici",
       "color":"rgb(219,157,37)",
       "marks":0,
@@ -578,7 +578,7 @@ module.exports = {
       "Mensa",
       "Chimica analitica"
     ],
-    "owner":{
+    "faction":{
       "name":"Medici Legali",
       "color":"rgb(149,221,75)",
       "marks":0,
@@ -593,7 +593,7 @@ module.exports = {
       "Fisica applicata",
       "Matematica"
     ],
-    "owner":{
+    "faction":{
       "name":"Addetti alla mensa",
       "color":"rgb(107,43,95)",
       "marks":0,
@@ -608,7 +608,7 @@ module.exports = {
       "Geologia",
       "Geochimica"
     ],
-    "owner":{
+    "faction":{
       "name":"Minerologia",
       "color":"rgb(62,140,210)",
       "marks":0,
@@ -623,7 +623,7 @@ module.exports = {
       "Scienze della Formazione",
       "Geochimica"
     ],
-    "owner":{
+    "faction":{
       "name":"Neurologi",
       "color":"rgb(244,166,186)",
       "marks":0,
@@ -640,14 +640,14 @@ module.exports = {
       "Ingegneria Chimica",
       "Ingegneria Gestionale"
     ],
-    "owner":nessuno
+    "faction":nessuno
   },
   "Ortopedia":{
     "adjacents":[
       "Pratino Sud",
       "Medicina"
     ],
-    "owner":{
+    "faction":{
       "name":"Ortopedici",
       "color":"rgb(208,83,9)",
       "marks":0,
@@ -661,7 +661,7 @@ module.exports = {
       "Scienze Politiche",
       "Biologia"
     ],
-    "owner":{
+    "faction":{
       "name":"Ostetrici",
       "color":"rgb(59,194,240)",
       "marks":0,
@@ -676,7 +676,7 @@ module.exports = {
       "Geologia",
       "Mineralogia"
     ],
-    "owner":nessuno
+    "faction":nessuno
   },
   "Pratino Est 1":{
     "adjacents":[
@@ -686,7 +686,7 @@ module.exports = {
       "Pratino Est 2",
       "Statua della Minerva"
     ],
-    "owner":nessuno
+    "faction":nessuno
   },
   "Pratino Est 2":{
     "adjacents":[
@@ -696,7 +696,7 @@ module.exports = {
       "Chimica",
       "Statua della Minerva"
     ],
-    "owner":nessuno
+    "faction":nessuno
   },
   "Pratino Sud":{
     "adjacents":[
@@ -705,7 +705,7 @@ module.exports = {
       "Scienze della Comunicazione",
       "Ortopedia"
     ],
-    "owner":nessuno
+    "faction":nessuno
   },
   "Pratone":{
     "adjacents":[
@@ -718,7 +718,7 @@ module.exports = {
       "Ostetricia",
       "Psicologia"
     ],
-    "owner":{
+    "faction":{
       "name":"Tossici",
       "color":"rgb(120,11,232)",
       "marks":0,
@@ -733,7 +733,7 @@ module.exports = {
       "Biologia",
       "Bar"
     ],
-    "owner":{
+    "faction":{
       "name":"Psicologi",
       "color":"rgb(174,169,17)",
       "marks":0,
@@ -748,7 +748,7 @@ module.exports = {
       "Giurisprudenza",
       "Scienze Politiche"
     ],
-    "owner":{
+    "faction":{
       "name":"Rettorato",
       "color":"rgb(213,195,208)",
       "marks":0,
@@ -762,7 +762,7 @@ module.exports = {
       "Fisica applicata",
       "Filosofia"
     ],
-    "owner":{
+    "faction":{
       "name":"Studenti di Robotica",
       "color":"rgb(134,171,105)",
       "marks":0,
@@ -780,7 +780,7 @@ module.exports = {
       "Rettorato",
       "Pratone"
     ],
-    "owner":{
+    "faction":{
       "name":"Studenti di Scienze Politiche",
       "color":"rgb(159,93,24)",
       "marks":0,
@@ -792,7 +792,7 @@ module.exports = {
       "Chirurgia",
       "Pratino Sud"
     ],
-    "owner":{
+    "faction":{
       "name":"Studenti di Scienze della Comunicazione",
       "color":"rgb(107,134,58)",
       "marks":0,
@@ -805,7 +805,7 @@ module.exports = {
       "Neurologia",
       "Scienze dello Spettacolo"
     ],
-    "owner":{
+    "faction":{
       "name":"Scienze della Formazione",
       "color":"rgb(162,192,211)",
       "marks":0,
@@ -817,7 +817,7 @@ module.exports = {
       "Informatica",
       "Scienze della Formazione"
     ],
-    "owner":{
+    "faction":{
       "name":"Studenti di Scienze dello Spettacolo",
       "color":"rgb(206,180,84)",
       "marks":0,
@@ -831,7 +831,7 @@ module.exports = {
       "Geochimica",
       "Architettura"
     ],
-    "owner":{
+    "faction":{
       "name":"Studenti di Scienze Statistiche",
       "color":"rgb(212,194,125)",
       "marks":0,
@@ -845,7 +845,7 @@ module.exports = {
       "Bar",
       "Ingegneria Gestionale"
     ],
-    "owner":{
+    "faction":{
       "name":"Sociologi",
       "color":"rgb(36,164,133)",
       "marks":0,
@@ -861,7 +861,7 @@ module.exports = {
       "Giurisprudenza",
       "Fontana della Minerva"
     ],
-    "owner":seguaciMinerva
+    "faction":seguaciMinerva
   },
   "Storia":{
     "adjacents":[
@@ -869,7 +869,7 @@ module.exports = {
       "Farmacologia",
       "Matematica"
     ],
-    "owner":{
+    "faction":{
       "name":"Storici",
       "color":"rgb(180,160,122)",
       "marks":0,
@@ -883,7 +883,7 @@ module.exports = {
       "Mensa",
       "Ingegneria Chimica"
     ],
-    "owner":{
+    "faction":{
       "name":"Storici dell'Arte",
       "color":"rgb(246,79,111)",
       "marks":0,
@@ -897,7 +897,7 @@ module.exports = {
       "Lingue",
       "Neurologia"
     ],
-    "owner":{
+    "faction":{
       "name":"Zoologi",
       "color":"rgb(55,52,42)",
       "marks":0,

@@ -20,13 +20,25 @@
           <div class="stat">
             <div class="row">
               <div class="col-3">
-                <div id="statsInfo" class="statText"></div>
+                <div id="statsInfo" class="statText">
+                  DIPARTIMENTO: <br>
+                  FAZIONE: <br>
+                  VOTI: <br>
+                  COLORE: <br>
+                </div>
               </div>
               <div class="col-5">
-                <div id="statsData" class="statText">Seleziona un dipartimento per vedere le statistiche e votarlo!!!</div>
+                <div id="statsData" class="statText">
+                  <span id="stat-department"><em>Non selezionato</em></span><br>
+                  <span id="stat-faction">-</span><br>
+                  <span id="stat-votes">-</span><br>
+                  <div id="stat-color" style='margin-top: 10px; width: 10px; height: 10px'></div>
+                </div>
               </div>
               <div class="col-4" style="padding-right: 22px;">
-                <div id="vote"></div>
+                <div id="vote">
+                  <button id="vote-btn" class='btn btn-success btn-custom' style="display: none" onclick='vote()'></button>
+                </div>
               </div>
             </div>
           </div>
@@ -43,10 +55,10 @@
     </div>
   </div>
 </body>
+<script type="text/javascript" src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script type="text/javascript" src="factions.js"></script>
 <script type="text/javascript" src="sapienza-map.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-<script type="text/javascript" src="https://unpkg.com/axios/dist/axios.min.js"></script>
-
 
 <!-- BOOTSTRAP -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

@@ -1,31 +1,28 @@
-let svg, departments, selection, owners;
-const adjacents = {};
-
-function setOwner(department, departmentData) {
-    department.setAttribute("owner", departmentData.owner.name);
-    department.style.fill = departmentData.owner.color;
-}
+let svg, departmentsSvg, selection;
 
 function getDepartmentDescription(departmentNode) {
-    return departmentNode.id + " posseduto da " + departmentNode.getAttribute("owner");
+    return departmentNode.id + " posseduto da " + departmentNode.getAttribute("faction");
 }
 
 function updateDepartments(data) {
-    for (let department of departments) {
-      const departmentData = data[department.id];
-      adjacents[department.id] = departmentData.adjacents;
-      setOwner(department, departmentData)
-    }
+	for (var i = departmentsSvg.length - 1; i >= 0; i--) {
+		let departmentSvg = departmentsSvg[i],
+			departmentName = departmentSvg.id,
+			faction = getDepartmentOwner(departmentName);
+
+		departmentSvg.setAttribute("faction", faction);
+    	departmentSvg.style.fill = getFactionColor(faction);
+	}
     updateRanking()
 }
 
-function vote(){
-  const owner = selection.getAttribute("owner");
-  if (owner && owner != "nessuno") {
-    axios.post('/vote', {'owner' : owner})
+function vote() {
+  const faction = selection.getAttribute("faction");
+  if (faction && faction != "nessuno") {
+    axios.post('/vote', {'faction' : faction})
     .then(res => {
       successToast(res.data);
-      owners[owner].marks++;
+      factions[faction].votes++;
       showStats(selection);
     })
     .catch(err => {
@@ -42,27 +39,23 @@ function vote(){
 // "department" argument is the svg element clicked
 function onDepartmentClicked(department) {
   makeSelected(department);
-  showStats(department);
+  showDepartmentStats(department);
   infoToast(getDepartmentDescription(department));
 }
 
-// show stats on user click
-function showStats(department){
-  const ownerName = department.getAttribute("owner");
-  const owner = owners[ownerName];
-  console.log(owner);
-  document.getElementById("statsInfo").innerHTML =
-  "DIPARTIMENTO: <br>" +
-  "FAZIONE: <br>" +
-  "VOTAZIONI: <br>" +
-  "COLORE: <br>";
-  document.getElementById("statsData").innerHTML =
-  department.id + "<br>" +
-  owner.name + "<br>" +
-  owner.marks + "<br>" +
-  "<div style='margin-top: 10px; width: 10px; height: 10px; background: "+owner.color+";'></div>";
-  document.getElementById("vote").innerHTML =
-  "<button class='btn btn-success btn-custom' onclick='vote()'>Vota "+owner.name+"</button>";
+const getById = id => document.getElementById(id)
+
+// show stats on of department
+function showDepartmentStats(departmentSvg){
+  const department = departmentSvg.id
+  const faction = departmentSvg.getAttribute("faction");
+  const isNessuno = faction === "nessuno"
+  getById("stat-department").innerHTML = department
+  getById("stat-faction").innerHTML = isNessuno && "Nessuna" || faction
+  getById("stat-votes").innerHTML = isNessuno && "-" || getFactionVotes(faction)
+  getById("stat-color").style.backgroundColor = getFactionColor(faction)
+  getById("vote-btn").innerHTML = "Vota " + faction
+  getById("vote-btn").style.display = isNessuno && "none" || "block"
 }
 
 // adds a "strong" border to the element clicked
@@ -127,34 +120,10 @@ function successToast(message) { toast("success", message)}
 const RANKIN_LENGTH = 7; // numero di fazioni messe nella table ranking
 let factionsDepartments = {}
 function updateRanking() {
-	// associa alle fazioni il totale dei dipartimenti posseduti
-	factionsDepartments = {}
-	for (let department of departments) {
-		let faction = department.getAttribute("owner")
-		if(faction != "nessuno") {
-			if(!factionsDepartments[faction]) 
-				factionsDepartments[faction] = [department.id]
-			else
-				factionsDepartments[faction].push(department.id)
-		}
-	}
-	// mappa in array di oggetti {faction: String, departments: Number}
-	// dove uno e' il nome della fazione, l'altro il numero dei territori
-	let factionsByRank =
-		Object.keys(factionsDepartments)
-		.map(faction => ({
-			faction: faction,
-			departments: factionsDepartments[faction].length,
-			voti: owners[faction].marks
-		}))
-	// ordina l'array verso decrescente
-	factionsByRank.sort((a, b) => b.departments - a.departments)
-	// prendi solo i primi RANKIN_LENGTH fazioni
-	factionsByRank = factionsByRank.slice(0, RANKIN_LENGTH)
-	// aggiorna table HTML
+	let factionsByRank = getFactionsByDepartments().slice(0, RANKIN_LENGTH)
 	let ranking =  document.getElementById("ranking")
 	ranking.innerHTML = "<tr><th>Fazione</th><th>Dip</th><th>Voti</th></tr>"
-	ranking.innerHTML += factionsByRank.map(entry => `<tr onmouseenter="onHighlightStart(event.target.firstChild.innerText)" onmouseout="onHighlightEnd()"><td>${entry.faction}</td><td>${entry.departments}</td><td>${entry.voti}</td></tr>`).join('')
+	ranking.innerHTML += factionsByRank.map(entry => `<tr onmouseenter="onHighlightStart(event.target.firstChild.innerText)" onmouseout="onHighlightEnd()"><td>${entry.faction}</td><td>${entry.departments.length}</td><td>${entry.votes}</td></tr>`).join('')
 }
 //  ----------------- RANKING END -----------------
 //  ----------------- HIGHLIGHT START -----------------
@@ -162,10 +131,11 @@ function updateRanking() {
 function onHighlightStart(faction) {
 	// nel caso non triggeri onHighlightEnd correttamente
 	onHighlightEnd()
-	let departments = factionsDepartments[faction]
-	if(departments)
-		for (let department of departments)
-			svg.getElementById(department).classList.add("highlight")
+	for (var i = departmentsSvg.length - 1; i >= 0; i--) {
+		let d = departmentsSvg[i]
+		if(d.getAttribute("faction") === faction)
+			d.classList.add("highlight")
+	}
 }
 // reset highlight
 function onHighlightEnd() {
@@ -174,32 +144,27 @@ function onHighlightEnd() {
 		highlighted[i].classList.remove("highlight")
 }
 //  ----------------- HIGHLIGHT END -----------------
-// update data every attack
-setInterval(() => {
-  axios.get('/ownership')
-  .then(response => updateDepartments(response.data))
-  .catch(error => console.log(error))
 
-  synchronizeLogs()
-},1000)
-
-// called on initialization
+// called on svg initialization
 function onSvgReady() {
     // initialize svg
     svg = document.getElementById("map-container").getSVGDocument()
-    // initialize departments
-    departments = svg.getElementsByClassName("department")
+    // initialize departmentsSvg
+    departmentsSvg = svg.getElementsByClassName("department")
     // load logs
-    synchronizeLogs()
-    // load owners data
-    axios.get('/owners')
-    .then(response => owners = response.data)
-    .catch(error => console.log(error))
-    // load ownership data
-    axios.get('/ownership')
-    .then(response => updateDepartments(response.data))
-    .catch(error => console.log(error))
+	synchronizeLogs()
+	onFactionsLoad = () => updateDepartments()
+	// load factions and departmentsSvg data
+	loadData() // calls onFactionsLoad()
     // set on click handler on deps
-    for (let department of departments)
+    for (let department of departmentsSvg)
       department.onclick = event => onDepartmentClicked(event.target)
+	// update data every attack
+	setInterval(() => {
+	  loadData() // calls onFactionsLoad() aka updateDepartments()
+	  synchronizeLogs()
+	},1000)
 }
+
+
+
