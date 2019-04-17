@@ -1,5 +1,6 @@
 let svg, departmentsSvg, selectedDepartment;
-const UPDATE_INTERVAL = 1 * 60 * 1000;
+const UPDATE_INTERVAL = 60 * 1000; // 60 seconds;
+const DEBUG_UPDATE_INTERVAL = 30;
 
 function getDepartmentDescription(departmentNode) {
     return departmentNode.id + " posseduto da " + departmentNode.getAttribute("faction");
@@ -66,9 +67,9 @@ function showDepartmentStats(departmentSvg){
 // saves the selected department to show some stats
 // "department" argument is the svg element clicked
 function makeSelected(department) {
-  if (selectedDepartment) selectedDepartment.classList.remove("selectedDepartment");
+  if (selectedDepartment) selectedDepartment.classList.remove("highlight");
   selectedDepartment = department;
-  selectedDepartment.classList.add("selectedDepartment");
+  selectedDepartment.classList.add("highlight");
 }
 
 //  -----------------  LOGS START -----------------
@@ -169,6 +170,3 @@ function onSvgReady() {
 	  synchronizeLogs()
 	}, UPDATE_INTERVAL)
 }
-
-
-

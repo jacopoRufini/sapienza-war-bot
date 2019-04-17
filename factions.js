@@ -8,7 +8,8 @@ module.exports.initializeFactionsAndDepartments = function () {
 		if(!factions[faction.name]) {
 			factions[faction.name] = {
 				color: faction.color,
-				votes: faction.marks
+				votes: faction.votes,
+        bonus: faction.bonus
 			}
 		}
 		adjacents[department] = defaultData[department].adjacents
@@ -24,15 +25,26 @@ module.exports.getOwner = function(departmentName) {
 	return departments[departmentName]
 }
 
-module.exports.addVotes = function(factionName, votes = 1) {
+module.exports.addVotes = function(factionName) {
 	if(!factions[factionName])
 		return false
-	factions[factionName].votes += votes
+	factions[factionName].votes++;
 	return true
 }
 
+module.exports.addBonus = function(factionName) {
+	factions[factionName].bonus += 5;
+}
+
+module.exports.clearBonuses = function() {
+	for (let faction in factions) {
+    faction.bonus = 0;
+  }
+}
+
 module.exports.getVotes = function(factionName) {
-	return factions[factionName].votes
+  const faction = factions[factionName];
+	return faction.votes + faction.bonus;
 }
 
 module.exports.getData = function() {
@@ -45,4 +57,12 @@ module.exports.getDepartmentsList = function() {
 
 module.exports.getDepartmentAdjacents = function(department) {
 	return adjacents[department]
+}
+
+module.exports.getCustomText = function(factionName) {
+  return factions[factionName].attackText || "";
+}
+
+module.exports.hasAttacks = function(factionName) {
+  // da compilare
 }
