@@ -64,6 +64,29 @@ module.exports.getCustomText = function(factionName) {
   return factions[factionName].attackText;
 }
 
-module.exports.hasAttacks = function(factionName) {
-  // da compilare
+module.exports.getAttackerDefender = function() {
+  const departmentsKeys = Object.keys(departments);
+  while (departmentsKeys.length > 0) {
+    const attackerIndex = Math.floor(Math.random() * departmentsKeys.length);
+    const attackerCandidate = departmentsKeys[attackerIndex];
+    departmentsKeys.splice(attackerIndex, 1);
+
+    if (this.getOwner(attackerCandidate) === "nessuno") {
+      continue;
+    }
+
+    const attackerAdjacents = this.getDepartmentAdjacents(attackerCandidate);
+
+    while (attackerAdjacents.length > 0) {
+      const defenderIndex = Math.floor(Math.random() * attackerAdjacents.length);
+      const defenderCandidate = attackerAdjacents[defenderIndex];
+      attackerAdjacents.splice(defenderIndex, 1);
+      if (this.getOwner(attackerCandidate) !== this.getOwner(defenderCandidate)) {
+        return {
+          attacker: attackerCandidate,
+          defender: defenderCandidate
+        };
+      }
+    }
+  }
 }

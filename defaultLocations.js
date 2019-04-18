@@ -482,7 +482,7 @@ module.exports = {
       "Ingegneria Chimica"
     ],
     "faction":{
-      "name":"Ingegneri Edili",
+      "name":"Ingegneri Energetici",
       "color":"rgb(73,104,181)",
       "votes":0,
 			"bonus":0,

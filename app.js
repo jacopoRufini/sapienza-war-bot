@@ -6,7 +6,7 @@ const Factions = require("./factions")
 
 const PORT = process.env.PORT || 8080;
 const ATTACK_INTERVAL = 1000 /* 1 sec */ * 60 /* min */;
-const DEBUG_ATTACK_INTERVAL = 30;
+const DEBUG_ATTACK_INTERVAL = 100;
 
 const app = express();
 
@@ -45,33 +45,32 @@ app.post("/vote", (req, res) => {
 const server = app.listen(PORT, () => {
 	console.log("server listening on localhost:" + PORT);
 });
-const doAttack = (attacker /* name */, departmentAttacked /* name */) => {
-  const defender /* name */ = Factions.getOwner(departmentAttacked);
+const doAttack = (attackingDepartment /* name */, defendingDepartment /* name */) => {
+  const attacker = Factions.getOwner(attackingDepartment);
+  const defender /* name */ = Factions.getOwner(defendingDepartment);
   if(attacker === defender || attacker === "nessuno") {
     return;
   }
    const hasAttackerWon = (Math.random() <= (0.5 + (Factions.getVotes(attacker) - Factions.getVotes(defender)) / 100));
    if (hasAttackerWon || defender === "nessuno") {
      Factions.addBonus(attacker);
-     Factions.setOwner(departmentAttacked, attacker)
-     Logger.log(attacker + " hanno CONQUISTATO il dipartimento di " + departmentAttacked + " " + Factions.getCustomText(attacker));
+     Factions.setOwner(defendingDepartment, attacker)
+     Logger.log(attacker + " hanno CONQUISTATO il dipartimento di " + defendingDepartment + " " + Factions.getCustomText(attacker));
    }
    else Logger.log(defender + " hanno DIFESO il dipartimento da " + attacker);
 }
 
-const randomElement = array => array[Math.floor(Math.random() * array.length)];
-
 // attack interval
-// NOTA: il dipartimento a caso ha probabilita' maggiore di appartenere ad una fazione con molti dipartimenti,
-// se si prende direttamente una fazione a caso allora la probilita di una fazione di essere scelta e' equa
 setInterval(() => {
   lastAttack = Date.now();
-  let attackingDepartment = randomElement(Factions.getDepartmentsList());
-
-  let defendingDepartment = randomElement(Factions.getDepartmentAdjacents(attackingDepartment));
-  let attackingFaction = Factions.getOwner(attackingDepartment);
-  doAttack(attackingFaction, defendingDepartment)
-}, ATTACK_INTERVAL);
+  const candidates =  Factions.getAttackerDefender();
+  if (!candidates) {
+    return;
+  }
+  const attackingDepartment =  candidates.attacker;
+  const defendingDepartment = candidates.defender;
+  doAttack(attackingDepartment, defendingDepartment)
+}, DEBUG_ATTACK_INTERVAL);
 
 /* ogni 24 ore:
 - resetta la mappa degli ip

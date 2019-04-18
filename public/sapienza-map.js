@@ -1,6 +1,6 @@
 let svg, departmentsSvg, selectedDepartment;
 const UPDATE_INTERVAL = 60 * 1000; // 60 seconds;
-const DEBUG_UPDATE_INTERVAL = 30;
+const DEBUG_UPDATE_INTERVAL = 1000;
 
 function getDepartmentDescription(departmentNode) {
     return departmentNode.id + " posseduto da " + departmentNode.getAttribute("faction");
@@ -197,5 +197,5 @@ function onSvgReady() {
 	setInterval(() => {
 	  loadData() // calls onFactionsLoad() aka updateDepartments()
 	  synchronizeLogs()
-	}, UPDATE_INTERVAL)
+	}, DEBUG_UPDATE_INTERVAL)
 }
