@@ -9,7 +9,7 @@ var seguaciMinerva = {
   "name": "Seguaci della Minerva",
   "color": "rgb(218,167,164)",
   "votes": 0,
-  "attackText": "",
+  "attackText": "grazie all\'aiuto divino direttamente dall\'Olimpo",
 }
 
 module.exports = {
@@ -59,7 +59,7 @@ module.exports = {
       "color":"rgb(10,30,99)",
       "votes":0,
 			"bonus":0,
-      "attackText":""
+      "attackText":"con il loro esercito di soldati fossili"
     }
   },
   "Architettura":{
@@ -75,7 +75,7 @@ module.exports = {
       "color":"rgb(209,46,101)",
       "votes":0,
 			"bonus":0,
-      "attackText":""
+      "attackText":"con un sofisticato sistema di specchi e leve"
     }
   },
   "Astrofisica":{
@@ -90,7 +90,7 @@ module.exports = {
       "color":"rgb(174,161,74)",
       "votes":0,
 			"bonus":0,
-      "attackText":""
+      "attackText":"grazie all\'energia sprigionata da una super nova"
     }
   },
   "Astronomia":{
@@ -106,7 +106,7 @@ module.exports = {
       "color":"rgb(190,211,218)",
       "votes":0,
 			"bonus":0,
-      "attackText":""
+      "attackText":"sfruttando l\'allineamento dei pianeti"
     }
   },
   "Bar":{
@@ -120,7 +120,7 @@ module.exports = {
       "color":"rgb(47,64,147)",
       "votes":0,
 			"bonus":0,
-      "attackText":""
+      "attackText":"distraendo la difesa avversaria con gli spritz gratis"
     }
   },
   "Biologia":{
@@ -135,7 +135,7 @@ module.exports = {
       "color":"rgb(29,220,131)",
       "votes":0,
 			"bonus":0,
-      "attackText":""
+      "attackText":"inglobandola nel loro ecosistema"
     }
   },
   "Biotecnologie":{
@@ -149,7 +149,7 @@ module.exports = {
       "color":"rgb(10,231,205)",
       "votes":0,
 			"bonus":0,
-      "attackText":""
+      "attackText":"attaccando con il loro esercito di microbatteri robotici"
     }
   },
   "Botanica":{
@@ -168,7 +168,7 @@ module.exports = {
       "color":"rgb(218,142,124)",
       "votes":0,
 			"bonus":0,
-      "attackText":""
+      "attackText":"grazie alla loro orda di piante carnivore"
     }
   },
   "Chiesa":{
@@ -184,7 +184,7 @@ module.exports = {
       "color":"rgb(148,211,201)",
       "votes":0,
 			"bonus":0,
-      "attackText":""
+      "attackText":"organizzando l\'ennesima crociata"
     }
   },
   "Chimica":{
@@ -199,7 +199,7 @@ module.exports = {
       "color":"rgb(15,84,107)",
       "votes":0,
 			"bonus":0,
-      "attackText":""
+      "attackText":"rilasciando gas nervino"
     }
   },
   "Chimica Industriale":{
@@ -215,7 +215,7 @@ module.exports = {
       "color":"rgb(92,187,180)",
       "votes":0,
 			"bonus":0,
-      "attackText":""
+      "attackText":"grazie alla potenza dei loro nuovi reattori"
     }
   },
   "Chimica analitica":{
@@ -231,7 +231,7 @@ module.exports = {
       "color":"rgb(199,236,168)",
       "votes":0,
 			"bonus":0,
-      "attackText":""
+      "attackText":"contaminando le difese con molecole altamente tossiche"
     }
   },
   "Chirurgia":{
@@ -245,7 +245,7 @@ module.exports = {
       "color":"rgb(68,89,1)",
       "votes":0,
 			"bonus":0,
-      "attackText":""
+      "attackText":"con i loro soldati a quattro braccia, gambe e occhi"
     }
   },
   "Economia":{
@@ -264,7 +264,7 @@ module.exports = {
       "color":"rgb(147,210,119)",
       "votes":0,
 			"bonus":0,
-      "attackText":""
+      "attackText":"comprando il loro territorio"
     }
   },
   "Farmacologia":{
@@ -280,7 +280,7 @@ module.exports = {
       "color":"rgb(16,78,235)",
       "votes":0,
 			"bonus":0,
-      "attackText":""
+      "attackText":"somministrando di nascosto mix di psicofarmaci alla loro difesa"
     }
   },
   "Filosofia":{
@@ -298,7 +298,7 @@ module.exports = {
       "color":"rgb(161,90,247)",
       "votes":0,
 			"bonus":0,
-      "attackText":""
+      "attackText":"grazie alla nobile arte della retorica"
     }
   },
   "Fisica":{
@@ -314,7 +314,7 @@ module.exports = {
       "color":"rgb(89,67,173)",
       "votes":0,
 			"bonus":0,
-      "attackText":""
+      "attackText":"attaccando con onde elettromagnetiche ad altissima frequenza"
     }
   },
   "Fisica applicata":{
@@ -330,7 +330,7 @@ module.exports = {
       "color":"rgb(245,37,207)",
       "votes":0,
 			"bonus":0,
-      "attackText":""
+      "attackText":"bombardandola di elettroni grazie al loro nuovo acceleratore di particelle"
     }
   },
   "Fontana della Minerva":{
@@ -350,7 +350,7 @@ module.exports = {
       "color":"rgb(201,214,189)",
       "votes":0,
 			"bonus":0,
-      "attackText":""
+      "attackText":"grazie all\'aiuto di un esercito di soldati OGM"
     }
   },
   "Geochimica":{
@@ -368,7 +368,7 @@ module.exports = {
       "color":"rgb(180,226,124)",
       "votes":0,
 			"bonus":0,
-      "attackText":""
+      "attackText":"accelerando il loro decadimento radioattivo"
     }
   },
   "Geologia":{
@@ -384,7 +384,7 @@ module.exports = {
       "color":"rgb(162,188,113)",
       "votes":0,
 			"bonus":0,
-      "attackText":""
+      "attackText":"con il loro generatore di scosse sismiche"
     }
   },
   "Giurisprudenza":{
@@ -400,7 +400,7 @@ module.exports = {
       "color":"rgb(89,38,222)",
       "votes":0,
 			"bonus":0,
-      "attackText":""
+      "attackText":"facendogli causa e vincendo ovviamente"
     }
   },
   "Igiene":{
@@ -415,7 +415,7 @@ module.exports = {
       "color":"rgb(36,118,33)",
       "votes":0,
 			"bonus":0,
-      "attackText":""
+      "attackText":"infettando le loro difese, colpevoli di non aver fatto i vaccini"
     }
   },
   "Infermieristica":{
@@ -429,7 +429,7 @@ module.exports = {
       "color":"rgb(180,29,31)",
       "votes":0,
 			"bonus":0,
-      "attackText":""
+      "attackText":"scagliando una pioggia di siringhe letali"
     }
   },
   "Informatica":{
@@ -442,14 +442,14 @@ module.exports = {
       "color":"rgb(200,54,230)",
       "votes":0,
 			"bonus":0,
-      "attackText":""
+      "attackText":"01110000 01100101 01110010 01100011 01101000 01100101 00100111 00100000 01110011 01101001"
     }
   },
   "Ingegneria Chimica":{
     "adjacents":[
       "Ingegneria Gestionale",
       "Orto Botanico",
-      "Storia dell'arte",
+      "Storia dell\'arte",
       "Botanica",
       "Ingegneria Energetica"
     ],
@@ -458,7 +458,7 @@ module.exports = {
       "color":"rgb(104,218,168)",
       "votes":0,
 			"bonus":0,
-      "attackText":""
+      "attackText":"sparando fluidi altamente reattivi con i loro impianti"
     }
   },
   "Ingegneria Meccanica":{
@@ -472,7 +472,7 @@ module.exports = {
       "color":"rgb(207,149,0)",
       "votes":0,
 			"bonus":0,
-      "attackText":""
+      "attackText":"utilizzando le loro macchine da guerra di nuova generazione"
     }
   },
   "Ingegneria Energetica":{
@@ -486,7 +486,7 @@ module.exports = {
       "color":"rgb(73,104,181)",
       "votes":0,
 			"bonus":0,
-      "attackText":""
+      "attackText":"grazie alle loro armi laser"
     }
   },
   "Ingegneria Gestionale":{
@@ -506,7 +506,7 @@ module.exports = {
       "color":"rgb(162,169,229)",
       "votes":0,
 			"bonus":0,
-      "attackText":""
+      "attackText":"tramite lo studio di tutti i possibili vantaggi"
     }
   },
   "Ingegneria Aerospaziale":{
@@ -521,7 +521,7 @@ module.exports = {
       "color":"rgb(242,87,60)",
       "votes":0,
 			"bonus":0,
-      "attackText":""
+      "attackText":"bombardando con i loro razzi telecomandati"
     }
   },
   "Ingegneria Informatica":{
@@ -537,7 +537,7 @@ module.exports = {
       "color":"rgb(96,11,134)",
       "votes":0,
 			"bonus":0,
-      "attackText":""
+      "attackText":"con un software in grado di controllare ogni dispositivo elettronico avversario"
     }
   },
   "Lettere":{
@@ -553,7 +553,7 @@ module.exports = {
       "color":"rgb(210,210,11)",
       "votes":0,
 			"bonus":0,
-      "attackText":""
+      "attackText":"perche\' a volte una parola fa piu\' male di una spada"
     }
   },
   "Lingue":{
@@ -571,7 +571,7 @@ module.exports = {
       "color":"rgb(5,227,35)",
       "votes":0,
 			"bonus":0,
-      "attackText":""
+      "attackText":"grazie ai loro alleati in tutto il mondo"
     }
   },
   "Matematica":{
@@ -590,7 +590,7 @@ module.exports = {
       "color":"rgb(82,204,86)",
       "votes":0,
 			"bonus":0,
-      "attackText":""
+      "attackText":"grazie ad un algoritmo che prevede le possibili mosse avversarie"
     }
   },
   "Medicina":{
@@ -605,12 +605,12 @@ module.exports = {
       "color":"rgb(219,157,37)",
       "votes":0,
 			"bonus":0,
-      "attackText":""
+      "attackText":"diffondendo i vari virus incurabili"
     }
   },
   "Medicina legale":{
     "adjacents":[
-      "Storia dell'arte",
+      "Storia dell\'arte",
       "Orto Botanico",
       "Mensa",
       "Chimica analitica"
@@ -620,12 +620,12 @@ module.exports = {
       "color":"rgb(149,221,75)",
       "votes":0,
 			"bonus":0,
-      "attackText":""
+      "attackText":"con la loro orda di zombie"
     }
   },
   "Mensa":{
     "adjacents":[
-      "Storia dell'arte",
+      "Storia dell\'arte",
       "Medicina legale",
       "Chimica analitica",
       "Fisica applicata",
@@ -636,7 +636,7 @@ module.exports = {
       "color":"rgb(107,43,95)",
       "votes":0,
 			"bonus":0,
-      "attackText":""
+      "attackText":"avvelenando il loro cibo, tratto da una storia vera"
     }
   },
   "Mineralogia":{
@@ -652,7 +652,7 @@ module.exports = {
       "color":"rgb(62,140,210)",
       "votes":0,
 			"bonus":0,
-      "attackText":""
+      "attackText":"grazie alle loro indistruttibili armature di adamantio"
     }
   },
   "Neurologia":{
@@ -668,13 +668,13 @@ module.exports = {
       "color":"rgb(244,166,186)",
       "votes":0,
 			"bonus":0,
-      "attackText":""
+      "attackText":"bruciando le sinapsi avversarie"
     }
   },
   "Orto Botanico":{
     "adjacents":[
       "Botanica",
-      "Storia dell'arte",
+      "Storia dell\'arte",
       "Medicina legale",
       "Robotica",
       "Filosofia",
@@ -693,7 +693,7 @@ module.exports = {
       "color":"rgb(208,83,9)",
       "votes":0,
 			"bonus":0,
-      "attackText":""
+      "attackText":"con i loro soldati dotati di un super apparato locomotore"
     }
   },
   "Ostetricia":{
@@ -708,7 +708,7 @@ module.exports = {
       "color":"rgb(59,194,240)",
       "votes":0,
 			"bonus":0,
-      "attackText":""
+      "attackText":"tramite il loro esercito di neonati mutanti"
     }
   },
   "Pratino":{
@@ -766,7 +766,7 @@ module.exports = {
       "color":"rgb(120,11,232)",
       "votes":0,
 			"bonus":0,
-      "attackText":""
+      "attackText":"con l\'utilizzo delle loro famose \'bombe\'"
     }
   },
   "Psicologia":{
@@ -782,7 +782,7 @@ module.exports = {
       "color":"rgb(174,169,17)",
       "votes":0,
 			"bonus":0,
-      "attackText":""
+      "attackText":"leggendo nella mente degli avversari"
     }
   },
   "Rettorato":{
@@ -798,7 +798,7 @@ module.exports = {
       "color":"rgb(213,195,208)",
       "votes":0,
 			"bonus":0,
-      "attackText":""
+      "attackText":"esercitando il potere e l\'autorita\' del Magnifico Rettore"
     }
   },
   "Robotica":{
@@ -813,7 +813,7 @@ module.exports = {
       "color":"rgb(134,171,105)",
       "votes":0,
 			"bonus":0,
-      "attackText":""
+      "attackText":"attaccando con il loro esercito di robot umanoidi"
     }
   },
   "Scienze Politiche":{
@@ -832,7 +832,7 @@ module.exports = {
       "color":"rgb(159,93,24)",
       "votes":0,
 			"bonus":0,
-      "attackText":""
+      "attackText":"grazie a mazzette e tangenti"
     }
   },
   "Scienze della Comunicazione":{
@@ -845,7 +845,7 @@ module.exports = {
       "color":"rgb(107,134,58)",
       "votes":0,
 			"bonus":0,
-      "attackText":""
+      "attackText":"semplicemente trovando un accordo verbale"
     }
   },
   "Scienze della Formazione":{
@@ -859,7 +859,7 @@ module.exports = {
       "color":"rgb(162,192,211)",
       "votes":0,
 			"bonus":0,
-      "attackText":""
+      "attackText":"solamente grazie ai loro modi composti ed educati"
     }
   },
   "Scienze dello Spettacolo":{
@@ -872,7 +872,7 @@ module.exports = {
       "color":"rgb(206,180,84)",
       "votes":0,
 			"bonus":0,
-      "attackText":""
+      "attackText":"organizzando un diversivo da premio Oscar"
     }
   },
   "Scienze statistiche":{
@@ -887,7 +887,7 @@ module.exports = {
       "color":"rgb(212,194,125)",
       "votes":0,
 			"bonus":0,
-      "attackText":""
+      "attackText":"perche\' avevano il 70% di possibilita\' di successo"
     }
   },
   "Sociologia":{
@@ -902,7 +902,7 @@ module.exports = {
       "color":"rgb(36,164,133)",
       "votes":0,
 			"bonus":0,
-      "attackText":""
+      "attackText":"conoscendo perfettamente i loro comportamenti"
     }
   },
   "Statua della Minerva":{
@@ -927,10 +927,10 @@ module.exports = {
       "color":"rgb(180,160,122)",
       "votes":0,
 			"bonus":0,
-      "attackText":""
+      "attackText":"con il loro esercito di legionari e spartani"
     }
   },
-  "Storia dell'arte":{
+  "Storia dell\'arte":{
     "adjacents":[
       "Orto Botanico",
       "Medicina legale",
@@ -938,11 +938,11 @@ module.exports = {
       "Ingegneria Chimica"
     ],
     "faction":{
-      "name":"Storici dell'Arte",
+      "name":"Storici dell\'Arte",
       "color":"rgb(246,79,111)",
       "votes":0,
 			"bonus":0,
-      "attackText":""
+      "attackText":"utilizzando delle sculture animate molto agguerrite"
     }
   },
   "Zoologia":{
@@ -957,7 +957,7 @@ module.exports = {
       "color":"rgb(55,52,42)",
       "votes":0,
 			"bonus":0,
-      "attackText":""
+      "attackText":"attaccando con animali pericolosi tenuti in cattivita\'"
     }
   }
 }

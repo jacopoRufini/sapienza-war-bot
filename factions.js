@@ -61,7 +61,7 @@ module.exports.getDepartmentAdjacents = function(department) {
 }
 
 module.exports.getCustomText = function(factionName) {
-  return factions[factionName].attackText || "";
+  return factions[factionName].attackText;
 }
 
 module.exports.hasAttacks = function(factionName) {
