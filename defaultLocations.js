@@ -1,13 +1,15 @@
 var nessuno = {
   "name": "nessuno",
   "color": "rgb(255,255,255)",
-  "marks": 0
+  "votes": 0,
+  "attackText": "",
 }
 
 var seguaciMinerva = {
   "name": "Seguaci della Minerva",
   "color": "rgb(218,167,164)",
-  "marks": 0
+  "votes": 0,
+  "attackText": "",
 }
 
 module.exports = {
@@ -55,7 +57,8 @@ module.exports = {
     "faction":{
       "name":"Archeologi",
       "color":"rgb(10,30,99)",
-      "marks":0,
+      "votes":0,
+			"bonus":0,
       "attackText":""
     }
   },
@@ -70,7 +73,8 @@ module.exports = {
     "faction":{
       "name":"Architetti",
       "color":"rgb(209,46,101)",
-      "marks":0,
+      "votes":0,
+			"bonus":0,
       "attackText":""
     }
   },
@@ -84,7 +88,8 @@ module.exports = {
     "faction":{
       "name":"Astrofisici",
       "color":"rgb(174,161,74)",
-      "marks":0,
+      "votes":0,
+			"bonus":0,
       "attackText":""
     }
   },
@@ -99,7 +104,8 @@ module.exports = {
     "faction":{
       "name":"Astronomi",
       "color":"rgb(190,211,218)",
-      "marks":0,
+      "votes":0,
+			"bonus":0,
       "attackText":""
     }
   },
@@ -112,7 +118,8 @@ module.exports = {
     "faction":{
       "name":"Baristi",
       "color":"rgb(47,64,147)",
-      "marks":0,
+      "votes":0,
+			"bonus":0,
       "attackText":""
     }
   },
@@ -126,7 +133,8 @@ module.exports = {
     "faction":{
       "name":"Biologi",
       "color":"rgb(29,220,131)",
-      "marks":0,
+      "votes":0,
+			"bonus":0,
       "attackText":""
     }
   },
@@ -139,7 +147,8 @@ module.exports = {
     "faction":{
       "name":"Studenti di Biotecnologie",
       "color":"rgb(10,231,205)",
-      "marks":0,
+      "votes":0,
+			"bonus":0,
       "attackText":""
     }
   },
@@ -155,9 +164,10 @@ module.exports = {
       "Economia"
     ],
     "faction":{
-      "name":"Studenti di Botanica",
+      "name":"Botanici",
       "color":"rgb(218,142,124)",
-      "marks":0,
+      "votes":0,
+			"bonus":0,
       "attackText":""
     }
   },
@@ -172,7 +182,8 @@ module.exports = {
     "faction":{
       "name":"Vaticano",
       "color":"rgb(148,211,201)",
-      "marks":0,
+      "votes":0,
+			"bonus":0,
       "attackText":""
     }
   },
@@ -186,7 +197,8 @@ module.exports = {
     "faction":{
       "name":"Chimici",
       "color":"rgb(15,84,107)",
-      "marks":0,
+      "votes":0,
+			"bonus":0,
       "attackText":""
     }
   },
@@ -201,7 +213,8 @@ module.exports = {
     "faction":{
       "name":"Chimici Industriali",
       "color":"rgb(92,187,180)",
-      "marks":0,
+      "votes":0,
+			"bonus":0,
       "attackText":""
     }
   },
@@ -216,7 +229,8 @@ module.exports = {
     "faction":{
       "name":"Studenti di Chimica Analitica",
       "color":"rgb(199,236,168)",
-      "marks":0,
+      "votes":0,
+			"bonus":0,
       "attackText":""
     }
   },
@@ -229,7 +243,8 @@ module.exports = {
     "faction":{
       "name":"Chirurghi",
       "color":"rgb(68,89,1)",
-      "marks":0,
+      "votes":0,
+			"bonus":0,
       "attackText":""
     }
   },
@@ -245,9 +260,10 @@ module.exports = {
       "Psicologia"
     ],
     "faction":{
-      "name":"Studenti di Economia",
+      "name":"Economisti",
       "color":"rgb(147,210,119)",
-      "marks":0,
+      "votes":0,
+			"bonus":0,
       "attackText":""
     }
   },
@@ -260,9 +276,10 @@ module.exports = {
       "Pratino Sud"
     ],
     "faction":{
-      "name":"Studenti di Farmacologia",
+      "name":"Farmacisti",
       "color":"rgb(16,78,235)",
-      "marks":0,
+      "votes":0,
+			"bonus":0,
       "attackText":""
     }
   },
@@ -279,7 +296,8 @@ module.exports = {
     "faction":{
       "name":"Filosofi",
       "color":"rgb(161,90,247)",
-      "marks":0,
+      "votes":0,
+			"bonus":0,
       "attackText":""
     }
   },
@@ -294,7 +312,8 @@ module.exports = {
     "faction":{
       "name":"Fisici",
       "color":"rgb(89,67,173)",
-      "marks":0,
+      "votes":0,
+			"bonus":0,
       "attackText":""
     }
   },
@@ -309,7 +328,8 @@ module.exports = {
     "faction":{
       "name":"Studenti di Fisica Applicata",
       "color":"rgb(245,37,207)",
-      "marks":0,
+      "votes":0,
+			"bonus":0,
       "attackText":""
     }
   },
@@ -328,7 +348,8 @@ module.exports = {
     "faction":{
       "name":"Studenti di Genetica",
       "color":"rgb(201,214,189)",
-      "marks":0,
+      "votes":0,
+			"bonus":0,
       "attackText":""
     }
   },
@@ -345,7 +366,8 @@ module.exports = {
     "faction":{
       "name":"Geochimici",
       "color":"rgb(180,226,124)",
-      "marks":0,
+      "votes":0,
+			"bonus":0,
       "attackText":""
     }
   },
@@ -360,7 +382,8 @@ module.exports = {
     "faction":{
       "name":"Geologi",
       "color":"rgb(162,188,113)",
-      "marks":0,
+      "votes":0,
+			"bonus":0,
       "attackText":""
     }
   },
@@ -374,8 +397,9 @@ module.exports = {
     ],
     "faction":{
       "name":"Giuristi",
-      "color":"rgb(121,38,246)",
-      "marks":0,
+      "color":"rgb(89,38,222)",
+      "votes":0,
+			"bonus":0,
       "attackText":""
     }
   },
@@ -387,9 +411,10 @@ module.exports = {
       "Chiesa"
     ],
     "faction":{
-      "name":"Studenti di Igiene",
+      "name":"Igienisti",
       "color":"rgb(36,118,33)",
-      "marks":0,
+      "votes":0,
+			"bonus":0,
       "attackText":""
     }
   },
@@ -402,7 +427,8 @@ module.exports = {
     "faction":{
       "name":"Infermieri",
       "color":"rgb(180,29,31)",
-      "marks":0,
+      "votes":0,
+			"bonus":0,
       "attackText":""
     }
   },
@@ -414,7 +440,8 @@ module.exports = {
     "faction":{
       "name":"Informatici",
       "color":"rgb(200,54,230)",
-      "marks":0,
+      "votes":0,
+			"bonus":0,
       "attackText":""
     }
   },
@@ -429,7 +456,8 @@ module.exports = {
     "faction":{
       "name":"Ingegneri Chimici",
       "color":"rgb(104,218,168)",
-      "marks":0,
+      "votes":0,
+			"bonus":0,
       "attackText":""
     }
   },
@@ -442,7 +470,8 @@ module.exports = {
     "faction":{
       "name":"Ingegneri Civili",
       "color":"rgb(207,149,0)",
-      "marks":0,
+      "votes":0,
+			"bonus":0,
       "attackText":""
     }
   },
@@ -455,7 +484,8 @@ module.exports = {
     "faction":{
       "name":"Ingegneri Edili",
       "color":"rgb(73,104,181)",
-      "marks":0,
+      "votes":0,
+			"bonus":0,
       "attackText":""
     }
   },
@@ -472,9 +502,10 @@ module.exports = {
       "Sociologia"
     ],
     "faction":{
-      "name":"Studenti di Ingegneria gestionale",
+      "name":"Ingegneri gestionali",
       "color":"rgb(162,169,229)",
-      "marks":0,
+      "votes":0,
+			"bonus":0,
       "attackText":""
     }
   },
@@ -488,7 +519,8 @@ module.exports = {
     "faction":{
       "name":"Ingegneri Industriali",
       "color":"rgb(242,87,60)",
-      "marks":0,
+      "votes":0,
+			"bonus":0,
       "attackText":""
     }
   },
@@ -503,7 +535,8 @@ module.exports = {
     "faction":{
       "name":"Ingegneri Informatici",
       "color":"rgb(96,11,134)",
-      "marks":0,
+      "votes":0,
+			"bonus":0,
       "attackText":""
     }
   },
@@ -516,9 +549,10 @@ module.exports = {
       "Pratone"
     ],
     "faction":{
-      "name":"Studenti di Lettere",
+      "name":"Letterati",
       "color":"rgb(210,210,11)",
-      "marks":0,
+      "votes":0,
+			"bonus":0,
       "attackText":""
     }
   },
@@ -535,7 +569,8 @@ module.exports = {
     "faction":{
       "name":"Linguisti",
       "color":"rgb(5,227,35)",
-      "marks":0,
+      "votes":0,
+			"bonus":0,
       "attackText":""
     }
   },
@@ -553,7 +588,8 @@ module.exports = {
     "faction":{
       "name":"Matematici",
       "color":"rgb(82,204,86)",
-      "marks":0,
+      "votes":0,
+			"bonus":0,
       "attackText":""
     }
   },
@@ -567,7 +603,8 @@ module.exports = {
     "faction":{
       "name":"Medici",
       "color":"rgb(219,157,37)",
-      "marks":0,
+      "votes":0,
+			"bonus":0,
       "attackText":""
     }
   },
@@ -581,7 +618,8 @@ module.exports = {
     "faction":{
       "name":"Medici Legali",
       "color":"rgb(149,221,75)",
-      "marks":0,
+      "votes":0,
+			"bonus":0,
       "attackText":""
     }
   },
@@ -596,7 +634,8 @@ module.exports = {
     "faction":{
       "name":"Addetti alla mensa",
       "color":"rgb(107,43,95)",
-      "marks":0,
+      "votes":0,
+			"bonus":0,
       "attackText":""
     }
   },
@@ -611,7 +650,8 @@ module.exports = {
     "faction":{
       "name":"Minerologia",
       "color":"rgb(62,140,210)",
-      "marks":0,
+      "votes":0,
+			"bonus":0,
       "attackText":""
     }
   },
@@ -626,7 +666,8 @@ module.exports = {
     "faction":{
       "name":"Neurologi",
       "color":"rgb(244,166,186)",
-      "marks":0,
+      "votes":0,
+			"bonus":0,
       "attackText":""
     }
   },
@@ -650,7 +691,8 @@ module.exports = {
     "faction":{
       "name":"Ortopedici",
       "color":"rgb(208,83,9)",
-      "marks":0,
+      "votes":0,
+			"bonus":0,
       "attackText":""
     }
   },
@@ -664,7 +706,8 @@ module.exports = {
     "faction":{
       "name":"Ostetrici",
       "color":"rgb(59,194,240)",
-      "marks":0,
+      "votes":0,
+			"bonus":0,
       "attackText":""
     }
   },
@@ -719,9 +762,10 @@ module.exports = {
       "Psicologia"
     ],
     "faction":{
-      "name":"Tossici",
+      "name":"Fattoni",
       "color":"rgb(120,11,232)",
-      "marks":0,
+      "votes":0,
+			"bonus":0,
       "attackText":""
     }
   },
@@ -736,7 +780,8 @@ module.exports = {
     "faction":{
       "name":"Psicologi",
       "color":"rgb(174,169,17)",
-      "marks":0,
+      "votes":0,
+			"bonus":0,
       "attackText":""
     }
   },
@@ -751,7 +796,8 @@ module.exports = {
     "faction":{
       "name":"Rettorato",
       "color":"rgb(213,195,208)",
-      "marks":0,
+      "votes":0,
+			"bonus":0,
       "attackText":""
     }
   },
@@ -765,7 +811,8 @@ module.exports = {
     "faction":{
       "name":"Studenti di Robotica",
       "color":"rgb(134,171,105)",
-      "marks":0,
+      "votes":0,
+			"bonus":0,
       "attackText":""
     }
   },
@@ -783,7 +830,8 @@ module.exports = {
     "faction":{
       "name":"Studenti di Scienze Politiche",
       "color":"rgb(159,93,24)",
-      "marks":0,
+      "votes":0,
+			"bonus":0,
       "attackText":""
     }
   },
@@ -795,7 +843,8 @@ module.exports = {
     "faction":{
       "name":"Studenti di Scienze della Comunicazione",
       "color":"rgb(107,134,58)",
-      "marks":0,
+      "votes":0,
+			"bonus":0,
       "attackText":""
     }
   },
@@ -808,7 +857,8 @@ module.exports = {
     "faction":{
       "name":"Scienze della Formazione",
       "color":"rgb(162,192,211)",
-      "marks":0,
+      "votes":0,
+			"bonus":0,
       "attackText":""
     }
   },
@@ -820,7 +870,8 @@ module.exports = {
     "faction":{
       "name":"Studenti di Scienze dello Spettacolo",
       "color":"rgb(206,180,84)",
-      "marks":0,
+      "votes":0,
+			"bonus":0,
       "attackText":""
     }
   },
@@ -832,9 +883,10 @@ module.exports = {
       "Architettura"
     ],
     "faction":{
-      "name":"Studenti di Scienze Statistiche",
+      "name":"Statisti",
       "color":"rgb(212,194,125)",
-      "marks":0,
+      "votes":0,
+			"bonus":0,
       "attackText":""
     }
   },
@@ -848,7 +900,8 @@ module.exports = {
     "faction":{
       "name":"Sociologi",
       "color":"rgb(36,164,133)",
-      "marks":0,
+      "votes":0,
+			"bonus":0,
       "attackText":""
     }
   },
@@ -872,7 +925,8 @@ module.exports = {
     "faction":{
       "name":"Storici",
       "color":"rgb(180,160,122)",
-      "marks":0,
+      "votes":0,
+			"bonus":0,
       "attackText":""
     }
   },
@@ -886,7 +940,8 @@ module.exports = {
     "faction":{
       "name":"Storici dell'Arte",
       "color":"rgb(246,79,111)",
-      "marks":0,
+      "votes":0,
+			"bonus":0,
       "attackText":""
     }
   },
@@ -900,7 +955,8 @@ module.exports = {
     "faction":{
       "name":"Zoologi",
       "color":"rgb(55,52,42)",
-      "marks":0,
+      "votes":0,
+			"bonus":0,
       "attackText":""
     }
   }

@@ -10,7 +10,7 @@
 }
 
 body {
-  background-color: #5555 !important;
+  background-color: #822334 !important;
   overflow-x: hidden !important;
 }
 
@@ -37,6 +37,12 @@ container {
   font-family: consoleFont;
 }
 
+#countdown {
+  color: red;
+  font-size: 15px;
+  margin: auto;
+}
+
 .stat {
   background-image: url("./images/stats.png");
   background-repeat: no-repeat;
@@ -52,7 +58,6 @@ container {
 .statText {
   line-height: 250%;
 }
-
 
 .selected {
   font-size: 24px;
@@ -70,10 +75,6 @@ container {
   src: url(SFMono-Regular.otf);
 }
 
-body {
-  background-image: url("/images/sapienza-blur.png");
-  background-size: 100%;
-}
 
 table {
   color: white;
