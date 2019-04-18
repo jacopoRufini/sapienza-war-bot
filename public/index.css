@@ -16,11 +16,6 @@ body {
   background-size: 100%;
 }
 
-.container {
-  margin-right: unset !important;
-  margin-left: unset !important;
-}
-
 .console {
   background-image: url("./images/console.png");
   background-repeat: no-repeat;
@@ -79,5 +74,14 @@ body {
 
 
 table {
+  margin-top: 20px;
   color: white;
+}
+
+td {
+  text-align: center;
+}
+
+td:first-child {
+  text-align: left;
 }
