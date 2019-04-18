@@ -11,8 +11,8 @@ path, rect {
 }
 
 #wall {
-	fill-opacity: .5;
-	stroke-width:0.7;
+	stroke-width: 0.7;
+   fill: black;
 }
 
 .department:hover {
