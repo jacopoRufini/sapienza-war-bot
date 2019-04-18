@@ -197,5 +197,5 @@ function onSvgReady() {
 	setInterval(() => {
 	  loadData() // calls onFactionsLoad() aka updateDepartments()
 	  synchronizeLogs()
-	}, DEBUG_UPDATE_INTERVAL)
+	}, UPDATE_INTERVAL)
 }

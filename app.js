@@ -10,7 +10,7 @@ const DEBUG_ATTACK_INTERVAL = 100;
 
 const app = express();
 
-
+let visitors = new Set();
 let votedIp = {};
 let owners = {};
 let lastAttack = Date.now();
@@ -70,12 +70,14 @@ setInterval(() => {
   const attackingDepartment =  candidates.attacker;
   const defendingDepartment = candidates.defender;
   doAttack(attackingDepartment, defendingDepartment)
-}, DEBUG_ATTACK_INTERVAL);
+}, ATTACK_INTERVAL);
 
 /* ogni 24 ore:
 - resetta la mappa degli ip
 - ogni fazione perde il proprio bonus */
 setInterval(() => {
+  for (let ip in votedIp)
+    visitors.add(ip);
   votedIp = {};
   Faction.clearBonuses();
 }, 1000 * 60 * 60 * 24);

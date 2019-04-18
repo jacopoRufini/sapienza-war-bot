@@ -75,7 +75,7 @@ module.exports.getAttackerDefender = function() {
       continue;
     }
 
-    const attackerAdjacents = this.getDepartmentAdjacents(attackerCandidate);
+    const attackerAdjacents = Array.from(this.getDepartmentAdjacents(attackerCandidate));
 
     while (attackerAdjacents.length > 0) {
       const defenderIndex = Math.floor(Math.random() * attackerAdjacents.length);

@@ -9,6 +9,7 @@ var seguaciMinerva = {
   "name": "Seguaci della Minerva",
   "color": "rgb(218,167,164)",
   "votes": 0,
+  "bonus":0,
   "attackText": "grazie all\'aiuto divino direttamente dall\'Olimpo",
 }
 
