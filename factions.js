@@ -9,7 +9,8 @@ module.exports.initializeFactionsAndDepartments = function () {
 			factions[faction.name] = {
 				color: faction.color,
 				votes: faction.votes,
-        bonus: faction.bonus
+        bonus: faction.bonus,
+        attackText: faction.attackText
 			}
 		}
 		adjacents[department] = defaultData[department].adjacents

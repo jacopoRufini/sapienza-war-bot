@@ -451,7 +451,7 @@ module.exports = {
       "Orto Botanico",
       "Storia dell'arte",
       "Botanica",
-      "Ingegneria Edile"
+      "Ingegneria Energetica"
     ],
     "faction":{
       "name":"Ingegneri Chimici",
@@ -461,10 +461,10 @@ module.exports = {
       "attackText":""
     }
   },
-  "Ingegneria Civile":{
+  "Ingegneria Meccanica":{
     "adjacents":[
       "Ingegneria Informatica",
-      "Ingegneria Industriale",
+      "Ingegneria Aerospaziale",
       "Ingegneria Gestionale"
     ],
     "faction":{
@@ -475,9 +475,9 @@ module.exports = {
       "attackText":""
     }
   },
-  "Ingegneria Edile":{
+  "Ingegneria Energetica":{
     "adjacents":[
-      "Ingegneria Industriale",
+      "Ingegneria Aerospaziale",
       "Ingegneria Gestionale",
       "Ingegneria Chimica"
     ],
@@ -494,9 +494,9 @@ module.exports = {
       "Botanica",
       "Economia",
       "Ingegneria Informatica",
-      "Ingegneria Civile",
-      "Ingegneria Industriale",
-      "Ingegneria Edile",
+      "Ingegneria Meccanica",
+      "Ingegneria Aerospaziale",
+      "Ingegneria Energetica",
       "Ingegneria Chimica",
       "Orto Botanico",
       "Sociologia"
@@ -509,11 +509,11 @@ module.exports = {
       "attackText":""
     }
   },
-  "Ingegneria Industriale":{
+  "Ingegneria Aerospaziale":{
     "adjacents":[
-      "Ingegneria Civile",
+      "Ingegneria Meccanica",
       "Ingegneria Informatica",
-      "Ingegneria Edile",
+      "Ingegneria Energetica",
       "Ingegneria Gestionale"
     ],
     "faction":{
@@ -529,8 +529,8 @@ module.exports = {
       "Ingegneria Gestionale",
       "Sociologia",
       "Economia",
-      "Ingegneria Civile",
-      "Ingegneria Industriale"
+      "Ingegneria Meccanica",
+      "Ingegneria Aerospaziale"
     ],
     "faction":{
       "name":"Ingegneri Informatici",

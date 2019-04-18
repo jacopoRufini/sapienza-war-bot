@@ -68,7 +68,7 @@
        height="24.615698"
        x="86.273071"
        y="79.002235"/>
-    <rect class="department" 
+    <rect class="department"
        id="Pratino Est 1"
        width="24.054256"
        height="5.6126599"
@@ -148,15 +148,15 @@
        y="243.81335" />
     <path class="department"
        d="m 142.2542,26.924143 4.54359,5.746294 -10.62397,6.414469 -2.20497,-6.347653 z"
-       id="Ingegneria Civile"
+       id="Ingegneria Meccanica"
        inkscape:connector-curvature="0" />
     <path class="department"
        d="m 148.33459,46.234365 5.47902,-4.142679 8.0849,10.223061 -9.6217,7.216277 -2.40542,-2.472242 3.40768,-2.672697 z"
-       id="Ingegneria Edile"
+       id="Ingegneria Energetica"
        inkscape:connector-curvature="0" />
     <path class="department"
        d="m 136.64154,40.688521 11.02487,-6.414468 5.07812,6.548104 -5.27857,4.142677 -4.54358,0.53454 -3.20724,1.804069 z"
-       id="Ingegneria Industriale"
+       id="Ingegneria Aerospaziale"
        inkscape:connector-curvature="0" />
     <path class="department"
        d="m 162.96759,53.918363 -9.55488,6.949008 -2.93997,3.274052 4.34313,4.81085 5.0113,-2.472243 -2.80632,-3.140416 6.21401,-3.407685 3.0736,3.140416 4.00904,-0.200453 z"
