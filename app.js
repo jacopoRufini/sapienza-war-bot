@@ -50,8 +50,8 @@ const doAttack = (attacker /* name */, departmentAttacked /* name */) => {
   if(attacker === defender || attacker === "nessuno") {
     return;
   }
-   const hasAttackerWon = Math.random() <= (0.5 + (Factions.getVotes(attacker) - Factions.getVotes(defender)) / 100);
-   if (hasAttackerWon) {
+   const hasAttackerWon = (Math.random() <= (0.5 + (Factions.getVotes(attacker) - Factions.getVotes(defender)) / 100));
+   if (hasAttackerWon || defender === "nessuno") {
      Factions.addBonus(attacker);
      Factions.setOwner(departmentAttacked, attacker)
      Logger.log(attacker + " hanno CONQUISTATO il dipartimento di " + departmentAttacked + " " + Factions.getCustomText(attacker));
@@ -67,6 +67,7 @@ const randomElement = array => array[Math.floor(Math.random() * array.length)];
 setInterval(() => {
   lastAttack = Date.now();
   let attackingDepartment = randomElement(Factions.getDepartmentsList());
+
   let defendingDepartment = randomElement(Factions.getDepartmentAdjacents(attackingDepartment));
   let attackingFaction = Factions.getOwner(attackingDepartment);
   doAttack(attackingFaction, defendingDepartment)
