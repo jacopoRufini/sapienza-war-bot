@@ -12,9 +12,11 @@
 body {
   background-color: #822334 !important;
   overflow-x: hidden !important;
+  background-image: url("/images/sapienza-blur.png");
+  background-size: 100%;
 }
 
-container {
+.container {
   margin-right: unset !important;
   margin-left: unset !important;
 }
