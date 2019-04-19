@@ -1,6 +1,7 @@
 let svg, departmentsSvg, selectedDepartment;
 const UPDATE_INTERVAL = 60 * 1000; // 60 seconds;
 const DEBUG_UPDATE_INTERVAL = 1000;
+let date = new Date('01/01/2020');
 
 function getDepartmentDescription(departmentNode) {
     return departmentNode.id + " posseduto da " + departmentNode.getAttribute("faction");
@@ -161,7 +162,7 @@ function setCountdown(lastAttack){
   countdown = UPDATE_INTERVAL - (Date.now() - lastAttack);
   setInterval(() => {
     if (countdown <= 0) countdown = UPDATE_INTERVAL;
-    getById("countdown").innerHTML = "Prossimo Attacco in " + msToTime(countdown);
+    getById("countdown").innerHTML = showDate() + " | Prossimo Attacco in " + msToTime(countdown);
     countdown-= 1000;
   }, 1000);
 }
@@ -178,13 +179,19 @@ function msToTime(duration) {
 }
 //  ----------------- COUNTDOWN END ----------------
 
+function showDate(next) {
+  console.log(date)
+  if (next) date.setMonth(date.getMonth() + 1);
+  return "Data: " + date.toDateString();
+}
+
 // called on svg initialization
 function onSvgReady() {
-    // initialize svg
-    svg = document.getElementById("map-container").getSVGDocument()
-    // initialize departmentsSvg
-    departmentsSvg = svg.getElementsByClassName("department")
-    // load logs
+  // initialize svg
+  svg = document.getElementById("map-container").getSVGDocument()
+  // initialize departmentsSvg
+  departmentsSvg = svg.getElementsByClassName("department")
+  // load logs
 	synchronizeLogs()
   synchronizeCountdown()
 	onFactionsLoad = () => updateDepartments()
@@ -197,5 +204,6 @@ function onSvgReady() {
 	setInterval(() => {
 	  loadData() // calls onFactionsLoad() aka updateDepartments()
 	  synchronizeLogs()
+    // update date
 	}, UPDATE_INTERVAL)
 }
