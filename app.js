@@ -79,7 +79,7 @@ setInterval(() => {
   for (let ip in votedIp)
     visitors.add(ip);
   votedIp = {};
-  Faction.clearBonuses();
+  Factions.clearBonuses();
 }, 1000 * 60 * 60 * 24);
 // wake up heroku app
 const http = require("http");
