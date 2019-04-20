@@ -10,7 +10,7 @@ const DEBUG_ATTACK_INTERVAL = 100;
 
 const app = express();
 
-let visitors = new Set();
+let users = new Set();
 let votedIp = {};
 let owners = {};
 let lastAttack = Date.now();
@@ -28,9 +28,9 @@ app.get("/countdown", (req, res) => res.send(lastAttack + ""));
 app.get("/logs", (req, res) => res.send(Logger.getLogs()));
 // post vote for a faction
 app.post("/vote", (req, res) => {
-  const clientIp = req.connection.remoteAddress;
+  const forwarded = req.headers['x-forwarded-for']
+  const clientIp = forwarded ? forwarded.split(/, /)[0] : req.connection.remoteAddress
   const faction = req.body.faction;
-
   if(votedIp[clientIp]) {
     res.status(401 /* Not Authorized */).send("Non puoi votare in questo momento, hai già votato.");
   } else if(Factions.addVotes(faction)) {
@@ -77,7 +77,7 @@ setInterval(() => {
 - ogni fazione perde il proprio bonus */
 setInterval(() => {
   for (let ip in votedIp)
-    visitors.add(ip);
+    users.add(ip);
   votedIp = {};
   Factions.clearBonuses();
 }, 1000 * 60 * 60 * 24);

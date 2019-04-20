@@ -180,7 +180,6 @@ function msToTime(duration) {
 //  ----------------- COUNTDOWN END ----------------
 
 function showDate(next) {
-  console.log(date)
   if (next) date.setMonth(date.getMonth() + 1);
   return "Data: " + date.toDateString();
 }
