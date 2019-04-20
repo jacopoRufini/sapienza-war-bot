@@ -5,7 +5,7 @@ const Backup = require('./backup');
 const Factions = require("./factions")
 
 const PORT = process.env.PORT || 8080;
-const ATTACK_INTERVAL = 1000 /* 1 sec */ * 10 /* min */;
+const ATTACK_INTERVAL = 1000 /* 1 sec */ * 60 /* min */;
 const DEBUG_ATTACK_INTERVAL = 10;
 
 const app = express();
