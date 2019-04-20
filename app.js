@@ -5,8 +5,8 @@ const Backup = require('./backup');
 const Factions = require("./factions")
 
 const PORT = process.env.PORT || 8080;
-const ATTACK_INTERVAL = 1000 /* 1 sec */ * 60 /* min */;
-const DEBUG_ATTACK_INTERVAL = 100;
+const ATTACK_INTERVAL = 1000 /* 1 sec */ * 10 /* min */;
+const DEBUG_ATTACK_INTERVAL = 10;
 
 const app = express();
 
@@ -14,6 +14,7 @@ let users = new Set();
 let votedIp = {};
 let owners = {};
 let lastAttack = Date.now();
+let iteration = 0;
 
 
 app.use(express.static('public'));
@@ -40,7 +41,6 @@ app.post("/vote", (req, res) => {
     res.status(400 /* Bad Request */).send("La fazione non esiste.");
   }
 });
-
 // on server start
 const server = app.listen(PORT, () => {
 	console.log("server listening on localhost:" + PORT);
@@ -55,9 +55,12 @@ const doAttack = (attackingDepartment /* name */, defendingDepartment /* name */
    if (hasAttackerWon || defender === "nessuno") {
      Factions.addBonus(attacker);
      Factions.setOwner(defendingDepartment, attacker)
-     Logger.log(attacker + " hanno CONQUISTATO il dipartimento di " + defendingDepartment + " " + Factions.getCustomText(attacker));
+     Logger.log("#"+iteration++ + " " + attacker + " hanno CONQUISTATO il dipartimento di " + defendingDepartment + " " + Factions.getCustomText(attacker));
+     if (iteration % 24 == 0) {
+       Factions.clearBonuses();
+     }
    }
-   else Logger.log(defender + " hanno DIFESO il dipartimento da " + attacker);
+   else Logger.log("#"+iteration++ + " " + defender + " hanno DIFESO il dipartimento di " + defendingDepartment + " da " + attacker);
 }
 
 // attack interval
@@ -67,7 +70,7 @@ setInterval(() => {
   if (!candidates) {
     return;
   }
-  const attackingDepartment =  candidates.attacker;
+  const attackingDepartment = candidates.attacker;
   const defendingDepartment = candidates.defender;
   doAttack(attackingDepartment, defendingDepartment)
 }, ATTACK_INTERVAL);

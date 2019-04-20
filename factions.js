@@ -34,7 +34,7 @@ module.exports.addVotes = function(factionName) {
 }
 
 module.exports.addBonus = function(factionName) {
-	factions[factionName].bonus += 5;
+	factions[factionName].bonus += 2;
 }
 
 module.exports.clearBonuses = function() {
