@@ -86,7 +86,7 @@ setInterval(() => {
     users.add(ip);
   votedIp = {};
   Factions.clearBonuses();
-}, 1000 * 30);
+}, 1000 * 60 * 60 * 24);
 
 //Backup.loadBackup();
 /* OR esclusivo tra i due */

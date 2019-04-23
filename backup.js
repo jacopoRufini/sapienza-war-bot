@@ -1,22 +1,25 @@
 const fs = require('fs');
-const folder = './backup';
+const folder = 'backup';
 const Logger = require('./logger');
 const Factions = require("./factions")
 
 const BACKUP = 'backup/Tue Apr 23 2019 12:27:34 GMT+0200 (Central European Summer Time)'; /* inserire project path in caso di restore backup */
 
-// we'll use it for delete old backups when the FILELIMIT is reached
-module.exports.getFolderSize = function() {
-  let count = 0;
+function deleteOldest(){
   fs.readdir(folder, (err, files) => {
-    files.forEach(file => {
-      count++;
-    });
+    if (files.length >= 7){
+      files.forEach((file, index) => {
+        fs.stat(file, (stat, err) => {
+          //TO BE CONTINUED
+        })
+      });
+    }
   });
 }
 
 // save backup
 module.exports.saveBackup = function() {
+  deleteOldest();
   const object = Factions.getData();
   object['logs'] = Logger.getLogs();
   let date = new Date();
