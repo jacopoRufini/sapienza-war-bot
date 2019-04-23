@@ -5,7 +5,7 @@ const Backup = require('./backup');
 const Factions = require("./factions")
 
 const PORT = process.env.PORT || 8080;
-const ATTACK_INTERVAL = 1000 /* 1 sec */ * 60 /* min */;
+const ATTACK_INTERVAL = 1000 /* 1 sec */ /* min */;
 const DEBUG_ATTACK_INTERVAL = 10;
 
 const app = express();
@@ -14,7 +14,7 @@ let users = new Set();
 let votedIp = {};
 let owners = {};
 let lastAttack = Date.now();
-let iteration = 0;
+let iteration = 0; /* Da cambiare quando si fa il restore del backup */
 
 
 app.use(express.static('public'));
@@ -41,6 +41,7 @@ app.post("/vote", (req, res) => {
     res.status(400 /* Bad Request */).send("La fazione non esiste.");
   }
 });
+
 // on server start
 const server = app.listen(PORT, () => {
 	console.log("server listening on localhost:" + PORT);
@@ -76,22 +77,17 @@ setInterval(() => {
 }, ATTACK_INTERVAL);
 
 /* ogni 24 ore:
+- save backup
 - resetta la mappa degli ip
 - ogni fazione perde il proprio bonus */
 setInterval(() => {
+  Backup.saveBackup();
   for (let ip in votedIp)
     users.add(ip);
   votedIp = {};
   Factions.clearBonuses();
-}, 1000 * 60 * 60 * 24);
-// wake up heroku app
-const http = require("http");
+}, 1000 * 30);
 
-setInterval(function() {
-  let hour = ((new Date()).getHours() + 2) % 24 // server e' 2 ore indietro
-  // non sprecare le ore dei dyno di notte
-  if(hour >= 8 && hour < 22)
-    http.get("http://sapienza-warbot.herokuapp.com");
-}, 10 * 60 * 1000); // every 10 minutes
-
+//Backup.loadBackup();
+/* OR esclusivo tra i due */
 Factions.initializeFactionsAndDepartments()

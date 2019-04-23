@@ -49,7 +49,14 @@ module.exports.getVotes = function(factionName) {
 }
 
 module.exports.getData = function() {
-	return {factions: factions, departments: departments}
+	return {factions: factions, departments: departments, adjacents: adjacents}
+}
+
+
+module.exports.setData = function(fac, dep, adj) {
+	factions = fac;
+	departments = dep;
+	adjacents = adj;
 }
 
 module.exports.getDepartmentsList = function() {

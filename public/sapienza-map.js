@@ -1,5 +1,5 @@
 let svg, departmentsSvg, selectedDepartment;
-const UPDATE_INTERVAL = 60 * 1000; // 60 seconds;
+const UPDATE_INTERVAL = 1000; // 60 seconds;
 const DEBUG_UPDATE_INTERVAL = 10;
 let date = new Date('01/01/2020');
 
