@@ -188,7 +188,7 @@ function update() {
   // schedule next update
   axios.get('/countdown')
   .then(response => {
-    // ritardiamo l'update di 10 secondi cosi' che non vada a vuoto
+    // ritardiamo l'update di qualche secondo cosi' che non vada a vuoto
     let nextUpdateMillis = parseInt(response.data) + UPDATE_OFFSET
     // aggiorniamo la view del contatore
     setCountdown(nextUpdateMillis)
@@ -197,7 +197,10 @@ function update() {
     if(nextUpdateMillis >= 0)
       setTimeout(update, nextUpdateMillis)
   })
-  .catch(console.error);
+  .catch(error => {
+    setTimeout(update, 2000) // try again until the connection returns 
+    console.log(error)
+  });
 }
 
 // called on svg initialization
