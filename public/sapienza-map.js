@@ -164,7 +164,7 @@ function msToTime(millis) {
   // aggiungi uno zero se c'e' un solo carattere
   const padWithZero = str => ("0" + str).slice(-2)
   // mappa numeri a stringhe di 2 caratteri, poi concatena separando con ':' 
-  return [hours, minutes, seconds].map(n => padWithZero(n)).join(":");
+  return [hours, minutes, seconds].map(padWithZero).join(":");
 }
 //  ----------------- COUNTDOWN END ----------------
 // tempo di ritardo per richiesta di aggiornamento (per essere sicuri che l'aggiornamento nel server sia gia' avvenuto)
@@ -187,7 +187,7 @@ function update() {
     if(nextUpdateMillis >= 0)
       setTimeout(update, nextUpdateMillis)
   })
-  .catch(error => console.log(error));
+  .catch(console.error);
 }
 
 // called on svg initialization
