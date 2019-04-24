@@ -8,7 +8,7 @@ const BACKUP = dir + 'Tue Apr 23 2019 12:27:34 GMT+0200 (Central European Summer
 
 function deleteOldest(){
   fs.readdir(folder, (err, files) => {
-    if (files.length >= 3){
+    if (files.length >= 7){
       fs.unlinkSync(dir + files[0]);
     }
   });
