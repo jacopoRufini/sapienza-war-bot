@@ -148,18 +148,28 @@ function onHighlightEnd() {
 }
 //  ----------------- HIGHLIGHT END -----------------
 //  ----------------- COUNTDOWN START ----------------
-// aggiorna ricorsivamente il contatore HTML ogni secondo
+let countdownInterval, targetCountdownTime;
+// aggiorna la view del countdown ogni secondo
 function setCountdown(timeLeftMillis) {
   if(timeLeftMillis < 0)
     timeLeftMillis = 0;
+  targetCountdownTime = Date.now() + timeLeftMillis;
   getById("countdown").innerHTML = "Prossimo Attacco in " + msToTime(timeLeftMillis);
-  if(timeLeftMillis > 0)
-    setTimeout(() => setCountdown(timeLeftMillis - 1000), 1000);
+  if(timeLeftMillis > 0) {
+    clearInterval(countdownInterval)
+    countdownInterval = setInterval(() => {
+      let time = targetCountdownTime - Date.now()
+      if(time >= 0)
+        getById("countdown").innerHTML = "Prossimo Attacco in " + msToTime(time);
+      else
+        clearInterval(countdownInterval)
+    }, 1000);
+  }
 }
 
 function msToTime(millis) {
-  const seconds = Math.floor( millis /  1000),
-        minutes = Math.floor((millis / (1000 * 60)) % 60),
+  const seconds = Math.floor( millis /  1000) % 60,
+        minutes = Math.floor(millis / (1000 * 60)) % 60,
         hours   = Math.floor( millis / (1000 * 60 * 60));
   // aggiungi uno zero se c'e' un solo carattere
   const padWithZero = str => ("0" + str).slice(-2)
@@ -201,4 +211,12 @@ function onSvgReady() {
 	// set on click handler on deps
   for (let department of departmentsSvg)
     department.onclick = event => onDepartmentClicked(event.target)
+}
+
+try {
+  // Work on Firefox but not on Chrome
+  onSvgReady()
+} catch(e) {
+  // Work on Chrome but not on Firefox
+  document.getElementById("map-container").onload = onSvgReady
 }
