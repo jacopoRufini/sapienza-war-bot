@@ -4,7 +4,7 @@ const Logger = require('./logger');
 const Backup = require('./backup');
 const Factions = require("./factions")
 
-const debugMode = true;
+const debugMode = false;
 
 const PORT = process.env.PORT || 8080;
 const ATTACK_INTERVAL = debugMode ? 10 : 1000 * 60 * 60 // 1 l'ora

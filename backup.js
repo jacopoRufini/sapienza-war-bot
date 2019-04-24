@@ -2,17 +2,14 @@ const fs = require('fs');
 const folder = 'backup';
 const Logger = require('./logger');
 const Factions = require("./factions")
+const dir = './backup/'
 
-const BACKUP = 'backup/Tue Apr 23 2019 12:27:34 GMT+0200 (Central European Summer Time)'; /* inserire project path in caso di restore backup */
+const BACKUP = dir + 'Tue Apr 23 2019 12:27:34 GMT+0200 (Central European Summer Time)'; /* inserire project path in caso di restore backup */
 
 function deleteOldest(){
   fs.readdir(folder, (err, files) => {
-    if (files.length >= 7){
-      files.forEach((file, index) => {
-        fs.stat(file, (stat, err) => {
-          //TO BE CONTINUED
-        })
-      });
+    if (files.length >= 3){
+      fs.unlinkSync(dir + files[0]);
     }
   });
 }
@@ -23,7 +20,7 @@ module.exports.saveBackup = function() {
   const object = Factions.getData();
   object['logs'] = Logger.getLogs();
   let date = new Date();
-  fs.writeFile("./backup/"+date, JSON.stringify(object, null, 2), (err) => console.log(err));
+  fs.writeFile(dir + date, JSON.stringify(object, null, 2), (err) => {});
 }
 
 // load backup
