@@ -4,8 +4,10 @@ const Logger = require('./logger');
 const Backup = require('./backup');
 const Factions = require("./factions")
 
+const debugMode = true;
+
 const PORT = process.env.PORT || 8080;
-const ATTACK_INTERVAL = 1000 /* 1 sec */ /* min */;
+const ATTACK_INTERVAL = debugMode ? 10 : 1000 * 60 * 60 // 1 l'ora
 const DEBUG_ATTACK_INTERVAL = 10;
 
 const app = express();
@@ -85,7 +87,6 @@ setInterval(() => {
   for (let ip in votedIp)
     users.add(ip);
   votedIp = {};
-  Factions.clearBonuses();
 }, 1000 * 60 * 60 * 24);
 
 //Backup.loadBackup();

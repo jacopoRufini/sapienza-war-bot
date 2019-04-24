@@ -1,6 +1,7 @@
 let svg, departmentsSvg, selectedDepartment;
-const UPDATE_INTERVAL = 1000; // 60 seconds;
-const DEBUG_UPDATE_INTERVAL = 10;
+const debugMode = true;
+
+const UPDATE_INTERVAL = debugMode ? 10 : 1000 * 60 * 60 // 1 l'ora
 let date = new Date('01/01/2020');
 
 function getDepartmentDescription(departmentNode) {
