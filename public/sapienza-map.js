@@ -190,11 +190,6 @@ function update() {
   .catch(error => console.log(error));
 }
 
-// schedule next update
-function scheduleUpdate(timeToNextUpdate) {
-  setTimeout()
-}
-
 // called on svg initialization
 function onSvgReady() {
   // initialize svg
