@@ -1,13 +1,13 @@
-let factions = null, departments = null,  onFactionsLoad = null;
+let factions = null, departments = null;
 
-function loadData() {
+function loadData(onFactionsLoadedCallback) {
 	axios.get('/data')
 	.then(response => {
 		factions = response.data.factions
 		departments = response.data.departments
 		updateFactions()
-		if(onFactionsLoad)
-			onFactionsLoad()
+		if(onFactionsLoadedCallback)
+			onFactionsLoadedCallback()
 	})
 	.catch(error => console.log(error))
 }

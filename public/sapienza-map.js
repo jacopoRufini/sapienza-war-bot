@@ -1,6 +1,4 @@
 let svg, departmentsSvg, selectedDepartment;
-const UPDATE_INTERVAL = 60 * 1000; // 60 seconds;
-const DEBUG_UPDATE_INTERVAL = 1000;
 
 function getDepartmentDescription(departmentNode) {
     return departmentNode.id + " posseduto da " + departmentNode.getAttribute("faction");
@@ -150,52 +148,62 @@ function onHighlightEnd() {
 }
 //  ----------------- HIGHLIGHT END -----------------
 //  ----------------- COUNTDOWN START ----------------
-function synchronizeCountdown(){
+// aggiorna ricorsivamente il contatore HTML ogni secondo
+function setCountdown(timeLeftMillis) {
+  if(timeLeftMillis < 0)
+    timeLeftMillis = 0;
+  getById("countdown").innerHTML = "Prossimo Attacco in " + msToTime(timeLeftMillis);
+  if(timeLeftMillis > 0)
+    setTimeout(() => setCountdown(timeLeftMillis - 1000), 1000);
+}
+
+function msToTime(millis) {
+  const seconds = Math.floor( millis /  1000),
+        minutes = Math.floor((millis / (1000 * 60)) % 60),
+        hours   = Math.floor( millis / (1000 * 60 * 60));
+  // aggiungi uno zero se c'e' un solo carattere
+  const padWithZero = str => ("0" + str).slice(-2)
+  // mappa numeri a stringhe di 2 caratteri, poi concatena separando con ':' 
+  return [hours, minutes, seconds].map(n => padWithZero(n)).join(":");
+}
+//  ----------------- COUNTDOWN END ----------------
+// tempo di ritardo per richiesta di aggiornamento (per essere sicuri che l'aggiornamento nel server sia gia' avvenuto)
+// E' un valore casuale cosi' che le richieste si distribuiscano in modo da minimizzare la congestione (non serve a un cazzo)
+const UPDATE_OFFSET = (Math.random() * 3 + 2) * 1000 /* 2-5 sec */
+// syncronizza in loop lo stato e la view con il server
+function update() {
+  synchronizeLogs()
+  // calls updateDepartments when factions data is ready
+  loadData(updateDepartments)
+  // schedule next update
   axios.get('/countdown')
-  .then(response => setCountdown(response.data))
+  .then(response => {
+    // ritardiamo l'update di 10 secondi cosi' che non vada a vuoto
+    let nextUpdateMillis = parseInt(response.data) + UPDATE_OFFSET
+    // aggiorniamo la view del contatore
+    setCountdown(nextUpdateMillis)
+    // aggiorniamo allo scadere del countdown
+    // se il tempo rimasto e' negativo c'e' probabilmente un errore o non ci sono adiacenti per combattere
+    if(nextUpdateMillis >= 0)
+      setTimeout(update, nextUpdateMillis)
+  })
   .catch(error => console.log(error));
 }
 
-function setCountdown(lastAttack){
-  let countdown;
-  countdown = UPDATE_INTERVAL - (Date.now() - lastAttack);
-  setInterval(() => {
-    if (countdown <= 0) countdown = UPDATE_INTERVAL;
-    getById("countdown").innerHTML = "Prossimo Attacco in " + msToTime(countdown);
-    countdown-= 1000;
-  }, 1000);
+// schedule next update
+function scheduleUpdate(timeToNextUpdate) {
+  setTimeout()
 }
-
-function msToTime(duration) {
-  let seconds = Math.floor((duration / 1000) % 60),
-    minutes = Math.floor((duration / (1000 * 60)) % 60),
-    hours = Math.floor((duration / (1000 * 60 * 60)) % 24);
-
-  hours = (hours < 10) ? "0" + hours : hours;
-  minutes = (minutes < 10) ? "0" + minutes : minutes;
-  seconds = (seconds < 10) ? "0" + seconds : seconds;
-  return hours + ":" + minutes + ":" + seconds;
-}
-//  ----------------- COUNTDOWN END ----------------
 
 // called on svg initialization
 function onSvgReady() {
-    // initialize svg
-    svg = document.getElementById("map-container").getSVGDocument()
-    // initialize departmentsSvg
-    departmentsSvg = svg.getElementsByClassName("department")
+  // initialize svg
+  svg = document.getElementById("map-container").getSVGDocument()
+  // initialize departmentsSvg
+  departmentsSvg = svg.getElementsByClassName("department")
     // load logs
-	synchronizeLogs()
-  synchronizeCountdown()
-	onFactionsLoad = () => updateDepartments()
-	// load factions and departmentsSvg data
-	loadData() // calls onFactionsLoad()
-    // set on click handler on deps
-    for (let department of departmentsSvg)
-      department.onclick = event => onDepartmentClicked(event.target)
-	// update data every attack
-	setInterval(() => {
-	  loadData() // calls onFactionsLoad() aka updateDepartments()
-	  synchronizeLogs()
-	}, UPDATE_INTERVAL)
+	update()
+	// set on click handler on deps
+  for (let department of departmentsSvg)
+    department.onclick = event => onDepartmentClicked(event.target)
 }

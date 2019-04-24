@@ -5,8 +5,7 @@ const Backup = require('./backup');
 const Factions = require("./factions")
 
 const PORT = process.env.PORT || 8080;
-const ATTACK_INTERVAL = 1000 /* 1 sec */ * 60 /* min */;
-const DEBUG_ATTACK_INTERVAL = 100;
+const ATTACK_INTERVAL = 1000 * 60 /* 60 sec */;
 
 const app = express();
 
@@ -23,7 +22,8 @@ app.use(bodyParser.json());
 // routes for data
 app.get("/data", (req, res) => res.send(Factions.getData()));
 // routes countdown
-app.get("/countdown", (req, res) => res.send(lastAttack + ""));
+// get time to next attack 
+app.get("/countdown", (req, res) => res.send(String(lastAttack + ATTACK_INTERVAL - Date.now())));
 // get war history
 app.get("/logs", (req, res) => res.send(Logger.getLogs()));
 // post vote for a faction
@@ -62,14 +62,15 @@ const doAttack = (attackingDepartment /* name */, defendingDepartment /* name */
 
 // attack interval
 setInterval(() => {
-  lastAttack = Date.now();
   const candidates =  Factions.getAttackerDefender();
-  if (!candidates) {
+  if (!candidates)
     return;
-  }
   const attackingDepartment =  candidates.attacker;
   const defendingDepartment = candidates.defender;
-  doAttack(attackingDepartment, defendingDepartment)
+  doAttack(attackingDepartment, defendingDepartment);
+  // aggiornamento il tempo alla fine cosi' che il client non perda l'aggiornamento
+  // se avvenissero strani interleaving (molto improbabili)
+  lastAttack = Date.now();
 }, ATTACK_INTERVAL);
 
 /* ogni 24 ore:
