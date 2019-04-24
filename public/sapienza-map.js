@@ -1,5 +1,5 @@
 let svg, departmentsSvg, selectedDepartment;
-const debugMode = true;
+const debugMode = false;
 
 const UPDATE_INTERVAL = debugMode ? 10 : 1000 * 60 * 60 // 1 l'ora
 let date = new Date('01/01/2020');

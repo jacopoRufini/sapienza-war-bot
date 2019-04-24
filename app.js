@@ -16,7 +16,7 @@ let users = new Set();
 let votedIp = {};
 let owners = {};
 let lastAttack = Date.now();
-let iteration = 0; /* Da cambiare quando si fa il restore del backup */
+let iteration = 0;
 
 
 app.use(express.static('public'));
