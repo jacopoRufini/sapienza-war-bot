@@ -75,7 +75,7 @@ function makeSelected(department) {
 // add log message, feel free to change the HTML of the logger
 function addLogMessage(message) {
   let messageNode = document.createElement("div");
-  messageNode.innerHTML = message;
+  messageNode.innerHTML = "- " + message;
   let logs = document.getElementById("logs");
   // append as first child
   logs.insertBefore(messageNode, logs.firstChild);
