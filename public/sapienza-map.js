@@ -148,6 +148,20 @@ function onHighlightEnd() {
 }
 //  ----------------- HIGHLIGHT END -----------------
 //  ----------------- COUNTDOWN START ----------------
+function setMaskColor(color1 /* stripes */, color2 /* background */) {
+  svg.getElementById("mask-2").style.stroke = color1;
+  svg.getElementById("mask-1").style.fill = color2;
+  svg.getElementById("mask-1").style.stroke = color2;
+}
+
+function showAttack(attackingDepartment, defendingDepartment) {
+  let masked = svg.getElementsByClassName("masked")
+  for (var i = masked.length - 1; i >= 0; i--)
+    masked[i].classList.remove("masked");
+  setMaskColor(getFactionColor(getDepartmentOwner(attackingDepartment)), getFactionColor(getDepartmentOwner(defendingDepartment)));
+  svg.getElementById(defendingDepartment).classList.add("masked");
+}
+
 let countdownInterval, targetCountdownTime;
 // aggiorna la view del countdown ogni secondo
 function setCountdown(attackingDepartment, defendingDepartment, timeLeftMillis) {
@@ -160,6 +174,7 @@ function setCountdown(attackingDepartment, defendingDepartment, timeLeftMillis) 
     timeLeftMillis = 0;
   targetCountdownTime = Date.now() + timeLeftMillis;
   getById("countdown").innerHTML = attackDescription(attackingDepartment, defendingDepartment, timeLeftMillis);
+  showAttack(attackingDepartment, defendingDepartment);
   if(timeLeftMillis > 0) {
     countdownInterval = setInterval(() => {
       let time = targetCountdownTime - Date.now()

@@ -23,3 +23,7 @@ path, rect {
 .selection, .highlight {
    stroke-width: 1;
 }
+
+.masked {
+   fill: url(#diagonal-stripe)!important;
+}
