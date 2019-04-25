@@ -111,11 +111,12 @@ function toast(type, message) {
   Toastify({
     text: message,
     backgroundColor: types[type],
+    className: "sapienza-toast"
   }).showToast();
 }
 
 function errorToast(message) { toast("error", message)}
-function infoToast(message) { }//toast("info", message)}
+function infoToast(message) { toast("info", message)}
 function successToast(message) { toast("success", message)}
 
 //  ----------------- TOAST END -----------------
@@ -250,14 +251,14 @@ function showDate(next) {
 // called on svg initialization
 function onSvgReady() {
   // initialize svg
-  svg = document.getElementById("map-container").getSVGDocument()
+  svg = document.getElementById("map-container").getSVGDocument();
   // initialize departmentsSvg
-  departmentsSvg = svg.getElementsByClassName("department")
+  departmentsSvg = svg.getElementsByClassName("department");
     // load logs
-	update()
+	update();
 	// set on click handler on deps
   for (let department of departmentsSvg)
-    department.onclick = event => onDepartmentClicked(event.target)
+    department.addEventListener("click", event => onDepartmentClicked(event.target));
 }
 
 try {

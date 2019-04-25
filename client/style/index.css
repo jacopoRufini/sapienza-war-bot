@@ -84,3 +84,7 @@ td {
 td:first-child {
   text-align: left;
 }
+
+.sapienza-toast {
+  position: fixed;
+}
