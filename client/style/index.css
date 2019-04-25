@@ -7,6 +7,15 @@
     padding-top: 100px;
     padding-right: 5%;
   }
+  .stat-margin {
+    margin: 30px 10px 5px 0px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .stat-margin {
+    margin: -90px 10px 5px 0px;
+  }
 }
 
 body {
@@ -33,6 +42,10 @@ body {
   font-family: consoleFont;
 }
 
+.jumbotron {
+  margin: 7px 10px 0px 3px;
+}
+
 #countdown {
   color: red;
   font-size: 15px;
@@ -45,7 +58,6 @@ body {
   border-radius: 5px 11px 5px 9px;
   width: 100%;
   height: 175px;
-  margin: 30px 10px 5px 0px;
   padding-top: 30px;
   padding-left: 13px;
   font-size: 13px;
