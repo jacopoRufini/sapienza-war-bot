@@ -4,12 +4,15 @@ const Logger = require('./logger');
 const Backup = require('./backup');
 const Factions = require("./factions")
 
+const debugMode = false;
+
 const PORT = process.env.PORT || 8080;
-const ATTACK_INTERVAL = 1000 * 60 /* 60 sec */;
+const ATTACK_INTERVAL = debugMode ? 10 : 1000 * 60 * 60 // 1 l'ora
+const DEBUG_ATTACK_INTERVAL = 10;
 
 const app = express();
 
-let visitors = new Set();
+let users = new Set();
 let votedIp = {};
 let owners = {};
 let lastAttackTime = Date.now();
@@ -35,9 +38,9 @@ app.get("/next-attack", (req, res) =>
 app.get("/logs", (req, res) => res.send(Logger.getLogs()));
 // post vote for a faction
 app.post("/vote", (req, res) => {
-  const clientIp = req.connection.remoteAddress;
+  const forwarded = req.headers['x-forwarded-for']
+  const clientIp = forwarded ? forwarded.split(/, /)[0] : req.connection.remoteAddress
   const faction = req.body.faction;
-
   if(votedIp[clientIp]) {
     res.status(401 /* Not Authorized */).send("Non puoi votare in questo momento, hai già votato.");
   } else if(Factions.addVotes(faction)) {
@@ -98,8 +101,8 @@ if(nextAttack) {
 - resetta la mappa degli ip
 - ogni fazione perde il proprio bonus */
 setInterval(() => {
+  Backup.saveBackup();
   for (let ip in votedIp)
-    visitors.add(ip);
+    users.add(ip);
   votedIp = {};
-  Faction.clearBonuses();
 }, 1000 * 60 * 60 * 24);

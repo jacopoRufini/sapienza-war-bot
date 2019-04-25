@@ -1,114 +1,160 @@
+var nessuno = {
+  "name": "nessuno",
+  "color": "rgb(255,255,255)",
+  "votes": 0,
+  "attackText": "",
+}
+
+var seguaciMinerva = {
+  "name": "Seguaci della Minerva",
+  "color": "rgb(218,167,164)",
+  "votes": 0,
+  "bonus":0,
+  "attackText": "grazie all\'aiuto divino direttamente dall\'Olimpo",
+}
+
 module.exports = {
-  "Aiuola 1": {
-    "adjacents": [
+  "Aiuola 1":{
+    "adjacents":[
       "Aiuola 2",
       "Astronomia",
       "Astrofisica",
       "Fisica",
       "Aiuola 3"
     ],
-    "color": "rgb(255,255,255)",
-    "owner": "nessuno"
+    "faction":nessuno
   },
-  "Aiuola 2": {
-    "adjacents": [
+  "Aiuola 2":{
+    "adjacents":[
       "Chimica",
       "Aiuola 1",
       "Aiuola 4"
     ],
-    "color": "rgb(255,255,255)",
-    "owner": "nessuno"
+    "faction":nessuno
   },
-  "Aiuola 3": {
-    "adjacents": [
+  "Aiuola 3":{
+    "adjacents":[
       "Aiuola 1",
       "Aiuola 4",
       "Igiene",
       "Infermieristica"
     ],
-    "color": "rgb(255,255,255)",
-    "owner": "nessuno"
+    "faction":nessuno
   },
-  "Aiuola 4": {
-    "adjacents": [
+  "Aiuola 4":{
+    "adjacents":[
       "Medicina",
       "Aiuola 2",
       "Aiuola 3"
     ],
-    "color": "rgb(255,255,255)",
-    "owner": "nessuno"
+    "faction":nessuno
   },
-  "Archeologia": {
-    "adjacents": [
+  "Archeologia":{
+    "adjacents":[
       "Architettura",
       "Geochimica",
       "Zoologia"
     ],
-    "color": "rgb(10,30,99)",
-    "owner": "Archeologi"
+    "faction":{
+      "name":"Archeologi",
+      "color":"rgb(10,30,99)",
+      "votes":0,
+			"bonus":0,
+      "attackText":"con il loro esercito di soldati fossili"
+    }
   },
-  "Architettura": {
-    "adjacents": [
+  "Architettura":{
+    "adjacents":[
       "Biotecnologie",
       "Scienze Politiche",
       "Scienze statistiche",
       "Geochimica",
       "Archeologia"
     ],
-    "color": "rgb(209,46,101)",
-    "owner": "Architetti"
+    "faction":{
+      "name":"Architetti",
+      "color":"rgb(209,46,101)",
+      "votes":0,
+			"bonus":0,
+      "attackText":"con un sofisticato sistema di specchi e leve"
+    }
   },
-  "Astrofisica": {
-    "adjacents": [
+  "Astrofisica":{
+    "adjacents":[
       "Astronomia",
       "Aiuola 1",
       "Fisica",
       "Lingue"
     ],
-    "color": "rgb(174,161,74)",
-    "owner": "Astrofisici"
+    "faction":{
+      "name":"Astrofisici",
+      "color":"rgb(174,161,74)",
+      "votes":0,
+			"bonus":0,
+      "attackText":"grazie all\'energia sprigionata da una super nova"
+    }
   },
-  "Astronomia": {
-    "adjacents": [
+  "Astronomia":{
+    "adjacents":[
       "Pratino",
       "Astrofisica",
       "Lingue",
       "Geologia",
       "Aiuola 1"
     ],
-    "color": "rgb(190,211,218)",
-    "owner": "Astronomi"
+    "faction":{
+      "name":"Astronomi",
+      "color":"rgb(190,211,218)",
+      "votes":0,
+			"bonus":0,
+      "attackText":"sfruttando l\'allineamento dei pianeti"
+    }
   },
-  "Bar": {
-    "adjacents": [
+  "Bar":{
+    "adjacents":[
       "Sociologia",
       "Economia",
       "Psicologia"
     ],
-    "color": "rgb(47,214,147)",
-    "owner": "Baristi"
+    "faction":{
+      "name":"Baristi",
+      "color":"rgb(47,64,147)",
+      "votes":0,
+			"bonus":0,
+      "attackText":"distraendo la difesa avversaria con gli spritz gratis"
+    }
   },
-  "Biologia": {
-    "adjacents": [
+  "Biologia":{
+    "adjacents":[
       "Ostetricia",
       "Psicologia",
       "Scienze Politiche",
       "Biotecnologie"
     ],
-    "color": "rgb(29,220,131)",
-    "owner": "Biologi"
+    "faction":{
+      "name":"Biologi",
+      "color":"rgb(29,220,131)",
+      "votes":0,
+			"bonus":0,
+      "attackText":"inglobandola nel loro ecosistema"
+    }
   },
-  "Biotecnologie": {
-    "adjacents": [
+  "Biotecnologie":{
+    "adjacents":[
       "Biologia",
       "Scienze Politiche",
       "Architettura"
     ],
-    "color": "rgb(10,231,205)",
-    "owner": "Studenti di Biotecnologie"
+    "faction":{
+      "name":"Studenti di Biotecnologie",
+      "color":"rgb(10,231,205)",
+      "votes":0,
+			"bonus":0,
+      "attackText":"attaccando con il loro esercito di microbatteri robotici"
+    }
   },
-  "Botanica": {
-    "adjacents": [
+  "Botanica":{
+    "adjacents":[
       "Genetica",
       "Ingegneria Gestionale",
       "Orto Botanico",
@@ -118,63 +164,93 @@ module.exports = {
       "Ingegneria Chimica",
       "Economia"
     ],
-    "color": "rgb(218,142,124)",
-    "owner": "Studenti di Botanica"
+    "faction":{
+      "name":"Botanici",
+      "color":"rgb(218,142,124)",
+      "votes":0,
+			"bonus":0,
+      "attackText":"grazie alla loro orda di piante carnivore"
+    }
   },
-  "Chiesa": {
-    "adjacents": [
+  "Chiesa":{
+    "adjacents":[
       "Lingue",
       "Fisica",
       "Igiene",
       "Scienze della Formazione",
       "Neurologia"
     ],
-    "color": "rgb(148,211,201)",
-    "owner": "Vaticano"
+    "faction":{
+      "name":"Vaticano",
+      "color":"rgb(148,211,201)",
+      "votes":0,
+			"bonus":0,
+      "attackText":"organizzando l\'ennesima crociata"
+    }
   },
-  "Chimica": {
-    "adjacents": [
+  "Chimica":{
+    "adjacents":[
       "Chimica Industriale",
       "Pratino Est 2",
       "Medicina",
       "Aiuola 2"
     ],
-    "color": "rgb(15,84,107)",
-    "owner": "Chimici"
+    "faction":{
+      "name":"Chimici",
+      "color":"rgb(15,84,107)",
+      "votes":0,
+			"bonus":0,
+      "attackText":"rilasciando gas nervino"
+    }
   },
-  "Chimica Industriale": {
-    "adjacents": [
+  "Chimica Industriale":{
+    "adjacents":[
       "Pratino Est 2",
       "Farmacologia",
       "Medicina",
       "Chimica",
       "Matematica"
     ],
-    "color": "rgb(92,187,180)",
-    "owner": "Chimici Industriali"
+    "faction":{
+      "name":"Chimici Industriali",
+      "color":"rgb(92,187,180)",
+      "votes":0,
+			"bonus":0,
+      "attackText":"grazie alla potenza dei loro nuovi reattori"
+    }
   },
-  "Chimica analitica": {
-    "adjacents": [
+  "Chimica analitica":{
+    "adjacents":[
       "Mensa",
       "Storia",
       "Fisica applicata",
       "Robotica",
       "Medicina legale"
     ],
-    "color": "rgb(199,236,168)",
-    "owner": "Studenti di Chimica Analitica"
+    "faction":{
+      "name":"Studenti di Chimica Analitica",
+      "color":"rgb(199,236,168)",
+      "votes":0,
+			"bonus":0,
+      "attackText":"contaminando le difese con molecole altamente tossiche"
+    }
   },
-  "Chirurgia": {
-    "adjacents": [
+  "Chirurgia":{
+    "adjacents":[
       "Farmacologia",
       "Scienze della Comunicazione",
       "Pratino Sud"
     ],
-    "color": "rgb(68,89,1)",
-    "owner": "Chirurghi"
+    "faction":{
+      "name":"Chirurghi",
+      "color":"rgb(68,89,1)",
+      "votes":0,
+			"bonus":0,
+      "attackText":"con i loro soldati a quattro braccia, gambe e occhi"
+    }
   },
-  "Economia": {
-    "adjacents": [
+  "Economia":{
+    "adjacents":[
       "Bar",
       "Sociologia",
       "Ingegneria Gestionale",
@@ -184,22 +260,32 @@ module.exports = {
       "Pratone",
       "Psicologia"
     ],
-    "color": "rgb(147,210,119)",
-    "owner": "Studenti di Economia"
+    "faction":{
+      "name":"Economisti",
+      "color":"rgb(147,210,119)",
+      "votes":0,
+			"bonus":0,
+      "attackText":"comprando il loro territorio"
+    }
   },
-  "Farmacologia": {
-    "adjacents": [
+  "Farmacologia":{
+    "adjacents":[
       "Matematica",
       "Storia",
       "Chirurgia",
       "Chimica Industriale",
       "Pratino Sud"
     ],
-    "color": "rgb(16,78,235)",
-    "owner": "Studenti di Farmacologia"
+    "faction":{
+      "name":"Farmacisti",
+      "color":"rgb(16,78,235)",
+      "votes":0,
+			"bonus":0,
+      "attackText":"somministrando di nascosto mix di psicofarmaci alla loro difesa"
+    }
   },
-  "Filosofia": {
-    "adjacents": [
+  "Filosofia":{
+    "adjacents":[
       "Botanica",
       "Orto Botanico",
       "Robotica",
@@ -208,49 +294,68 @@ module.exports = {
       "Pratino Est 1",
       "Lettere"
     ],
-    "color": "rgb(161,90,247)",
-    "owner": "Filosofi"
+    "faction":{
+      "name":"Filosofi",
+      "color":"rgb(161,90,247)",
+      "votes":0,
+			"bonus":0,
+      "attackText":"grazie alla nobile arte della retorica"
+    }
   },
-  "Fisica": {
-    "adjacents": [
+  "Fisica":{
+    "adjacents":[
       "Astrofisica",
       "Aiuola 1",
       "Igiene",
       "Chiesa",
       "Lingue"
     ],
-    "color": "rgb(89,67,173)",
-    "owner": "Fisici"
+    "faction":{
+      "name":"Fisici",
+      "color":"rgb(89,67,173)",
+      "votes":0,
+			"bonus":0,
+      "attackText":"attaccando con onde elettromagnetiche ad altissima frequenza"
+    }
   },
-  "Fisica applicata": {
-    "adjacents": [
+  "Fisica applicata":{
+    "adjacents":[
       "Robotica",
       "Chimica analitica",
       "Mensa",
       "Matematica",
       "Filosofia"
     ],
-    "color": "rgb(245,37,207)",
-    "owner": "Studenti di Fisica Applicata"
+    "faction":{
+      "name":"Studenti di Fisica Applicata",
+      "color":"rgb(245,37,207)",
+      "votes":0,
+			"bonus":0,
+      "attackText":"bombardandola di elettroni grazie al loro nuovo acceleratore di particelle"
+    }
   },
-  "Fontana della Minerva": {
-    "adjacents": [
+  "Fontana della Minerva":{
+    "adjacents":[
       "Statua della Minerva"
     ],
-    "color": "rgb(218,167,164)",
-    "owner": "Seguaci della Minerva"
+    "faction":seguaciMinerva
   },
-  "Genetica": {
-    "adjacents": [
+  "Genetica":{
+    "adjacents":[
       "Botanica",
       "Economia",
       "Pratone"
     ],
-    "color": "rgb(201,214,189)",
-    "owner": "Studenti di Genetica"
+    "faction":{
+      "name":"Studenti di Genetica",
+      "color":"rgb(201,214,189)",
+      "votes":0,
+			"bonus":0,
+      "attackText":"grazie all\'aiuto di un esercito di soldati OGM"
+    }
   },
-  "Geochimica": {
-    "adjacents": [
+  "Geochimica":{
+    "adjacents":[
       "Scienze statistiche",
       "Mineralogia",
       "Geologia",
@@ -259,136 +364,201 @@ module.exports = {
       "Archeologia",
       "Architettura"
     ],
-    "color": "rgb(180,226,124)",
-    "owner": "Geochimici"
+    "faction":{
+      "name":"Geochimici",
+      "color":"rgb(180,226,124)",
+      "votes":0,
+			"bonus":0,
+      "attackText":"accelerando il loro decadimento radioattivo"
+    }
   },
-  "Geologia": {
-    "adjacents": [
+  "Geologia":{
+    "adjacents":[
       "Mineralogia",
       "Pratino",
       "Astronomia",
       "Lingue",
       "Geochimica"
     ],
-    "color": "rgb(162,188,113)",
-    "owner": "Geologi"
+    "faction":{
+      "name":"Geologi",
+      "color":"rgb(162,188,113)",
+      "votes":0,
+			"bonus":0,
+      "attackText":"con il loro generatore di scosse sismiche"
+    }
   },
-  "Giurisprudenza": {
-    "adjacents": [
+  "Giurisprudenza":{
+    "adjacents":[
       "Scienze Politiche",
       "Rettorato",
       "Pratino",
       "Mineralogia",
       "Statua della Minerva"
     ],
-    "color": "rgb(121,38,246)",
-    "owner": "Giuristi"
+    "faction":{
+      "name":"Giuristi",
+      "color":"rgb(89,38,222)",
+      "votes":0,
+			"bonus":0,
+      "attackText":"facendogli causa e vincendo ovviamente"
+    }
   },
-  "Igiene": {
-    "adjacents": [
+  "Igiene":{
+    "adjacents":[
       "Fisica",
       "Aiuola 3",
       "Infermieristica",
       "Chiesa"
     ],
-    "color": "rgb(36,118,33)",
-    "owner": "Studenti di Igene"
+    "faction":{
+      "name":"Igienisti",
+      "color":"rgb(36,118,33)",
+      "votes":0,
+			"bonus":0,
+      "attackText":"infettando le loro difese, colpevoli di non aver fatto i vaccini"
+    }
   },
-  "Infermieristica": {
-    "adjacents": [
+  "Infermieristica":{
+    "adjacents":[
       "Igiene",
       "Aiuola 3",
       "Informatica"
     ],
-    "color": "rgb(180,29,31)",
-    "owner": "Infermieri"
+    "faction":{
+      "name":"Infermieri",
+      "color":"rgb(180,29,31)",
+      "votes":0,
+			"bonus":0,
+      "attackText":"scagliando una pioggia di siringhe letali"
+    }
   },
-  "Informatica": {
-    "adjacents": [
+  "Informatica":{
+    "adjacents":[
       "Infermieristica",
       "Scienze dello Spettacolo"
     ],
-    "color": "rgb(200,54,230)",
-    "owner": "Informatici"
+    "faction":{
+      "name":"Informatici",
+      "color":"rgb(200,54,230)",
+      "votes":0,
+			"bonus":0,
+      "attackText":"01110000 01100101 01110010 01100011 01101000 01100101 00100111 00100000 01110011 01101001"
+    }
   },
-  "Ingegneria Chimica": {
-    "adjacents": [
+  "Ingegneria Chimica":{
+    "adjacents":[
       "Ingegneria Gestionale",
       "Orto Botanico",
-      "Storia dell'arte",
+      "Storia dell\'arte",
       "Botanica",
-      "Ingegneria Edile"
+      "Ingegneria Energetica"
     ],
-    "color": "rgb(104,218,168)",
-    "owner": "Ingegneri Chimici"
+    "faction":{
+      "name":"Ingegneri Chimici",
+      "color":"rgb(104,218,168)",
+      "votes":0,
+			"bonus":0,
+      "attackText":"sparando fluidi altamente reattivi con i loro impianti"
+    }
   },
-  "Ingegneria Civile": {
-    "adjacents": [
+  "Ingegneria Meccanica":{
+    "adjacents":[
       "Ingegneria Informatica",
-      "Ingegneria Industriale",
+      "Ingegneria Aerospaziale",
       "Ingegneria Gestionale"
     ],
-    "color": "rgb(207,149,0)",
-    "owner": "Ingegneri Civili"
+    "faction":{
+      "name":"Ingegneri Civili",
+      "color":"rgb(207,149,0)",
+      "votes":0,
+			"bonus":0,
+      "attackText":"utilizzando le loro macchine da guerra di nuova generazione"
+    }
   },
-  "Ingegneria Edile": {
-    "adjacents": [
-      "Ingegneria Industriale",
+  "Ingegneria Energetica":{
+    "adjacents":[
+      "Ingegneria Aerospaziale",
       "Ingegneria Gestionale",
       "Ingegneria Chimica"
     ],
-    "color": "rgb(73,104,181)",
-    "owner": "Ingegneri Edili"
+    "faction":{
+      "name":"Ingegneri Energetici",
+      "color":"rgb(73,104,181)",
+      "votes":0,
+			"bonus":0,
+      "attackText":"grazie alle loro armi laser"
+    }
   },
-  "Ingegneria Gestionale": {
-    "adjacents": [
+  "Ingegneria Gestionale":{
+    "adjacents":[
       "Botanica",
       "Economia",
       "Ingegneria Informatica",
-      "Ingegneria Civile",
-      "Ingegneria Industriale",
-      "Ingegneria Edile",
+      "Ingegneria Meccanica",
+      "Ingegneria Aerospaziale",
+      "Ingegneria Energetica",
       "Ingegneria Chimica",
       "Orto Botanico",
       "Sociologia"
     ],
-    "color": "rgb(162,169,229)",
-    "owner": "Studenti di Ingegneria gestionale"
+    "faction":{
+      "name":"Ingegneri gestionali",
+      "color":"rgb(162,169,229)",
+      "votes":0,
+			"bonus":0,
+      "attackText":"tramite lo studio di tutti i possibili vantaggi"
+    }
   },
-  "Ingegneria Industriale": {
-    "adjacents": [
-      "Ingegneria Civile",
+  "Ingegneria Aerospaziale":{
+    "adjacents":[
+      "Ingegneria Meccanica",
       "Ingegneria Informatica",
-      "Ingegneria Edile",
+      "Ingegneria Energetica",
       "Ingegneria Gestionale"
     ],
-    "color": "rgb(242,87,60)",
-    "owner": "Ingegneri Industriali"
+    "faction":{
+      "name":"Ingegneri Industriali",
+      "color":"rgb(242,87,60)",
+      "votes":0,
+			"bonus":0,
+      "attackText":"bombardando con i loro razzi telecomandati"
+    }
   },
-  "Ingegneria Informatica": {
-    "adjacents": [
+  "Ingegneria Informatica":{
+    "adjacents":[
       "Ingegneria Gestionale",
       "Sociologia",
       "Economia",
-      "Ingegneria Civile",
-      "Ingegneria Industriale"
+      "Ingegneria Meccanica",
+      "Ingegneria Aerospaziale"
     ],
-    "color": "rgb(21,171,54)",
-    "owner": "Ingegneri Informatici"
+    "faction":{
+      "name":"Ingegneri Informatici",
+      "color":"rgb(96,11,134)",
+      "votes":0,
+			"bonus":0,
+      "attackText":"con un software in grado di controllare ogni dispositivo elettronico avversario"
+    }
   },
-  "Lettere": {
-    "adjacents": [
+  "Lettere":{
+    "adjacents":[
       "Botanica",
       "Filosofia",
       "Pratino Est 1",
       "Rettorato",
       "Pratone"
     ],
-    "color": "rgb(210,210,11)",
-    "owner": "Studenti di Lettere"
+    "faction":{
+      "name":"Letterati",
+      "color":"rgb(210,210,11)",
+      "votes":0,
+			"bonus":0,
+      "attackText":"perche\' a volte una parola fa piu\' male di una spada"
+    }
   },
-  "Lingue": {
-    "adjacents": [
+  "Lingue":{
+    "adjacents":[
       "Geologia",
       "Astronomia",
       "Astrofisica",
@@ -397,11 +567,16 @@ module.exports = {
       "Neurologia",
       "Zoologia"
     ],
-    "color": "rgb(5,227,35)",
-    "owner": "Linguisti"
+    "faction":{
+      "name":"Linguisti",
+      "color":"rgb(5,227,35)",
+      "votes":0,
+			"bonus":0,
+      "attackText":"grazie ai loro alleati in tutto il mondo"
+    }
   },
-  "Matematica": {
-    "adjacents": [
+  "Matematica":{
+    "adjacents":[
       "Fisica applicata",
       "Storia",
       "Farmacologia",
@@ -411,138 +586,173 @@ module.exports = {
       "Filosofia",
       "Mensa"
     ],
-    "color": "rgb(82,204,86)",
-    "owner": "Matematici"
+    "faction":{
+      "name":"Matematici",
+      "color":"rgb(82,204,86)",
+      "votes":0,
+			"bonus":0,
+      "attackText":"grazie ad un algoritmo che prevede le possibili mosse avversarie"
+    }
   },
-  "Medicina": {
-    "adjacents": [
+  "Medicina":{
+    "adjacents":[
       "Chimica Industriale",
       "Chimica",
       "Aiuola 4",
       "Ortopedia"
     ],
-    "color": "rgb(219,157,37)",
-    "owner": "Medici"
+    "faction":{
+      "name":"Medici",
+      "color":"rgb(219,157,37)",
+      "votes":0,
+			"bonus":0,
+      "attackText":"diffondendo i vari virus incurabili"
+    }
   },
-  "Medicina legale": {
-    "adjacents": [
-      "Storia dell'arte",
+  "Medicina legale":{
+    "adjacents":[
+      "Storia dell\'arte",
       "Orto Botanico",
       "Mensa",
       "Chimica analitica"
     ],
-    "color": "rgb(149,221,75)",
-    "owner": "Medici Legali"
+    "faction":{
+      "name":"Medici Legali",
+      "color":"rgb(149,221,75)",
+      "votes":0,
+			"bonus":0,
+      "attackText":"con la loro orda di zombie"
+    }
   },
-  "Mensa": {
-    "adjacents": [
-      "Storia dell'arte",
+  "Mensa":{
+    "adjacents":[
+      "Storia dell\'arte",
       "Medicina legale",
       "Chimica analitica",
       "Fisica applicata",
       "Matematica"
     ],
-    "color": "rgb(107,43,95)",
-    "owner": "Addetti alla mensa"
+    "faction":{
+      "name":"Addetti alla mensa",
+      "color":"rgb(107,43,95)",
+      "votes":0,
+			"bonus":0,
+      "attackText":"avvelenando il loro cibo, tratto da una storia vera"
+    }
   },
-  "Mineralogia": {
-    "adjacents": [
+  "Mineralogia":{
+    "adjacents":[
       "Scienze statistiche",
       "Giurisprudenza",
       "Pratino",
       "Geologia",
       "Geochimica"
     ],
-    "color": "rgb(62,140,210)",
-    "owner": "Minerologia"
+    "faction":{
+      "name":"Minerologia",
+      "color":"rgb(62,140,210)",
+      "votes":0,
+			"bonus":0,
+      "attackText":"grazie alle loro indistruttibili armature di adamantio"
+    }
   },
-  "Neurologia": {
-    "adjacents": [
+  "Neurologia":{
+    "adjacents":[
       "Zoologia",
       "Lingue",
       "Chiesa",
       "Scienze della Formazione",
       "Geochimica"
     ],
-    "color": "rgb(244,166,186)",
-    "owner": "Neurologi"
+    "faction":{
+      "name":"Neurologi",
+      "color":"rgb(244,166,186)",
+      "votes":0,
+			"bonus":0,
+      "attackText":"bruciando le sinapsi avversarie"
+    }
   },
-  "Orto Botanico": {
-    "adjacents": [
+  "Orto Botanico":{
+    "adjacents":[
       "Botanica",
-      "Storia dell'arte",
+      "Storia dell\'arte",
       "Medicina legale",
       "Robotica",
       "Filosofia",
       "Ingegneria Chimica",
       "Ingegneria Gestionale"
     ],
-    "color": "rgb(255,255,255)",
-    "owner": "nessuno"
+    "faction":nessuno
   },
-  "Ortopedia": {
-    "adjacents": [
+  "Ortopedia":{
+    "adjacents":[
       "Pratino Sud",
       "Medicina"
     ],
-    "color": "rgb(208,83,9)",
-    "owner": "Ortopedici"
+    "faction":{
+      "name":"Ortopedici",
+      "color":"rgb(208,83,9)",
+      "votes":0,
+			"bonus":0,
+      "attackText":"con i loro soldati dotati di un super apparato locomotore"
+    }
   },
-  "Ostetricia": {
-    "adjacents": [
+  "Ostetricia":{
+    "adjacents":[
       "Psicologia",
       "Pratone",
       "Scienze Politiche",
       "Biologia"
     ],
-    "color": "rgb(59,194,240)",
-    "owner": "Ostetrici"
+    "faction":{
+      "name":"Ostetrici",
+      "color":"rgb(59,194,240)",
+      "votes":0,
+			"bonus":0,
+      "attackText":"tramite il loro esercito di neonati mutanti"
+    }
   },
-  "Pratino": {
-    "adjacents": [
+  "Pratino":{
+    "adjacents":[
       "Giurisprudenza",
       "Statua della Minerva",
       "Astronomia",
       "Geologia",
       "Mineralogia"
     ],
-    "color": "rgb(255,255,255)",
-    "owner": "nessuno"
+    "faction":nessuno
   },
-  "Pratino Est 1": {
-    "adjacents": [
+  "Pratino Est 1":{
+    "adjacents":[
       "Lettere",
       "Filosofia",
       "Matematica",
       "Pratino Est 2",
       "Statua della Minerva"
     ],
-    "color": "rgb(255,255,255)",
-    "owner": "nessuno"
+    "faction":nessuno
   },
-  "Pratino Est 2": {
-    "adjacents": [
+  "Pratino Est 2":{
+    "adjacents":[
       "Pratino Est 1",
       "Matematica",
       "Chimica Industriale",
       "Chimica",
       "Statua della Minerva"
     ],
-    "color": "rgb(255,255,255)",
-    "owner": "nessuno"
+    "faction":nessuno
   },
-  "Pratino Sud": {
-    "adjacents": [
+  "Pratino Sud":{
+    "adjacents":[
       "Farmacologia",
       "Chirurgia",
       "Scienze della Comunicazione",
       "Ortopedia"
     ],
-    "color": "rgb(255,255,255)",
-    "owner": "nessuno"
+    "faction":nessuno
   },
-  "Pratone": {
-    "adjacents": [
+  "Pratone":{
+    "adjacents":[
       "Economia",
       "Genetica",
       "Botanica",
@@ -552,43 +762,63 @@ module.exports = {
       "Ostetricia",
       "Psicologia"
     ],
-    "color": "rgb(120,11,232)",
-    "owner": "Tossici"
+    "faction":{
+      "name":"Fattoni",
+      "color":"rgb(120,11,232)",
+      "votes":0,
+			"bonus":0,
+      "attackText":"con l\'utilizzo delle loro famose \'bombe\'"
+    }
   },
-  "Psicologia": {
-    "adjacents": [
+  "Psicologia":{
+    "adjacents":[
       "Economia",
       "Pratone",
       "Ostetricia",
       "Biologia",
       "Bar"
     ],
-    "color": "rgb(174,169,17)",
-    "owner": "Psicologi"
+    "faction":{
+      "name":"Psicologi",
+      "color":"rgb(174,169,17)",
+      "votes":0,
+			"bonus":0,
+      "attackText":"leggendo nella mente degli avversari"
+    }
   },
-  "Rettorato": {
-    "adjacents": [
+  "Rettorato":{
+    "adjacents":[
       "Pratone",
       "Lettere",
       "Statua della Minerva",
       "Giurisprudenza",
       "Scienze Politiche"
     ],
-    "color": "rgb(213,195,208)",
-    "owner": "Rettorato"
+    "faction":{
+      "name":"Rettorato",
+      "color":"rgb(213,195,208)",
+      "votes":0,
+			"bonus":0,
+      "attackText":"esercitando il potere e l\'autorita\' del Magnifico Rettore"
+    }
   },
-  "Robotica": {
-    "adjacents": [
+  "Robotica":{
+    "adjacents":[
       "Orto Botanico",
       "Chimica analitica",
       "Fisica applicata",
       "Filosofia"
     ],
-    "color": "rgb(134,171,105)",
-    "owner": "Studenti di Robotica"
+    "faction":{
+      "name":"Studenti di Robotica",
+      "color":"rgb(134,171,105)",
+      "votes":0,
+			"bonus":0,
+      "attackText":"attaccando con il loro esercito di robot umanoidi"
+    }
   },
-  "Scienze Politiche": {
-    "adjacents": [
+  "Scienze Politiche":{
+    "adjacents":[
       "Ostetricia",
       "Biologia",
       "Biotecnologie",
@@ -598,56 +828,86 @@ module.exports = {
       "Rettorato",
       "Pratone"
     ],
-    "color": "rgb(219,3,244)",
-    "owner": "Studenti di Scienze Politiche"
+    "faction":{
+      "name":"Studenti di Scienze Politiche",
+      "color":"rgb(159,93,24)",
+      "votes":0,
+			"bonus":0,
+      "attackText":"grazie a mazzette e tangenti"
+    }
   },
-  "Scienze della Comunicazione": {
-    "adjacents": [
+  "Scienze della Comunicazione":{
+    "adjacents":[
       "Chirurgia",
       "Pratino Sud"
     ],
-    "color": "rgb(107,134,58)",
-    "owner": "Studenti di Scienze della Comunicazione"
+    "faction":{
+      "name":"Studenti di Scienze della Comunicazione",
+      "color":"rgb(107,134,58)",
+      "votes":0,
+			"bonus":0,
+      "attackText":"semplicemente trovando un accordo verbale"
+    }
   },
-  "Scienze della Formazione": {
-    "adjacents": [
+  "Scienze della Formazione":{
+    "adjacents":[
       "Chiesa",
       "Neurologia",
       "Scienze dello Spettacolo"
     ],
-    "color": "rgb(162,192,211)",
-    "owner": "Scienze della Formazione"
+    "faction":{
+      "name":"Scienze della Formazione",
+      "color":"rgb(162,192,211)",
+      "votes":0,
+			"bonus":0,
+      "attackText":"solamente grazie ai loro modi composti ed educati"
+    }
   },
-  "Scienze dello Spettacolo": {
-    "adjacents": [
+  "Scienze dello Spettacolo":{
+    "adjacents":[
       "Informatica",
       "Scienze della Formazione"
     ],
-    "color": "rgb(206,180,84)",
-    "owner": "Studenti di Scienze dello Spettacolo"
+    "faction":{
+      "name":"Studenti di Scienze dello Spettacolo",
+      "color":"rgb(206,180,84)",
+      "votes":0,
+			"bonus":0,
+      "attackText":"organizzando un diversivo da premio Oscar"
+    }
   },
-  "Scienze statistiche": {
-    "adjacents": [
+  "Scienze statistiche":{
+    "adjacents":[
       "Scienze Politiche",
       "Mineralogia",
       "Geochimica",
       "Architettura"
     ],
-    "color": "rgb(212,194,125)",
-    "owner": "Studenti di Scienze Statistiche"
+    "faction":{
+      "name":"Statisti",
+      "color":"rgb(212,194,125)",
+      "votes":0,
+			"bonus":0,
+      "attackText":"perche\' avevano il 70% di possibilita\' di successo"
+    }
   },
-  "Sociologia": {
-    "adjacents": [
+  "Sociologia":{
+    "adjacents":[
       "Ingegneria Informatica",
       "Economia",
       "Bar",
       "Ingegneria Gestionale"
     ],
-    "color": "rgb(36,164,133)",
-    "owner": "Sociologi"
+    "faction":{
+      "name":"Sociologi",
+      "color":"rgb(36,164,133)",
+      "votes":0,
+			"bonus":0,
+      "attackText":"conoscendo perfettamente i loro comportamenti"
+    }
   },
-  "Statua della Minerva": {
-    "adjacents": [
+  "Statua della Minerva":{
+    "adjacents":[
       "Rettorato",
       "Pratino Est 1",
       "Pratino Est 2",
@@ -655,36 +915,50 @@ module.exports = {
       "Giurisprudenza",
       "Fontana della Minerva"
     ],
-    "color": "rgb(218,167,164)",
-    "owner": "Seguaci della Minerva"
+    "faction":seguaciMinerva
   },
-  "Storia": {
-    "adjacents": [
+  "Storia":{
+    "adjacents":[
       "Chimica analitica",
       "Farmacologia",
       "Matematica"
     ],
-    "color": "rgb(207,83,53)",
-    "owner": "Storici"
+    "faction":{
+      "name":"Storici",
+      "color":"rgb(180,160,122)",
+      "votes":0,
+			"bonus":0,
+      "attackText":"con il loro esercito di legionari e spartani"
+    }
   },
-  "Storia dell'arte": {
-    "adjacents": [
+  "Storia dell\'arte":{
+    "adjacents":[
       "Orto Botanico",
       "Medicina legale",
       "Mensa",
       "Ingegneria Chimica"
     ],
-    "color": "rgb(246,79,111)",
-    "owner": "Storici dell'Arte"
+    "faction":{
+      "name":"Storici dell\'Arte",
+      "color":"rgb(246,79,111)",
+      "votes":0,
+			"bonus":0,
+      "attackText":"utilizzando delle sculture animate molto agguerrite"
+    }
   },
-  "Zoologia": {
-    "adjacents": [
+  "Zoologia":{
+    "adjacents":[
       "Archeologia",
       "Geochimica",
       "Lingue",
       "Neurologia"
     ],
-    "color": "rgb(55,52,42)",
-    "owner": "Zoologi"
+    "faction":{
+      "name":"Zoologi",
+      "color":"rgb(55,52,42)",
+      "votes":0,
+			"bonus":0,
+      "attackText":"attaccando con animali pericolosi tenuti in cattivita\'"
+    }
   }
 }

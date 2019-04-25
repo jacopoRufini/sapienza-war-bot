@@ -212,7 +212,7 @@ function msToTime(millis) {
         hours   = Math.floor( millis / (1000 * 60 * 60));
   // aggiungi uno zero se c'e' un solo carattere
   const padWithZero = str => ("0" + str).slice(-2)
-  // mappa numeri a stringhe di 2 caratteri, poi concatena separando con ':' 
+  // mappa numeri a stringhe di 2 caratteri, poi concatena separando con ':'
   return [hours, minutes, seconds].map(padWithZero).join(":");
 }
 //  ----------------- COUNTDOWN END ----------------
@@ -237,9 +237,14 @@ function update() {
       setTimeout(update, nextUpdateMillis)
   })
   .catch(error => {
-    setTimeout(update, 2000) // try again until the connection returns 
+    setTimeout(update, 2000) // try again until the connection returns
     console.log(error)
   });
+}
+
+function showDate(next) {
+  if (next) date.setMonth(date.getMonth() + 1);
+  return "Data: " + date.toDateString();
 }
 
 // called on svg initialization
