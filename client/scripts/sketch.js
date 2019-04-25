@@ -23,7 +23,7 @@ function vote() {
   if (faction && faction != "nessuno") {
     axios.post('/vote', {'faction' : faction})
     .then(res => {
-      hasVoted = false;
+      hasVoted = true;
       successToast(res.data);
       factions[faction].votes++;
       updateRanking()
