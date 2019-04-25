@@ -1,4 +1,4 @@
-let svg, departmentsSvg, selectedDepartment;
+let svg, departmentsSvg, selectedDepartment, hasVoted;
 
 function getDepartmentDescription(departmentNode) {
     return departmentNode.id + " posseduto da " + departmentNode.getAttribute("faction");
@@ -23,6 +23,7 @@ function vote() {
   if (faction && faction != "nessuno") {
     axios.post('/vote', {'faction' : faction})
     .then(res => {
+      hasVoted = false;
       successToast(res.data);
       factions[faction].votes++;
       updateRanking()
@@ -57,7 +58,16 @@ function showDepartmentStats(departmentSvg){
   getById("stat-faction").innerHTML = isNessuno && "Nessuna" || faction
   getById("stat-votes").innerHTML = isNessuno && "-" || getFactionVotes(faction)
   getById("stat-color").style.backgroundColor = getFactionColor(faction)
-  getById("vote-btn").innerHTML = "Vota " + faction
+  let voteBtn = getById("vote-btn");
+  if(hasVoted) {
+    voteBtn.classList.add("btn-danger")
+    voteBtn.classList.remove("btn-success")
+    voteBtn.innerHTML = "Aspetta un giorno prima di votare nuovamente";
+  } else {
+    voteBtn.classList.add("btn-success")
+    voteBtn.classList.remove("btn-danger")
+    voteBtn.innerHTML = "Vota " + faction;
+  }
   getById("vote-btn").style.display = isNessuno && "none" || "block"
 }
 
@@ -225,6 +235,12 @@ function update() {
   synchronizeLogs()
   // calls updateDepartments when factions data is ready
   loadData(updateDepartments)
+  // check has voted
+  axios.get("/has-voted")
+  .then(response => {
+    hasVoted = response.data;
+  })
+  .catch(console.error);
   // schedule next update
   axios.get('/next-attack')
   .then(response => {

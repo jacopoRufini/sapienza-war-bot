@@ -16,6 +16,12 @@ let votedIp = {};
 let owners = {};
 let lastAttackTime = Date.now();
 
+const getIp = request => {
+  const forwarded = request.headers['x-forwarded-for'];
+  const clientIp = forwarded ? forwarded.split(/, /)[0] : request.connection.remoteAddress;
+  return clientIp;
+}
+
 
 app.use(express.static('client'));
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -37,8 +43,7 @@ app.get("/next-attack", (req, res) =>
 app.get("/logs", (req, res) => res.send(Logger.getLogs()));
 // post vote for a faction
 app.post("/vote", (req, res) => {
-  const forwarded = req.headers['x-forwarded-for']
-  const clientIp = forwarded ? forwarded.split(/, /)[0] : req.connection.remoteAddress
+  const clientIp = getIp(req)
   const faction = req.body.faction;
   if(votedIp[clientIp]) {
     res.status(401 /* Not Authorized */).send("Non puoi votare in questo momento, hai già votato.");
@@ -49,6 +54,9 @@ app.post("/vote", (req, res) => {
     res.status(400 /* Bad Request */).send("La fazione non esiste.");
   }
 });
+// check if as voted
+app.get("/has-voted", (req, res) => res.send(votedIp[getIp(req)] ? true : false));
+
 
 // on server start
 const server = app.listen(PORT, () => {
