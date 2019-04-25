@@ -53,6 +53,11 @@ const server = app.listen(PORT, () => {
 	console.log("server listening on localhost:" + PORT);
 });
 
+function isSingular(sentence) {
+  let firstWord = sentence.split(" ")[0];
+  return ["A", "E", "O"].some(letter => letter === firstWord[firstWord.length - 1].toUpperCase());
+}
+
 const doAttack = (attackingDepartment /* name */, defendingDepartment /* name */) => {
   const attacker = Factions.getOwner(attackingDepartment);
   const defender /* name */ = Factions.getOwner(defendingDepartment);
@@ -63,9 +68,9 @@ const doAttack = (attackingDepartment /* name */, defendingDepartment /* name */
    if (hasAttackerWon || defender === "nessuno") {
      Factions.addBonus(attacker);
      Factions.setOwner(defendingDepartment, attacker)
-     Logger.log(attacker + " hanno CONQUISTATO il dipartimento di " + defendingDepartment + " " + Factions.getCustomText(attacker));
+     Logger.log(attacker + (isSingular(attacker) ? " ha" : " hanno") + " CONQUISTATO il dipartimento di " + defendingDepartment + " " + Factions.getCustomText(attacker));
    }
-   else Logger.log(defender + " hanno DIFESO il dipartimento da " + attacker);
+   else Logger.log(defender + (isSingular(defender) ? " ha" : " hanno") + " DIFESO il dipartimento da " + attacker);
 }
 
 // INIZIALIZZA I DATI DELLE FAZIONI

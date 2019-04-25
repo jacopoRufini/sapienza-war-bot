@@ -66,10 +66,13 @@ module.exports.getCustomText = function(factionName) {
 
 module.exports.getRandomAttack = function() { // ci mette meno di 1ms
   let couples = [];
-  for(let dep1 in adjacents)
-    for(let dep2 of adjacents[dep1])
-      if(this.getOwner(dep1) !== this.getOwner(dep2))
-        couples.push({attacker: dep1, defender: dep2})
+  for(let dep1 in adjacents) {
+    let owner1 = this.getOwner(dep1);
+    if(owner1 !== "nessuno")
+      for(let dep2 of adjacents[dep1])
+        if(owner1 !== this.getOwner(dep2))
+          couples.push({attacker: dep1, defender: dep2});
+  }
   return couples[Math.floor(Math.random() * couples.length)];
 }
 

@@ -171,9 +171,24 @@ function setCountdown(attackingDepartment, defendingDepartment, timeLeftMillis) 
   }
 }
 
+function isVowel(word) {
+  return ["A", "E", "I", "O", "U"].some(vocale => vocale === word[0].toUpperCase());
+}
+
+function isSingular(sentence) {
+  let firstWord = sentence.split(" ")[0];
+  return ["A", "E", "O"].some(letter => letter === firstWord[firstWord.length - 1].toUpperCase());
+}
+
 function attackDescription(attackingDepartment, defendingDepartment, timeLeftMillis) {
-  let preposizione = ["a", "e", "i", "o", "u"].some(vocale => vocale === defendingDepartment[0].toLowerCase()) ? " ad " : " a ";
-  return getDepartmentOwner(attackingDepartment) + " attaccheranno " + getDepartmentOwner(defendingDepartment) + preposizione + defendingDepartment + " in " + msToTime(timeLeftMillis);
+  let attackingFaction = getDepartmentOwner(attackingDepartment);
+  if(getDepartmentOwner(defendingDepartment) == "nessuno") {
+    let verbo = isSingular(attackingFaction) ? " prenderà possesso di " : " prenderanno possesso di ";
+    return attackingFaction + verbo + defendingDepartment + " in " + msToTime(timeLeftMillis);
+  }
+  let preposizione = isVowel(defendingDepartment[0]) ? " ad " : " a ";
+  let verbo = isSingular(attackingFaction) ? " attaccherà " : " attaccheranno ";
+  return attackingFaction + verbo + getDepartmentOwner(defendingDepartment) + preposizione + defendingDepartment + " in " + msToTime(timeLeftMillis);
 }
 
 function msToTime(millis) {
