@@ -150,21 +150,30 @@ function onHighlightEnd() {
 //  ----------------- COUNTDOWN START ----------------
 let countdownInterval, targetCountdownTime;
 // aggiorna la view del countdown ogni secondo
-function setCountdown(timeLeftMillis) {
+function setCountdown(attackingDepartment, defendingDepartment, timeLeftMillis) {
+  clearInterval(countdownInterval)
+  if(!attackingDepartment || !defendingDepartment) {
+    getById("countdown").innerHTML = "Nessun attacco previsto"
+    return
+  }
   if(timeLeftMillis < 0)
     timeLeftMillis = 0;
   targetCountdownTime = Date.now() + timeLeftMillis;
-  getById("countdown").innerHTML = "Prossimo Attacco in " + msToTime(timeLeftMillis);
+  getById("countdown").innerHTML = attackDescription(attackingDepartment, defendingDepartment, timeLeftMillis);
   if(timeLeftMillis > 0) {
-    clearInterval(countdownInterval)
     countdownInterval = setInterval(() => {
       let time = targetCountdownTime - Date.now()
       if(time >= 0)
-        getById("countdown").innerHTML = "Prossimo Attacco in " + msToTime(time);
+        getById("countdown").innerHTML = attackDescription(attackingDepartment, defendingDepartment, time);
       else
         clearInterval(countdownInterval)
     }, 1000);
   }
+}
+
+function attackDescription(attackingDepartment, defendingDepartment, timeLeftMillis) {
+  let preposizione = ["a", "e", "i", "o", "u"].some(vocale => vocale === defendingDepartment[0].toLowerCase()) ? " ad " : " a ";
+  return getDepartmentOwner(attackingDepartment) + " attaccheranno " + getDepartmentOwner(defendingDepartment) + preposizione + defendingDepartment + " in " + msToTime(timeLeftMillis);
 }
 
 function msToTime(millis) {
@@ -186,12 +195,12 @@ function update() {
   // calls updateDepartments when factions data is ready
   loadData(updateDepartments)
   // schedule next update
-  axios.get('/countdown')
+  axios.get('/next-attack')
   .then(response => {
     // ritardiamo l'update di qualche secondo cosi' che non vada a vuoto
-    let nextUpdateMillis = parseInt(response.data) + UPDATE_OFFSET
+    let nextUpdateMillis = parseInt(response.data.timeLeft) + UPDATE_OFFSET
     // aggiorniamo la view del contatore
-    setCountdown(nextUpdateMillis)
+    setCountdown(response.data.attacker, response.data.defender, nextUpdateMillis)
     // aggiorniamo allo scadere del countdown
     // se il tempo rimasto e' negativo c'e' probabilmente un errore o non ci sono adiacenti per combattere
     if(nextUpdateMillis >= 0)

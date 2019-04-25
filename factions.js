@@ -64,7 +64,17 @@ module.exports.getCustomText = function(factionName) {
   return factions[factionName].attackText;
 }
 
-module.exports.getAttackerDefender = function() {
+module.exports.getRandomAttack = function() { // ci mette meno di 1ms
+  let couples = [];
+  for(let dep1 in adjacents)
+    for(let dep2 of adjacents[dep1])
+      if(this.getOwner(dep1) !== this.getOwner(dep2))
+        couples.push({attacker: dep1, defender: dep2})
+  return couples[Math.floor(Math.random() * couples.length)];
+}
+
+// module.exports.getAttackerDefender = function() {
+/*
   const departmentsKeys = Object.keys(departments);
   while (departmentsKeys.length > 0) {
     const attackerIndex = Math.floor(Math.random() * departmentsKeys.length);
@@ -90,3 +100,4 @@ module.exports.getAttackerDefender = function() {
     }
   }
 }
+*/
