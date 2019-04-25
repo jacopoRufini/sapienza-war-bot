@@ -261,9 +261,7 @@ function onSvgReady() {
 }
 
 try {
-  // Work on Firefox but not on Chrome
   onSvgReady()
 } catch(e) {
-  // Work on Chrome but not on Firefox
   document.getElementById("map-container").onload = onSvgReady
 }
