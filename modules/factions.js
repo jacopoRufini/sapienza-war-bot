@@ -2,7 +2,7 @@
 let factions = {/* name: {color: String, votes: String} */}, departments = {/* name: faction */}, adjacents = {};
 
 module.exports.initializeFactionsAndDepartments = function () {
-	let defaultData = require("./defaultLocations")
+	let defaultData = require("./data")
 	for (let department in defaultData) {
 		let faction = defaultData[department].faction
 		if(!factions[faction.name]) {

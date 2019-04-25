@@ -1,14 +1,13 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const Logger = require('./logger');
-const Backup = require('./backup');
-const Factions = require("./factions")
+const Logger = require('./modules/logger');
+const Backup = require('./modules/backup');
+const Factions = require("./modules/factions")
 
 const debugMode = false;
 
 const PORT = process.env.PORT || 8080;
 const ATTACK_INTERVAL = debugMode ? 10 : 1000 * 60 * 60 // 1 l'ora
-const DEBUG_ATTACK_INTERVAL = 10;
 
 const app = express();
 
@@ -18,7 +17,7 @@ let owners = {};
 let lastAttackTime = Date.now();
 
 
-app.use(express.static('public'));
+app.use(express.static('client'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
