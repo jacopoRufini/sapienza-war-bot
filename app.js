@@ -105,3 +105,9 @@ setInterval(() => {
     users.add(ip);
   votedIp = {};
 }, 1000 * 60 * 60 * 24);
+
+/* DON'T SLEEP - 5 min */
+var http = require("http");
+setInterval(function() {
+    http.get("http://sapienza-warbot.herokuapp.com/");
+}, 300000);
