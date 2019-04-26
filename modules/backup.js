@@ -2,7 +2,7 @@ const fs = require('fs');
 const folder = 'backup';
 const Logger = require('./logger');
 const Factions = require("./factions")
-const dir = './backup/'
+const dir = './client/backups/'
 
 const BACKUP = dir + 'Tue Apr 23 2019 12:27:34 GMT+0200 (Central European Summer Time)'; /* inserire project path in caso di restore backup */
 

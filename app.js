@@ -1,4 +1,5 @@
 const express = require('express');
+const serveIndex = require('serve-index');
 const bodyParser = require('body-parser');
 const Logger = require('./modules/logger');
 const Backup = require('./modules/backup');
@@ -22,8 +23,10 @@ const getIp = request => {
   return clientIp;
 }
 
-
+// rende pubblici i files in client
 app.use(express.static('client'));
+// permette il listing di backups
+app.use('/backups', serveIndex('client/backups', {'icons': true}));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
@@ -56,7 +59,13 @@ app.post("/vote", (req, res) => {
 });
 // check if as voted
 app.get("/has-voted", (req, res) => res.send(votedIp[getIp(req)] ? true : false));
-
+// get count of unique ips that voted
+app.get("/unique-ips", (req, res) => {
+  // aggiorniamo users con votedIp
+  for (let ip in votedIp)
+    users.add(ip);
+  res.send(String(users.size));
+});
 
 // on server start
 const server = app.listen(PORT, () => {
