@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const fs = require('fs');
 const Logger = require('./modules/logger');
 const Backup = require('./modules/backup');
 const Factions = require("./modules/factions")
@@ -111,6 +112,7 @@ setInterval(() => {
   Backup.saveBackup();
   for (let ip in votedIp)
     users.add(ip);
+  fs.writeFile('client/visitors.txt', [...users].length, (err) => {});
   votedIp = {};
 }, 1000 * 60 * 60 * 24);
 
