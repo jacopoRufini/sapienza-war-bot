@@ -29,7 +29,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // routes for data
-app.get("/data", (req, res) => res.send(Factions.getData()));
+app.get("/data", (req, res) => {
+  res.send(Factions.getData())
+  users.add(getIp(req));
+});
 // routes countdown
 // get info about next attack {attacker: attackingDepartment, defender: defendingDepartment, timeLeft: number}
 let nextAttack;
@@ -110,14 +113,12 @@ if(nextAttack) {
 - ogni fazione perde il proprio bonus */
 setInterval(() => {
   Backup.saveBackup();
-  for (let ip in votedIp)
-    users.add(ip);
-  fs.writeFile('client/visitors.txt', [...users].length, (err) => {});
+  fs.writeFile('client/users.txt', JSON.stringify(Array.from(users)), (err) => {});
   votedIp = {};
 }, 1000 * 60 * 60 * 24);
 
 /* DON'T SLEEP - 5 min */
-var http = require("http");
+const http = require("http");
 setInterval(function() {
     http.get("http://sapienza-warbot.herokuapp.com/");
 }, 300000);
