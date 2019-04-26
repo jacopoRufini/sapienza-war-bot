@@ -115,7 +115,7 @@ setInterval(() => {
   Backup.saveBackup();
   fs.writeFile('client/users.txt', JSON.stringify(Array.from(users)), (err) => {});
   votedIp = {};
-}, 1000 * 60 * 60 * 24);
+}, 1000 * 20);
 
 /* DON'T SLEEP - 5 min */
 const http = require("http");
