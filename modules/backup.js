@@ -4,8 +4,8 @@ const Logger = require('./logger');
 const Factions = require("./factions")
 const dir = './backup/'
 
-const BACKUP = dir + 'data.json'; /* inserire project path in caso di restore backup */
-
+const BACKUP = dir + 'backup.json'; /* inserire project path in caso di restore backup */
+/*
 function deleteOldest(){
   fs.readdir(folder, (err, files) => {
     if (files.length >= 7){
@@ -13,14 +13,13 @@ function deleteOldest(){
     }
   });
 }
-
+*/
 // save backup
 module.exports.saveBackup = function() {
-  deleteOldest();
+  //deleteOldest();
   const object = Factions.getData();
   object['logs'] = Logger.getLogs();
-  let date = new Date();
-  fs.writeFile(dir + date, JSON.stringify(object, null, 2), (err) => {});
+  fs.writeFile(BACKUP, JSON.stringify(object, null, 2), (err) => {});
 }
 
 // load backup
