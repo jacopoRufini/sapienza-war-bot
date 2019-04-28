@@ -97,7 +97,9 @@ const doAttack = (attackingDepartment /* name */, defendingDepartment /* name */
 }
 
 // INIZIALIZZA I DATI DELLE FAZIONI
-Factions.initializeFactionsAndDepartments()
+//Factions.initializeFactionsAndDepartments()
+Backup.loadBackup();
+
 
 // ATTACCA FINO A FINIRE I CANDIDATI
 nextAttack = Factions.getRandomAttack();

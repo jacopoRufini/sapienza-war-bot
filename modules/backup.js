@@ -2,9 +2,9 @@ const fs = require('fs');
 const folder = 'backup';
 const Logger = require('./logger');
 const Factions = require("./factions")
-const dir = './client/backups/'
+const dir = './backup/'
 
-const BACKUP = dir + 'Tue Apr 23 2019 12:27:34 GMT+0200 (Central European Summer Time)'; /* inserire project path in caso di restore backup */
+const BACKUP = dir + 'data.json'; /* inserire project path in caso di restore backup */
 
 function deleteOldest(){
   fs.readdir(folder, (err, files) => {
