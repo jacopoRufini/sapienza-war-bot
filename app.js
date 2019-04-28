@@ -113,6 +113,7 @@ if(nextAttack) {
     // aggiornamento il tempo alla fine cosi' che il client non perda l'aggiornamento
     // se avvenissero strani interleaving (molto improbabili)
     lastAttackTime = Date.now();
+    Backup.saveBackup();
   }, ATTACK_INTERVAL);
 } else {
   // abbiamo inizializzato le fazioni per la prima volta e non ci sono fazioni adiacenti
@@ -123,7 +124,6 @@ if(nextAttack) {
 - resetta la mappa degli ip
 - ogni fazione perde il proprio bonus */
 setInterval(() => {
-  Backup.saveBackup();
   fs.writeFile('client/users.txt', JSON.stringify(Array.from(users)), (err) => {});
   votedIp = {};
 }, 1000 * 60 * 60 * 24);
