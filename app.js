@@ -9,7 +9,7 @@ const Factions = require("./modules/factions")
 const debugMode = false;
 
 const PORT = process.env.PORT || 8080;
-const ATTACK_INTERVAL = debugMode ? 10 : 1000 * 60 * 60 // 1 l'ora
+const ATTACK_INTERVAL = debugMode ? 100 : 1000 * 60 * 60 // 1 l'ora
 
 const app = express();
 
@@ -113,12 +113,15 @@ if(nextAttack) {
     // aggiornamento il tempo alla fine cosi' che il client non perda l'aggiornamento
     // se avvenissero strani interleaving (molto improbabili)
     lastAttackTime = Date.now();
-    Backup.saveBackup();
   }, ATTACK_INTERVAL);
 } else {
   // abbiamo inizializzato le fazioni per la prima volta e non ci sono fazioni adiacenti
   throw "Non ci sono fazioni nemiche adiacenti all'avvio!"
 }
+
+setInterval(() => {
+  Backup.saveBackup();
+}, 1000 * 60 * 15);
 
 /* OGNI 24 ORE:
 - resetta la mappa degli ip
