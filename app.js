@@ -2,6 +2,7 @@ const express = require('express');
 const serveIndex = require('serve-index');
 const bodyParser = require('body-parser');
 const fs = require('fs');
+
 const Logger = require('./modules/logger');
 const Backup = require('./modules/backup');
 const Factions = require("./modules/factions")
@@ -10,10 +11,11 @@ const debugMode = false;
 
 const PORT = process.env.PORT || 8080;
 const ATTACK_INTERVAL = debugMode ? 100 : 1000 * 60 * 60 // 1 l'ora
+const OLD_USERS = 1350;
 
 const app = express();
 
-let users = new Set();
+let users = [];
 let votedIp = {};
 let owners = {};
 let lastAttackTime = Date.now();
@@ -33,8 +35,8 @@ app.use(bodyParser.json());
 
 // routes for data
 app.get("/data", (req, res) => {
-  res.send(Factions.getData())
-  users.add(getIp(req));
+  res.send(Factions.getData());
+  users.push(getIp(req));
 });
 // routes countdown
 // get info about next attack {attacker: attackingDepartment, defender: defendingDepartment, timeLeft: number}
@@ -65,10 +67,7 @@ app.post("/vote", (req, res) => {
 app.get("/has-voted", (req, res) => res.send(votedIp[getIp(req)] ? true : false));
 // get count of unique ips that voted
 app.get("/unique-ips", (req, res) => {
-  // aggiorniamo users con votedIp
-  for (let ip in votedIp)
-    users.add(ip);
-  res.send(String(users.size));
+  res.send(String(users.length + OLD_USERS));
 });
 
 // on server start
@@ -98,27 +97,26 @@ const doAttack = (attackingDepartment /* name */, defendingDepartment /* name */
 
 // INIZIALIZZA I DATI DELLE FAZIONI
 //Factions.initializeFactionsAndDepartments()
-
-const attack = function() {
-  // ATTACCA FINO A FINIRE I CANDIDATI
-  nextAttack = Factions.getRandomAttack();
-  if(nextAttack) {
-    let attackInterval = setInterval(() => {
-      doAttack(nextAttack.attacker, nextAttack.defender);
-      nextAttack = Factions.getRandomAttack();
-      if(!nextAttack)
-        clearInterval(attackInterval)
-      // aggiornamento il tempo alla fine cosi' che il client non perda l'aggiornamento
-      // se avvenissero strani interleaving (molto improbabili)
-      lastAttackTime = Date.now();
-    }, ATTACK_INTERVAL);
-  } else {
-    // abbiamo inizializzato le fazioni per la prima volta e non ci sono fazioni adiacenti
-    throw "Non ci sono fazioni nemiche adiacenti all'avvio!"
+Backup.loadBackup(() => {
+  const attack = function() {
+    // ATTACCA FINO A FINIRE I CANDIDATI
+    nextAttack = Factions.getRandomAttack();
+    if(nextAttack) {
+      let attackInterval = setInterval(() => {
+        doAttack(nextAttack.attacker, nextAttack.defender);
+        nextAttack = Factions.getRandomAttack();
+        if(!nextAttack)
+          clearInterval(attackInterval)
+        // aggiornamento il tempo alla fine cosi' che il client non perda l'aggiornamento
+        // se avvenissero strani interleaving (molto improbabili)
+        lastAttackTime = Date.now();
+      }, ATTACK_INTERVAL);
+    } else {
+      // abbiamo inizializzato le fazioni per la prima volta e non ci sono fazioni adiacenti
+      throw "Non ci sono fazioni nemiche adiacenti all'avvio!"
+    }
   }
-}
-
-Backup.loadBackup(attack);
+});
 
 
 setInterval(() => {
@@ -129,7 +127,6 @@ setInterval(() => {
 - resetta la mappa degli ip
 - ogni fazione perde il proprio bonus */
 setInterval(() => {
-  fs.writeFile('client/users.txt', JSON.stringify(Array.from(users)), (err) => {});
   votedIp = {};
 }, 1000 * 60 * 60 * 24);
 
