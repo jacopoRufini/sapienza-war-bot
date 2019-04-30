@@ -97,26 +97,26 @@ const doAttack = (attackingDepartment /* name */, defendingDepartment /* name */
 
 // INIZIALIZZA I DATI DELLE FAZIONI
 //Factions.initializeFactionsAndDepartments()
-Backup.loadBackup(() => {
-  const attack = function() {
-    // ATTACCA FINO A FINIRE I CANDIDATI
-    nextAttack = Factions.getRandomAttack();
-    if(nextAttack) {
-      let attackInterval = setInterval(() => {
-        doAttack(nextAttack.attacker, nextAttack.defender);
-        nextAttack = Factions.getRandomAttack();
-        if(!nextAttack)
-          clearInterval(attackInterval)
-        // aggiornamento il tempo alla fine cosi' che il client non perda l'aggiornamento
-        // se avvenissero strani interleaving (molto improbabili)
-        lastAttackTime = Date.now();
-      }, ATTACK_INTERVAL);
-    } else {
-      // abbiamo inizializzato le fazioni per la prima volta e non ci sono fazioni adiacenti
-      throw "Non ci sono fazioni nemiche adiacenti all'avvio!"
-    }
+const attack = function() {
+  // ATTACCA FINO A FINIRE I CANDIDATI
+  nextAttack = Factions.getRandomAttack();
+  if(nextAttack) {
+    let attackInterval = setInterval(() => {
+      doAttack(nextAttack.attacker, nextAttack.defender);
+      nextAttack = Factions.getRandomAttack();
+      if(!nextAttack)
+        clearInterval(attackInterval)
+      // aggiornamento il tempo alla fine cosi' che il client non perda l'aggiornamento
+      // se avvenissero strani interleaving (molto improbabili)
+      lastAttackTime = Date.now();
+    }, ATTACK_INTERVAL);
+  } else {
+    // abbiamo inizializzato le fazioni per la prima volta e non ci sono fazioni adiacenti
+    throw "Non ci sono fazioni nemiche adiacenti all'avvio!"
   }
-});
+}
+
+Backup.loadBackup(attack);
 
 
 setInterval(() => {
