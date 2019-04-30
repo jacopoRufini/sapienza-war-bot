@@ -116,7 +116,7 @@ if(nextAttack) {
   }, ATTACK_INTERVAL);
 } else {
   // abbiamo inizializzato le fazioni per la prima volta e non ci sono fazioni adiacenti
-  //throw "Non ci sono fazioni nemiche adiacenti all'avvio!"
+  throw "Non ci sono fazioni nemiche adiacenti all'avvio!"
 }
 
 setInterval(() => {
