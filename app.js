@@ -118,7 +118,6 @@ const attack = function() {
 
 Backup.loadBackup(attack);
 
-
 setInterval(() => {
   Backup.saveBackup();
 }, 1000 * 60 * 45);
@@ -130,7 +129,7 @@ setInterval(() => {
   votedIp = {};
 }, 1000 * 60 * 60 * 24);
 
-/* DON'T SLEEP - 5 min */
+/* DON'T SLEEP - 5 min - non serve più ma per scaramanzia non lo tolgo */
 const http = require("http");
 setInterval(function() {
     http.get("http://sapienza-warbot.herokuapp.com/");
