@@ -13,32 +13,32 @@
 		},
 		"Architetti": {
 			"color": "rgb(209,46,101)",
-			"votes": 2,
+			"votes": 7,
 			"bonus": 8,
 			"attackText": "con un sofisticato sistema di specchi e leve"
 		},
 		"Astrofisici": {
 			"color": "rgb(174,161,74)",
-			"votes": 5,
+			"votes": 9,
 			"bonus": 0,
 			"attackText": "grazie all'energia sprigionata da una super nova"
 		},
 		"Astronomi": {
 			"color": "rgb(190,211,218)",
-			"votes": 4,
+			"votes": 5,
 			"bonus": 6,
 			"attackText": "sfruttando l'allineamento dei pianeti"
 		},
 		"Baristi": {
 			"color": "rgb(47,64,147)",
-			"votes": 1,
+			"votes": 2,
 			"bonus": 2,
 			"attackText": "distraendo la difesa avversaria con gli spritz gratis"
 		},
 		"Biologi": {
 			"color": "rgb(29,220,131)",
-			"votes": 2,
-			"bonus": 2,
+			"votes": 6,
+			"bonus": 6,
 			"attackText": "inglobandola nel loro ecosistema"
 		},
 		"Studenti di Biotecnologie": {
@@ -50,7 +50,7 @@
 		"Botanici": {
 			"color": "rgb(218,142,124)",
 			"votes": 0,
-			"bonus": 0,
+			"bonus": 2,
 			"attackText": "grazie alla loro orda di piante carnivore"
 		},
 		"Vaticano": {
@@ -61,14 +61,14 @@
 		},
 		"Chimici": {
 			"color": "rgb(15,84,107)",
-			"votes": 6,
-			"bonus": 0,
+			"votes": 10,
+			"bonus": 2,
 			"attackText": "rilasciando gas nervino"
 		},
 		"Chimici Industriali": {
 			"color": "rgb(92,187,180)",
-			"votes": 1,
-			"bonus": 0,
+			"votes": 2,
+			"bonus": 2,
 			"attackText": "grazie alla potenza dei loro nuovi reattori"
 		},
 		"Studenti di Chimica Analitica": {
@@ -85,20 +85,20 @@
 		},
 		"Economisti": {
 			"color": "rgb(147,210,119)",
-			"votes": 8,
+			"votes": 15,
 			"bonus": 2,
 			"attackText": "comprando il loro territorio"
 		},
 		"Farmacisti": {
 			"color": "rgb(16,78,235)",
-			"votes": 3,
-			"bonus": 2,
+			"votes": 6,
+			"bonus": 4,
 			"attackText": "somministrando di nascosto mix di psicofarmaci alla loro difesa"
 		},
 		"Filosofi": {
 			"color": "rgb(161,90,247)",
-			"votes": 4,
-			"bonus": 2,
+			"votes": 7,
+			"bonus": 4,
 			"attackText": "grazie alla nobile arte della retorica"
 		},
 		"Fisici": {
@@ -115,13 +115,13 @@
 		},
 		"Seguaci della Minerva": {
 			"color": "rgb(218,167,164)",
-			"votes": 1,
-			"bonus": 0,
+			"votes": 3,
+			"bonus": 2,
 			"attackText": "grazie all'aiuto divino direttamente dall'Olimpo"
 		},
 		"Studenti di Genetica": {
 			"color": "rgb(201,214,189)",
-			"votes": 3,
+			"votes": 4,
 			"bonus": 0,
 			"attackText": "grazie all'aiuto di un esercito di soldati OGM"
 		},
@@ -139,32 +139,32 @@
 		},
 		"Giuristi": {
 			"color": "rgb(89,38,222)",
-			"votes": 4,
+			"votes": 7,
 			"bonus": 2,
 			"attackText": "facendogli causa e vincendo ovviamente"
 		},
 		"Igienisti": {
 			"color": "rgb(36,118,33)",
 			"votes": 0,
-			"bonus": 0,
+			"bonus": 2,
 			"attackText": "infettando le loro difese, colpevoli di non aver fatto i vaccini"
 		},
 		"Infermieri": {
 			"color": "rgb(180,29,31)",
-			"votes": 5,
-			"bonus": 0,
+			"votes": 12,
+			"bonus": 2,
 			"attackText": "scagliando una pioggia di siringhe letali"
 		},
 		"Informatici": {
 			"color": "rgb(200,54,230)",
-			"votes": 225,
+			"votes": 246,
 			"bonus": 0,
 			"attackText": "01110000 01100101 01110010 01100011 01101000 01100101 00100111 00100000 01110011 01101001"
 		},
 		"Ingegneri Chimici": {
 			"color": "rgb(104,218,168)",
-			"votes": 66,
-			"bonus": 2,
+			"votes": 85,
+			"bonus": 4,
 			"attackText": "sparando fluidi altamente reattivi con i loro impianti"
 		},
 		"Ingegneri Civili": {
@@ -175,7 +175,7 @@
 		},
 		"Ingegneri Energetici": {
 			"color": "rgb(73,104,181)",
-			"votes": 5,
+			"votes": 7,
 			"bonus": 0,
 			"attackText": "grazie alle loro armi laser"
 		},
@@ -187,19 +187,19 @@
 		},
 		"Ingegneri Industriali": {
 			"color": "rgb(242,87,60)",
-			"votes": 4,
+			"votes": 8,
 			"bonus": 4,
 			"attackText": "bombardando con i loro razzi telecomandati"
 		},
 		"Ingegneri Informatici": {
 			"color": "rgb(96,11,134)",
-			"votes": 18,
-			"bonus": 2,
+			"votes": 34,
+			"bonus": 4,
 			"attackText": "con un software in grado di controllare ogni dispositivo elettronico avversario"
 		},
 		"Letterati": {
 			"color": "rgb(210,210,11)",
-			"votes": 22,
+			"votes": 23,
 			"bonus": 0,
 			"attackText": "perche' a volte una parola fa piu' male di una spada"
 		},
@@ -259,7 +259,7 @@
 		},
 		"Fattoni": {
 			"color": "rgb(120,11,232)",
-			"votes": 27,
+			"votes": 31,
 			"bonus": 0,
 			"attackText": "con l'utilizzo delle loro famose 'bombe'"
 		},
@@ -271,13 +271,13 @@
 		},
 		"Rettorato": {
 			"color": "rgb(213,195,208)",
-			"votes": 3,
+			"votes": 6,
 			"bonus": 0,
 			"attackText": "esercitando il potere e l'autorita' del Magnifico Rettore"
 		},
 		"Studenti di Robotica": {
 			"color": "rgb(134,171,105)",
-			"votes": 2,
+			"votes": 4,
 			"bonus": 2,
 			"attackText": "attaccando con il loro esercito di robot umanoidi"
 		},
@@ -289,7 +289,7 @@
 		},
 		"Studenti di Scienze della Comunicazione": {
 			"color": "rgb(107,134,58)",
-			"votes": 0,
+			"votes": 1,
 			"bonus": 0,
 			"attackText": "semplicemente trovando un accordo verbale"
 		},
@@ -338,8 +338,8 @@
 	},
 	"departments": {
 		"Aiuola 1": "Astronomi",
-		"Aiuola 2": "nessuno",
-		"Aiuola 3": "nessuno",
+		"Aiuola 2": "Chimici",
+		"Aiuola 3": "Infermieri",
 		"Aiuola 4": "nessuno",
 		"Archeologia": "Architetti",
 		"Architettura": "Architetti",
@@ -348,8 +348,8 @@
 		"Bar": "Baristi",
 		"Biologia": "Biologi",
 		"Biotecnologie": "Biologi",
-		"Botanica": "Botanici",
-		"Chiesa": "Vaticano",
+		"Botanica": "Ingegneri Informatici",
+		"Chiesa": "Igienisti",
 		"Chimica": "Chimici",
 		"Chimica Industriale": "Chimici Industriali",
 		"Chimica analitica": "Studenti di Robotica",
@@ -358,9 +358,9 @@
 		"Farmacologia": "Farmacisti",
 		"Filosofia": "Filosofi",
 		"Fisica": "Astronomi",
-		"Fisica applicata": "Addetti alla mensa",
+		"Fisica applicata": "Farmacisti",
 		"Fontana della Minerva": "Seguaci della Minerva",
-		"Genetica": "Studenti di Genetica",
+		"Genetica": "Botanici",
 		"Geochimica": "Architetti",
 		"Geologia": "Geologi",
 		"Giurisprudenza": "Giuristi",
@@ -373,11 +373,11 @@
 		"Ingegneria Gestionale": "Ingegneri Informatici",
 		"Ingegneria Aerospaziale": "Ingegneri Industriali",
 		"Ingegneria Informatica": "Ingegneri Informatici",
-		"Lettere": "Letterati",
+		"Lettere": "Filosofi",
 		"Lingue": "Geologi",
 		"Matematica": "Farmacisti",
-		"Medicina": "Medici",
-		"Medicina legale": "Medici Legali",
+		"Medicina": "Chimici Industriali",
+		"Medicina legale": "Ingegneri Chimici",
 		"Mensa": "Addetti alla mensa",
 		"Mineralogia": "Minerologia",
 		"Neurologia": "Neurologi",
@@ -385,14 +385,14 @@
 		"Ortopedia": "Ortopedici",
 		"Ostetricia": "Ostetrici",
 		"Pratino": "Minerologia",
-		"Pratino Est 1": "Filosofi",
+		"Pratino Est 1": "Seguaci della Minerva",
 		"Pratino Est 2": "nessuno",
 		"Pratino Sud": "Chirurghi",
 		"Pratone": "Fattoni",
-		"Psicologia": "Baristi",
+		"Psicologia": "Biologi",
 		"Rettorato": "Rettorato",
 		"Robotica": "Studenti di Robotica",
-		"Scienze Politiche": "Architetti",
+		"Scienze Politiche": "Biologi",
 		"Scienze della Comunicazione": "Studenti di Scienze della Comunicazione",
 		"Scienze della Formazione": "Scienze della Formazione",
 		"Scienze dello Spettacolo": "Studenti di Scienze dello Spettacolo",
@@ -404,434 +404,71 @@
 		"Zoologia": "Zoologi"
 	},
 	"adjacents": {
-		"Aiuola 1": [
-			"Aiuola 2",
-			"Astronomia",
-			"Astrofisica",
-			"Fisica",
-			"Aiuola 3"
-		],
-		"Aiuola 2": [
-			"Chimica",
-			"Aiuola 1",
-			"Aiuola 4"
-		],
-		"Aiuola 3": [
-			"Aiuola 1",
-			"Aiuola 4",
-			"Igiene",
-			"Infermieristica"
-		],
-		"Aiuola 4": [
-			"Medicina",
-			"Aiuola 2",
-			"Aiuola 3"
-		],
-		"Archeologia": [
-			"Architettura",
-			"Geochimica",
-			"Zoologia"
-		],
-		"Architettura": [
-			"Biotecnologie",
-			"Scienze Politiche",
-			"Scienze statistiche",
-			"Geochimica",
-			"Archeologia"
-		],
-		"Astrofisica": [
-			"Astronomia",
-			"Aiuola 1",
-			"Fisica",
-			"Lingue"
-		],
-		"Astronomia": [
-			"Pratino",
-			"Astrofisica",
-			"Lingue",
-			"Geologia",
-			"Aiuola 1"
-		],
-		"Bar": [
-			"Sociologia",
-			"Economia",
-			"Psicologia"
-		],
-		"Biologia": [
-			"Ostetricia",
-			"Psicologia",
-			"Scienze Politiche",
-			"Biotecnologie"
-		],
-		"Biotecnologie": [
-			"Biologia",
-			"Scienze Politiche",
-			"Architettura"
-		],
-		"Botanica": [
-			"Genetica",
-			"Ingegneria Gestionale",
-			"Orto Botanico",
-			"Filosofia",
-			"Lettere",
-			"Pratone",
-			"Ingegneria Chimica",
-			"Economia"
-		],
-		"Chiesa": [
-			"Lingue",
-			"Fisica",
-			"Igiene",
-			"Scienze della Formazione",
-			"Neurologia"
-		],
-		"Chimica": [
-			"Chimica Industriale",
-			"Pratino Est 2",
-			"Medicina",
-			"Aiuola 2"
-		],
-		"Chimica Industriale": [
-			"Pratino Est 2",
-			"Farmacologia",
-			"Medicina",
-			"Chimica",
-			"Matematica"
-		],
-		"Chimica analitica": [
-			"Mensa",
-			"Storia",
-			"Fisica applicata",
-			"Robotica",
-			"Medicina legale"
-		],
-		"Chirurgia": [
-			"Farmacologia",
-			"Scienze della Comunicazione",
-			"Pratino Sud"
-		],
-		"Economia": [
-			"Bar",
-			"Sociologia",
-			"Ingegneria Gestionale",
-			"Ingegneria Informatica",
-			"Botanica",
-			"Genetica",
-			"Pratone",
-			"Psicologia"
-		],
-		"Farmacologia": [
-			"Matematica",
-			"Storia",
-			"Chirurgia",
-			"Chimica Industriale",
-			"Pratino Sud"
-		],
-		"Filosofia": [
-			"Botanica",
-			"Orto Botanico",
-			"Robotica",
-			"Fisica applicata",
-			"Matematica",
-			"Pratino Est 1",
-			"Lettere"
-		],
-		"Fisica": [
-			"Astrofisica",
-			"Aiuola 1",
-			"Igiene",
-			"Chiesa",
-			"Lingue"
-		],
-		"Fisica applicata": [
-			"Robotica",
-			"Chimica analitica",
-			"Mensa",
-			"Matematica",
-			"Filosofia"
-		],
-		"Fontana della Minerva": [
-			"Statua della Minerva"
-		],
-		"Genetica": [
-			"Botanica",
-			"Economia",
-			"Pratone"
-		],
-		"Geochimica": [
-			"Scienze statistiche",
-			"Mineralogia",
-			"Geologia",
-			"Neurologia",
-			"Zoologia",
-			"Archeologia",
-			"Architettura"
-		],
-		"Geologia": [
-			"Mineralogia",
-			"Pratino",
-			"Astronomia",
-			"Lingue",
-			"Geochimica"
-		],
-		"Giurisprudenza": [
-			"Scienze Politiche",
-			"Rettorato",
-			"Pratino",
-			"Mineralogia",
-			"Statua della Minerva"
-		],
-		"Igiene": [
-			"Fisica",
-			"Aiuola 3",
-			"Infermieristica",
-			"Chiesa"
-		],
-		"Infermieristica": [
-			"Igiene",
-			"Aiuola 3",
-			"Informatica"
-		],
-		"Informatica": [
-			"Infermieristica",
-			"Scienze dello Spettacolo"
-		],
-		"Ingegneria Chimica": [
-			"Ingegneria Gestionale",
-			"Orto Botanico",
-			"Storia dell'arte",
-			"Botanica",
-			"Ingegneria Energetica"
-		],
-		"Ingegneria Meccanica": [
-			"Ingegneria Informatica",
-			"Ingegneria Aerospaziale",
-			"Ingegneria Gestionale"
-		],
-		"Ingegneria Energetica": [
-			"Ingegneria Aerospaziale",
-			"Ingegneria Gestionale",
-			"Ingegneria Chimica"
-		],
-		"Ingegneria Gestionale": [
-			"Botanica",
-			"Economia",
-			"Ingegneria Informatica",
-			"Ingegneria Meccanica",
-			"Ingegneria Aerospaziale",
-			"Ingegneria Energetica",
-			"Ingegneria Chimica",
-			"Orto Botanico",
-			"Sociologia"
-		],
-		"Ingegneria Aerospaziale": [
-			"Ingegneria Meccanica",
-			"Ingegneria Informatica",
-			"Ingegneria Energetica",
-			"Ingegneria Gestionale"
-		],
-		"Ingegneria Informatica": [
-			"Ingegneria Gestionale",
-			"Sociologia",
-			"Economia",
-			"Ingegneria Meccanica",
-			"Ingegneria Aerospaziale"
-		],
-		"Lettere": [
-			"Botanica",
-			"Filosofia",
-			"Pratino Est 1",
-			"Rettorato",
-			"Pratone"
-		],
-		"Lingue": [
-			"Geologia",
-			"Astronomia",
-			"Astrofisica",
-			"Fisica",
-			"Chiesa",
-			"Neurologia",
-			"Zoologia"
-		],
-		"Matematica": [
-			"Fisica applicata",
-			"Storia",
-			"Farmacologia",
-			"Chimica Industriale",
-			"Pratino Est 2",
-			"Pratino Est 1",
-			"Filosofia",
-			"Mensa"
-		],
-		"Medicina": [
-			"Chimica Industriale",
-			"Chimica",
-			"Aiuola 4",
-			"Ortopedia"
-		],
-		"Medicina legale": [
-			"Storia dell'arte",
-			"Orto Botanico",
-			"Mensa",
-			"Chimica analitica"
-		],
-		"Mensa": [
-			"Storia dell'arte",
-			"Medicina legale",
-			"Chimica analitica",
-			"Fisica applicata",
-			"Matematica"
-		],
-		"Mineralogia": [
-			"Scienze statistiche",
-			"Giurisprudenza",
-			"Pratino",
-			"Geologia",
-			"Geochimica"
-		],
-		"Neurologia": [
-			"Zoologia",
-			"Lingue",
-			"Chiesa",
-			"Scienze della Formazione",
-			"Geochimica"
-		],
-		"Orto Botanico": [
-			"Botanica",
-			"Storia dell'arte",
-			"Medicina legale",
-			"Robotica",
-			"Filosofia",
-			"Ingegneria Chimica",
-			"Ingegneria Gestionale"
-		],
-		"Ortopedia": [
-			"Pratino Sud",
-			"Medicina"
-		],
-		"Ostetricia": [
-			"Psicologia",
-			"Pratone",
-			"Scienze Politiche",
-			"Biologia"
-		],
-		"Pratino": [
-			"Giurisprudenza",
-			"Statua della Minerva",
-			"Astronomia",
-			"Geologia",
-			"Mineralogia"
-		],
-		"Pratino Est 1": [
-			"Lettere",
-			"Filosofia",
-			"Matematica",
-			"Pratino Est 2",
-			"Statua della Minerva"
-		],
-		"Pratino Est 2": [
-			"Pratino Est 1",
-			"Matematica",
-			"Chimica Industriale",
-			"Chimica",
-			"Statua della Minerva"
-		],
-		"Pratino Sud": [
-			"Farmacologia",
-			"Chirurgia",
-			"Scienze della Comunicazione",
-			"Ortopedia"
-		],
-		"Pratone": [
-			"Economia",
-			"Genetica",
-			"Botanica",
-			"Lettere",
-			"Rettorato",
-			"Scienze Politiche",
-			"Ostetricia",
-			"Psicologia"
-		],
-		"Psicologia": [
-			"Economia",
-			"Pratone",
-			"Ostetricia",
-			"Biologia",
-			"Bar"
-		],
-		"Rettorato": [
-			"Pratone",
-			"Lettere",
-			"Statua della Minerva",
-			"Giurisprudenza",
-			"Scienze Politiche"
-		],
-		"Robotica": [
-			"Orto Botanico",
-			"Chimica analitica",
-			"Fisica applicata",
-			"Filosofia"
-		],
-		"Scienze Politiche": [
-			"Ostetricia",
-			"Biologia",
-			"Biotecnologie",
-			"Architettura",
-			"Scienze statistiche",
-			"Giurisprudenza",
-			"Rettorato",
-			"Pratone"
-		],
-		"Scienze della Comunicazione": [
-			"Chirurgia",
-			"Pratino Sud"
-		],
-		"Scienze della Formazione": [
-			"Chiesa",
-			"Neurologia",
-			"Scienze dello Spettacolo"
-		],
-		"Scienze dello Spettacolo": [
-			"Informatica",
-			"Scienze della Formazione"
-		],
-		"Scienze statistiche": [
-			"Scienze Politiche",
-			"Mineralogia",
-			"Geochimica",
-			"Architettura"
-		],
-		"Sociologia": [
-			"Ingegneria Informatica",
-			"Economia",
-			"Bar",
-			"Ingegneria Gestionale"
-		],
-		"Statua della Minerva": [
-			"Rettorato",
-			"Pratino Est 1",
-			"Pratino Est 2",
-			"Pratino",
-			"Giurisprudenza",
-			"Fontana della Minerva"
-		],
-		"Storia": [
-			"Chimica analitica",
-			"Farmacologia",
-			"Matematica"
-		],
-		"Storia dell'arte": [
-			"Orto Botanico",
-			"Medicina legale",
-			"Mensa",
-			"Ingegneria Chimica"
-		],
-		"Zoologia": [
-			"Archeologia",
-			"Geochimica",
-			"Lingue",
-			"Neurologia"
-		]
+		"Aiuola 1": ["Aiuola 2", "Astronomia", "Astrofisica", "Fisica", "Aiuola 3"],
+		"Aiuola 2": ["Chimica", "Aiuola 1", "Aiuola 4"],
+		"Aiuola 3": ["Aiuola 1", "Aiuola 4", "Igiene", "Infermieristica"],
+		"Aiuola 4": ["Medicina", "Aiuola 2", "Aiuola 3"],
+		"Archeologia": ["Architettura", "Geochimica", "Zoologia"],
+		"Architettura": ["Biotecnologie", "Scienze Politiche", "Scienze statistiche", "Geochimica", "Archeologia"],
+		"Astrofisica": ["Astronomia", "Aiuola 1", "Fisica", "Lingue"],
+		"Astronomia": ["Pratino", "Astrofisica", "Lingue", "Geologia", "Aiuola 1"],
+		"Bar": ["Sociologia", "Economia", "Psicologia"],
+		"Biologia": ["Ostetricia", "Psicologia", "Scienze Politiche", "Biotecnologie"],
+		"Biotecnologie": ["Biologia", "Scienze Politiche", "Architettura"],
+		"Botanica": ["Genetica", "Ingegneria Gestionale", "Orto Botanico", "Filosofia", "Lettere", "Pratone", "Ingegneria Chimica", "Economia"],
+		"Chiesa": ["Lingue", "Fisica", "Igiene", "Scienze della Formazione", "Neurologia"],
+		"Chimica": ["Chimica Industriale", "Pratino Est 2", "Medicina", "Aiuola 2"],
+		"Chimica Industriale": ["Pratino Est 2", "Farmacologia", "Medicina", "Chimica", "Matematica"],
+		"Chimica analitica": ["Mensa", "Storia", "Fisica applicata", "Robotica", "Medicina legale"],
+		"Chirurgia": ["Farmacologia", "Scienze della Comunicazione", "Pratino Sud"],
+		"Economia": ["Bar", "Sociologia", "Ingegneria Gestionale", "Ingegneria Informatica", "Botanica", "Genetica", "Pratone", "Psicologia"],
+		"Farmacologia": ["Matematica", "Storia", "Chirurgia", "Chimica Industriale", "Pratino Sud"],
+		"Filosofia": ["Botanica", "Orto Botanico", "Robotica", "Fisica applicata", "Matematica", "Pratino Est 1", "Lettere"],
+		"Fisica": ["Astrofisica", "Aiuola 1", "Igiene", "Chiesa", "Lingue"],
+		"Fisica applicata": ["Robotica", "Chimica analitica", "Mensa", "Matematica", "Filosofia"],
+		"Fontana della Minerva": ["Statua della Minerva"],
+		"Genetica": ["Botanica", "Economia", "Pratone"],
+		"Geochimica": ["Scienze statistiche", "Mineralogia", "Geologia", "Neurologia", "Zoologia", "Archeologia", "Architettura"],
+		"Geologia": ["Mineralogia", "Pratino", "Astronomia", "Lingue", "Geochimica"],
+		"Giurisprudenza": ["Scienze Politiche", "Rettorato", "Pratino", "Mineralogia", "Statua della Minerva"],
+		"Igiene": ["Fisica", "Aiuola 3", "Infermieristica", "Chiesa"],
+		"Infermieristica": ["Igiene", "Aiuola 3", "Informatica"],
+		"Informatica": ["Infermieristica", "Scienze dello Spettacolo"],
+		"Ingegneria Chimica": ["Ingegneria Gestionale", "Orto Botanico", "Storia dell'arte", "Botanica", "Ingegneria Energetica"],
+		"Ingegneria Meccanica": ["Ingegneria Informatica", "Ingegneria Aerospaziale", "Ingegneria Gestionale"],
+		"Ingegneria Energetica": ["Ingegneria Aerospaziale", "Ingegneria Gestionale", "Ingegneria Chimica"],
+		"Ingegneria Gestionale": ["Botanica", "Economia", "Ingegneria Informatica", "Ingegneria Meccanica", "Ingegneria Aerospaziale", "Ingegneria Energetica", "Ingegneria Chimica", "Orto Botanico", "Sociologia"],
+		"Ingegneria Aerospaziale": ["Ingegneria Meccanica", "Ingegneria Informatica", "Ingegneria Energetica", "Ingegneria Gestionale"],
+		"Ingegneria Informatica": ["Ingegneria Gestionale", "Sociologia", "Economia", "Ingegneria Meccanica", "Ingegneria Aerospaziale"],
+		"Lettere": ["Botanica", "Filosofia", "Pratino Est 1", "Rettorato", "Pratone"],
+		"Lingue": ["Geologia", "Astronomia", "Astrofisica", "Fisica", "Chiesa", "Neurologia", "Zoologia"],
+		"Matematica": ["Fisica applicata", "Storia", "Farmacologia", "Chimica Industriale", "Pratino Est 2", "Pratino Est 1", "Filosofia", "Mensa"],
+		"Medicina": ["Chimica Industriale", "Chimica", "Aiuola 4", "Ortopedia"],
+		"Medicina legale": ["Storia dell'arte", "Orto Botanico", "Mensa", "Chimica analitica"],
+		"Mensa": ["Storia dell'arte", "Medicina legale", "Chimica analitica", "Fisica applicata", "Matematica"],
+		"Mineralogia": ["Scienze statistiche", "Giurisprudenza", "Pratino", "Geologia", "Geochimica"],
+		"Neurologia": ["Zoologia", "Lingue", "Chiesa", "Scienze della Formazione", "Geochimica"],
+		"Orto Botanico": ["Botanica", "Storia dell'arte", "Medicina legale", "Robotica", "Filosofia", "Ingegneria Chimica", "Ingegneria Gestionale"],
+		"Ortopedia": ["Pratino Sud", "Medicina"],
+		"Ostetricia": ["Psicologia", "Pratone", "Scienze Politiche", "Biologia"],
+		"Pratino": ["Giurisprudenza", "Statua della Minerva", "Astronomia", "Geologia", "Mineralogia"],
+		"Pratino Est 1": ["Lettere", "Filosofia", "Matematica", "Pratino Est 2", "Statua della Minerva"],
+		"Pratino Est 2": ["Pratino Est 1", "Matematica", "Chimica Industriale", "Chimica", "Statua della Minerva"],
+		"Pratino Sud": ["Farmacologia", "Chirurgia", "Scienze della Comunicazione", "Ortopedia"],
+		"Pratone": ["Economia", "Genetica", "Botanica", "Lettere", "Rettorato", "Scienze Politiche", "Ostetricia", "Psicologia"],
+		"Psicologia": ["Economia", "Pratone", "Ostetricia", "Biologia", "Bar"],
+		"Rettorato": ["Pratone", "Lettere", "Statua della Minerva", "Giurisprudenza", "Scienze Politiche"],
+		"Robotica": ["Orto Botanico", "Chimica analitica", "Fisica applicata", "Filosofia"],
+		"Scienze Politiche": ["Ostetricia", "Biologia", "Biotecnologie", "Architettura", "Scienze statistiche", "Giurisprudenza", "Rettorato", "Pratone"],
+		"Scienze della Comunicazione": ["Chirurgia", "Pratino Sud"],
+		"Scienze della Formazione": ["Chiesa", "Neurologia", "Scienze dello Spettacolo"],
+		"Scienze dello Spettacolo": ["Informatica", "Scienze della Formazione"],
+		"Scienze statistiche": ["Scienze Politiche", "Mineralogia", "Geochimica", "Architettura"],
+		"Sociologia": ["Ingegneria Informatica", "Economia", "Bar", "Ingegneria Gestionale"],
+		"Statua della Minerva": ["Rettorato", "Pratino Est 1", "Pratino Est 2", "Pratino", "Giurisprudenza", "Fontana della Minerva"],
+		"Storia": ["Chimica analitica", "Farmacologia", "Matematica"],
+		"Storia dell'arte": ["Orto Botanico", "Medicina legale", "Mensa", "Ingegneria Chimica"],
+		"Zoologia": ["Archeologia", "Geochimica", "Lingue", "Neurologia"]
 	},
-  "logs": ["Ingegneri Chimici hanno CONQUISTATO il dipartimento di Storia dell'arte sparando fluidi altamente reattivi con i loro impianti","Filosofi hanno CONQUISTATO il dipartimento di Pratino Est 1 grazie alla nobile arte della retorica","Studenti di Robotica hanno CONQUISTATO il dipartimento di Chimica analitica attaccando con il loro esercito di robot umanoidi","Architetti hanno CONQUISTATO il dipartimento di Geochimica con un sofisticato sistema di specchi e leve","Ingegneri Chimici hanno DIFESO il dipartimento da Botanici","Astronomi hanno CONQUISTATO il dipartimento di Aiuola 1 sfruttando l'allineamento dei pianeti","Ingegneri gestionali hanno DIFESO il dipartimento da Ingegneri Energetici","Vaticano ha DIFESO il dipartimento da Fisici","Giuristi hanno CONQUISTATO il dipartimento di Pratino facendogli causa e vincendo ovviamente","Addetti alla mensa hanno CONQUISTATO il dipartimento di Fisica applicata avvelenando il loro cibo, tratto da una storia vera","Architetti hanno CONQUISTATO il dipartimento di Scienze statistiche con un sofisticato sistema di specchi e leve","Chirurghi hanno CONQUISTATO il dipartimento di Pratino Sud con i loro soldati a quattro braccia, gambe e occhi","Filosofi hanno DIFESO il dipartimento da Matematici","Architetti hanno DIFESO il dipartimento da Neurologi","Economisti hanno DIFESO il dipartimento da Baristi","Farmacisti hanno CONQUISTATO il dipartimento di Matematica somministrando di nascosto mix di psicofarmaci alla loro difesa","Economisti hanno DIFESO il dipartimento da Botanici","Astronomi hanno CONQUISTATO il dipartimento di Lingue sfruttando l'allineamento dei pianeti","Economisti hanno CONQUISTATO il dipartimento di Sociologia comprando il loro territorio","Architetti hanno CONQUISTATO il dipartimento di Scienze Politiche con un sofisticato sistema di specchi e leve","Astronomi hanno CONQUISTATO il dipartimento di Fisica sfruttando l'allineamento dei pianeti","Filosofi hanno DIFESO il dipartimento da Seguaci della Minerva","Medici hanno DIFESO il dipartimento da Ortopedici","Chirurghi hanno DIFESO il dipartimento da Farmacisti","Rettorato ha DIFESO il dipartimento da Fattoni","Informatici hanno DIFESO il dipartimento da Infermieri","Rettorato ha DIFESO il dipartimento da Seguaci della Minerva","Biologi hanno CONQUISTATO il dipartimento di Biotecnologie inglobandola nel loro ecosistema","Ingegneri Industriali hanno CONQUISTATO il dipartimento di Ingegneria Meccanica bombardando con i loro razzi telecomandati","Fattoni hanno DIFESO il dipartimento da Botanici","Ortopedici hanno DIFESO il dipartimento da Medici","Studenti di Scienze della Comunicazione hanno DIFESO il dipartimento da Chirurghi","Architetti hanno CONQUISTATO il dipartimento di Archeologia con un sofisticato sistema di specchi e leve","Studenti di Robotica hanno DIFESO il dipartimento da Filosofi","Baristi hanno CONQUISTATO il dipartimento di Psicologia distraendo la difesa avversaria con gli spritz gratis","Informatici hanno DIFESO il dipartimento da Infermieri","Astronomi hanno DIFESO il dipartimento da Astrofisici","Farmacisti hanno DIFESO il dipartimento da Chirurghi","Geologi hanno CONQUISTATO il dipartimento di Lingue con il loro generatore di scosse sismiche","Ingegneri Industriali hanno CONQUISTATO il dipartimento di Ingegneria Gestionale bombardando con i loro razzi telecomandati","Ingegneri Informatici hanno CONQUISTATO il dipartimento di Ingegneria Gestionale con un software in grado di controllare ogni dispositivo elettronico avversario","Medici hanno DIFESO il dipartimento da Ortopedici","Minerologia ha CONQUISTATO il dipartimento di Pratino grazie alle loro indistruttibili armature di adamantio","Studenti di Robotica hanno DIFESO il dipartimento da Filosofi","Medici Legali hanno CONQUISTATO il dipartimento di Orto Botanico con la loro orda di zombie"]
+	"logs": ["Ingegneri Chimici hanno CONQUISTATO il dipartimento di Storia dell'arte sparando fluidi altamente reattivi con i loro impianti", "Filosofi hanno CONQUISTATO il dipartimento di Pratino Est 1 grazie alla nobile arte della retorica", "Studenti di Robotica hanno CONQUISTATO il dipartimento di Chimica analitica attaccando con il loro esercito di robot umanoidi", "Architetti hanno CONQUISTATO il dipartimento di Geochimica con un sofisticato sistema di specchi e leve", "Ingegneri Chimici hanno DIFESO il dipartimento da Botanici", "Astronomi hanno CONQUISTATO il dipartimento di Aiuola 1 sfruttando l'allineamento dei pianeti", "Ingegneri gestionali hanno DIFESO il dipartimento da Ingegneri Energetici", "Vaticano ha DIFESO il dipartimento da Fisici", "Giuristi hanno CONQUISTATO il dipartimento di Pratino facendogli causa e vincendo ovviamente", "Addetti alla mensa hanno CONQUISTATO il dipartimento di Fisica applicata avvelenando il loro cibo, tratto da una storia vera", "Architetti hanno CONQUISTATO il dipartimento di Scienze statistiche con un sofisticato sistema di specchi e leve", "Chirurghi hanno CONQUISTATO il dipartimento di Pratino Sud con i loro soldati a quattro braccia, gambe e occhi", "Filosofi hanno DIFESO il dipartimento da Matematici", "Architetti hanno DIFESO il dipartimento da Neurologi", "Economisti hanno DIFESO il dipartimento da Baristi", "Farmacisti hanno CONQUISTATO il dipartimento di Matematica somministrando di nascosto mix di psicofarmaci alla loro difesa", "Economisti hanno DIFESO il dipartimento da Botanici", "Astronomi hanno CONQUISTATO il dipartimento di Lingue sfruttando l'allineamento dei pianeti", "Economisti hanno CONQUISTATO il dipartimento di Sociologia comprando il loro territorio", "Architetti hanno CONQUISTATO il dipartimento di Scienze Politiche con un sofisticato sistema di specchi e leve", "Astronomi hanno CONQUISTATO il dipartimento di Fisica sfruttando l'allineamento dei pianeti", "Filosofi hanno DIFESO il dipartimento da Seguaci della Minerva", "Medici hanno DIFESO il dipartimento da Ortopedici", "Chirurghi hanno DIFESO il dipartimento da Farmacisti", "Rettorato ha DIFESO il dipartimento da Fattoni", "Informatici hanno DIFESO il dipartimento da Infermieri", "Rettorato ha DIFESO il dipartimento da Seguaci della Minerva", "Biologi hanno CONQUISTATO il dipartimento di Biotecnologie inglobandola nel loro ecosistema", "Ingegneri Industriali hanno CONQUISTATO il dipartimento di Ingegneria Meccanica bombardando con i loro razzi telecomandati", "Fattoni hanno DIFESO il dipartimento da Botanici", "Ortopedici hanno DIFESO il dipartimento da Medici", "Studenti di Scienze della Comunicazione hanno DIFESO il dipartimento da Chirurghi", "Architetti hanno CONQUISTATO il dipartimento di Archeologia con un sofisticato sistema di specchi e leve", "Studenti di Robotica hanno DIFESO il dipartimento da Filosofi", "Baristi hanno CONQUISTATO il dipartimento di Psicologia distraendo la difesa avversaria con gli spritz gratis", "Informatici hanno DIFESO il dipartimento da Infermieri", "Astronomi hanno DIFESO il dipartimento da Astrofisici", "Farmacisti hanno DIFESO il dipartimento da Chirurghi", "Geologi hanno CONQUISTATO il dipartimento di Lingue con il loro generatore di scosse sismiche", "Ingegneri Industriali hanno CONQUISTATO il dipartimento di Ingegneria Gestionale bombardando con i loro razzi telecomandati", "Ingegneri Informatici hanno CONQUISTATO il dipartimento di Ingegneria Gestionale con un software in grado di controllare ogni dispositivo elettronico avversario", "Medici hanno DIFESO il dipartimento da Ortopedici", "Minerologia ha CONQUISTATO il dipartimento di Pratino grazie alle loro indistruttibili armature di adamantio", "Studenti di Robotica hanno DIFESO il dipartimento da Filosofi", "Medici Legali hanno CONQUISTATO il dipartimento di Orto Botanico con la loro orda di zombie", "Astrofisici hanno DIFESO il dipartimento da Astronomi", "Biologi hanno CONQUISTATO il dipartimento di Psicologia inglobandola nel loro ecosistema", "Astrofisici hanno DIFESO il dipartimento da Astronomi", "Chimici Industriali hanno CONQUISTATO il dipartimento di Medicina grazie alla potenza dei loro nuovi reattori", "Ingegneri Chimici hanno DIFESO il dipartimento da Medici Legali", "Biologi hanno CONQUISTATO il dipartimento di Scienze Politiche inglobandola nel loro ecosistema", "Infermieri hanno CONQUISTATO il dipartimento di Aiuola 3 scagliando una pioggia di siringhe letali", "Igienisti hanno CONQUISTATO il dipartimento di Chiesa infettando le loro difese, colpevoli di non aver fatto i vaccini", "Baristi hanno DIFESO il dipartimento da Biologi", "Botanici hanno CONQUISTATO il dipartimento di Genetica grazie alla loro orda di piante carnivore", "Igienisti hanno DIFESO il dipartimento da Infermieri", "Chimici hanno CONQUISTATO il dipartimento di Aiuola 2 rilasciando gas nervino", "Filosofi hanno CONQUISTATO il dipartimento di Lettere grazie alla nobile arte della retorica", "Farmacisti hanno CONQUISTATO il dipartimento di Fisica applicata somministrando di nascosto mix di psicofarmaci alla loro difesa", "Ingegneri Chimici hanno CONQUISTATO il dipartimento di Medicina legale sparando fluidi altamente reattivi con i loro impianti", "Fattoni hanno DIFESO il dipartimento da Botanici", "Seguaci della Minerva hanno CONQUISTATO il dipartimento di Pratino Est 1 grazie all'aiuto divino direttamente dall'Olimpo", "Neurologi hanno DIFESO il dipartimento da Geologi", "Biologi hanno DIFESO il dipartimento da Architetti", "Farmacisti hanno DIFESO il dipartimento da Chirurghi", "Filosofi hanno DIFESO il dipartimento da Seguaci della Minerva", "Farmacisti hanno DIFESO il dipartimento da Storici", "Chirurghi hanno DIFESO il dipartimento da Farmacisti", "Ingegneri Informatici hanno CONQUISTATO il dipartimento di Botanica con un software in grado di controllare ogni dispositivo elettronico avversario"]
 }
