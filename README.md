@@ -1,2 +1,2 @@
-# sapienza-war-bot
+# Sapienza WarBot
 * Ready for war?
