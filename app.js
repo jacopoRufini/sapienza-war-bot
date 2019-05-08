@@ -11,7 +11,7 @@ const debugMode = false;
 
 const PORT = process.env.PORT || 80;
 const ATTACK_INTERVAL = debugMode ? 100 : 1000 * 60 * 60 // 1 l'ora
-const OLD_USERS = 1350;
+const OLD_USERS = 5300;
 
 const app = express();
 
